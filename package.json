@@ -1,0 +1,23 @@
+{
+  "name": "stronghayden",
+  "version": "1.0.0",
+  "description": "Commercial Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kennyl24/stronghayden.git"
+  },
+  "author": "Kenneth Laprelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kennyl24/stronghayden/issues"
+  },
+  "homepage": "https://github.com/Kennyl24/stronghayden#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
