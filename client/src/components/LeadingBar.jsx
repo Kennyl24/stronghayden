@@ -29,7 +29,7 @@ class LeadingBar extends React.Component {
       <AppBar position="static" style={{backgroundColor:'white', height:'80px'}}>
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
-      <MenuItem disableGutters="true" className="menu_icon" style={{height:'100%'}} >
+      <MenuItem className="menu_icon" style={{height:'100%'}} >
       <img style={{height: '85px', width: '305px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
     src="http://stronghayden.com/wp-content/uploads/2014/07/SH-WebLogo-Clear.png"/>

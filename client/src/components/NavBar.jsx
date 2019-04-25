@@ -29,7 +29,7 @@ class NavBar extends React.Component {
       <AppBar position="static" style={{backgroundColor:'transparent', height:'80px'}}>
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
-      <MenuItem disableGutters="true" className="menu_item" style={{height:'100%'}} >
+      <MenuItem className="menu_item" style={{height:'100%'}} >
       <img style={{height: '100px', width: '315px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
     src="https://i.ibb.co/dp407x7/newlogo.png"/>

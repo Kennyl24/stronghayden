@@ -16,7 +16,19 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,      
         query: {
-          'presets': ['@babel/preset-react']
+          'presets': ['@babel/preset-react'],
+          'plugins': [
+            [
+              '@babel/plugin-transform-runtime',
+              {
+                'absoluteRuntime': true,
+                'corejs': false,
+                'helpers': true,
+                'regenerator': true,
+                'useESModules': true
+              }
+            ]
+          ]
         }
       }, {
         test: /\.scss$/,

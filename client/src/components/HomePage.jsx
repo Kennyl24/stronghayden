@@ -29,10 +29,10 @@ class HomePage extends React.Component {
         We Provide, sales, leasing, consulting and Management Of Commercial Real Estate. 
       </h1>
       <h2>Creating Value in Middle Market Commercial Real Estate</h2>
-      <Button variant="outlined" style={{color:"#43b686", borderColor:'#43b686', marginRight:'10px'}} >
+      <Button variant="outlined"  onClick={() => window.location.href = '/listings'}style={{color:"#43b686", borderColor:'#43b686', marginRight:'10px'}} >
         Find a Property
       </Button>
-      <Button variant="outlined" style={{color:"#43b686", borderColor:'#43b686'}}>
+      <Button variant="outlined"  onClick={() => window.location.href = '/contact'}style={{color:"#43b686", borderColor:'#43b686'}}>
         Contact Us
       </Button>
       </div>

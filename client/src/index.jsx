@@ -8,6 +8,8 @@ import AboutPage from './components/AboutPage.jsx'
 import ContactPage from './components/ContactPage.jsx'
 import ListingsPage from './components/ListingsPage.jsx'
 import ServicesPage from './components/ServicesPage.jsx'
+import IndividualBlog from './components/IndividualBlog.jsx'
+
 
 ReactDOM.render(
   <Router>
@@ -15,6 +17,7 @@ ReactDOM.render(
       <Route exact path="/" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/blog" component={BlogPage} />
+      <Route exact path="/individualblog" component={IndividualBlog} />
       <Route exact path="/services" component={ServicesPage} />
       <Route exact path="/contact" component={ContactPage} />
       <Route exact path="/listings" component={ListingsPage} />
