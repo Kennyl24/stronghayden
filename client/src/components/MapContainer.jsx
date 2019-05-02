@@ -2,6 +2,7 @@ import React from 'react';
 import config from '../../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Button from '@material-ui/core/Button';
+import {isMobile} from 'react-device-detect';
 
 class MapContainer extends React.Component{
   constructor(props) {
@@ -42,13 +43,13 @@ class MapContainer extends React.Component{
   render() {
     return (
       <div
-      style={{width:'50%', backgroundColor:'#ededed'}}
+      style={{maxWidth: isMobile ? '100%' : '100%', position:"relative", backgroundColor:'#ededed'}}
       >
        <Map
        style={{
-        width: '50%',
+        width: isMobile ? '100%' : '100%',
         height: '80vh',
-        position: 'none'
+        position: 'absolute'
        }}
           google={this.props.google}
           initialCenter={{

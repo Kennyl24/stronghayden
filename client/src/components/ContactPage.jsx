@@ -8,6 +8,13 @@ import BottomNav from './BottomNav.jsx';
 import MapContainer from './MapContainer.jsx';
 import GetInTouch from './GetInTouch.jsx';
 import Button from '@material-ui/core/Button';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
+
 
 class ContactPage extends React.Component { 
   constructor(props) {
@@ -27,9 +34,11 @@ class ContactPage extends React.Component {
     return (
       <div>
       <LeadingBar/>
-      <div style={{maxHeight:'70%', marginTop:'.25%',backgroundColor:'#ededed', paddingBottom:'2%', display:'flex', flexDirection:'row'}}>
+      <div style={{paddingTop: isMobile? '150px' : '90px',backgroundColor:'#ededed', paddingBottom:'2%', display:'flex', flexWrap:'wrap', maxWidth:'100%', flexDirection:'row'}}>
       <GetInTouch/>
-      <MapContainer/>
+      <div style={{width: isMobile? '100%' : '50%', paddingTop: isMobile? '12px': '0px'}}>
+      {isMobile ? null : <MapContainer/>}
+      </div>
       </div>
       <BottomNav/>
       </div>

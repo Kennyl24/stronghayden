@@ -53,6 +53,7 @@ class Map extends React.Component {
   }
   render() {
     const style = {
+      position:"relative",
       width: '50%',
       maxWidth:'50%',
       height: '65vh',

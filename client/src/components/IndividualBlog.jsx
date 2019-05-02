@@ -73,7 +73,7 @@ class IndividualBlog extends React.Component {
     return (
       <div>
         <LeadingBar/>
-      <div style={{width:'100%', height:'500px', backgroundColor:'#43b686', cursor:'pointer'}}>
+      <div style={{width:'100%', height:'500px', paddingTop:'110px',backgroundColor:'#43b686', cursor:'pointer'}}>
       <h2 className='featured-title' style={{paddingTop:'20px'}}>{blog.blogTitle}</h2>
       <h2 className='featured-writing'>{blog.blogAuthor} | {blog.date}</h2>
       <div style={{display:'flex', paddingTop:'20px', alignItems:'center', justifyContent:'center'}}>

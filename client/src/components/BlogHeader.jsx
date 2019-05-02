@@ -40,7 +40,7 @@ class BlogHeader extends React.Component {
   }
   render () {
     return (
-      <div onClick={() => window.location.href = '/individualblog'} style={{width:'100%', height:'500px', backgroundColor:'#43b686', cursor:'pointer'}}>
+      <div onClick={() => window.location.href = '/individualblog'} style={{width:'100%', paddingBottom:'50px', backgroundColor:'#43b686', paddingTop:'100px', cursor:'pointer'}}>
       <h2 className='featured-writing'>Featured Article</h2>
       <h2 className='featured-title'>{blog.blogTitle}</h2>
       <div style={{display:'flex', paddingTop:'20px', alignItems:'center', justifyContent:'center'}}>

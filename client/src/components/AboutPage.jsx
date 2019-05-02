@@ -9,6 +9,8 @@ import AboutHeader from './AboutHeader.jsx';
 import TeamExperience from './TeamExperience.jsx';
 import Agents from './Agents.jsx';
 import Mission from './Mission.jsx';
+import AboutUs from './AboutUs.jsx';
+
 import Button from '@material-ui/core/Button';
 
 class AboutPage extends React.Component { 
@@ -22,12 +24,17 @@ class AboutPage extends React.Component {
 }
   render () {
     return (
-      <div>
+      <div className="test">
       <LeadingBar/>
       <AboutHeader/>
       <TeamExperience/>
-      <Agents/>
-      <Mission/>
+      <AboutUs/>
+      <div onClick={() => window.location.href = '/team'} 
+    className="extra-nav"
+    >
+      <h1 style={{textAlign:'center', lineHeight:'150px', color:'inherit'}}> Our Agents
+ </h1>
+      </div>
       <BottomNav/>
       </div>
 )

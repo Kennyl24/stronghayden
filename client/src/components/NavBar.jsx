@@ -14,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
+import {isMobile} from 'react-device-detect';
 
 class NavBar extends React.Component { 
   constructor(props) {
@@ -26,20 +27,23 @@ class NavBar extends React.Component {
 
   render () {
     return (
-      <AppBar position="static" style={{backgroundColor:'transparent', height:'80px'}}>
+      isMobile ? 
+      null
+      : 
+      <AppBar position="static" style={{backgroundColor:'white', height:'100px'}}>
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
       <MenuItem className="menu_item" style={{height:'100%'}} >
       <img style={{height: '100px', width: '315px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
-    src="https://i.ibb.co/dp407x7/newlogo.png"/>
+    src="https://i.ibb.co/w75NYhP/S-H-logo.jpg"/>
         </MenuItem >
       </MenuList>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>
         <span className="menu_a" ><a href="tel:+17072262661">(707) 226-2661</a></span>
         <span className="menu_a"><a href="mailto:lgrayson@stronghayden.com">lgrayson@stronghayden.com</a></span>
         </div>
-      <div style={{position:'absolute', right:'5%', top: '40px'}}>
+      <div style={{position:'absolute', right:'5%', top: '50px'}}>
         <span className="menu_item" onClick={() => window.location.href = '/'} >Home</span>
         <span className="menu_item" onClick={() => window.location.href = '/about'} >About</span>
         <span className="menu_item" onClick={() => window.location.href = '/services'}>Services</span>
@@ -49,6 +53,7 @@ class NavBar extends React.Component {
         </div>
         </Toolbar>
       </AppBar>
+      
 )
 }
 };

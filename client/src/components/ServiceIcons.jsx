@@ -13,11 +13,8 @@ class ServiceIcons extends React.Component {
   }
   render () {
     return (
-      <div style={{maxWidth:'300px', marginRight:'100px'}}>
+      <div style={{maxWidth:'300px', margin:'auto'}}>
         <img src={this.props.icon.image} style={{height:'128px', width:'128px'}}/> 
-        {/* <h3 style={{color:'#7e7575', marginRight:'10px', marginLeft:'10px', fontWeight:'300', }}>
-        
-        {this.props.icon.title}</h3> */}
         {this.props.icon.title}
       </div>
 )
