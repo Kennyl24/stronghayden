@@ -48,28 +48,14 @@ class Agent extends React.Component {
           }}
           animationDuration={1000}
         >
+        <h4 style={{fontSize:'42px'}}>{this.props.agent.name}</h4>
+        {this.props.agent.about}
           <p>
-          Gary Van Dam is a licensed real estate Broker who brings with him extensive business development, marketing and sales experience, and specializes in investment and development properties.
-          <br/>
-          Gary came to Napa because of the valley’s beauty and his belief in its future. Originally from Los Angeles, he attended the University of Southern California (USC) – School of Business. He is heavily involved with classic automobiles and vintage racing.
-          <br/>
-         
-          <ul>
-          <h4> SPECIALIZATION</h4>
-            <li>Commercial and Investment Sales</li>
-            <li> Leasing of Retail and Office Properties</li>
-            <li>Property Consulting and Analysis</li>
-            </ul>
-            <ul>
-            <h4>PROFESSIONAL AFFILIATIONS</h4>
-            <li>CCIM Institute</li>
-            <li>International Council of Shopping Centers, (ICSC)</li>
-            <li>Northern California Commercial Association of Realtors, (NCCAR)</li>
-          </ul>
-          <h4>DRE # 01321102</h4>
+          <h4>DRE: #{this.props.agent.bre}</h4>
           <h4>Email: {this.props.agent.email}</h4>
+          <h4>Mobile: {this.props.agent.phone}</h4>
           <h4>Office: (707) 226-2661</h4>
-          <h4>Mobile: (707) 342-1538</h4>
+          
           <h4>Fax: (707) 226-2339</h4>
           </p>
         </Modal>

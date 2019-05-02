@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
-// import newBack from './newBack.jpg';
-// import newBack from './stronghayden.jpg';
-// import newBack from './back.jpg';
+import final from './final.jpg';
+import vineyards from './vineyards.jpg';
 import newBack from './thisback.jpg';
+import archer from './archer.jpg';
 import {isMobile} from 'react-device-detect';
 
 import NavBar from './NavBar.jsx';
@@ -16,19 +16,41 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      phoneNumber:'707254-8891'
+      phoneNumber:'707254-8891',
+      background: newBack,
     }
     this.titleClick=this.titleClick.bind(this);
+    this.rotatephotos=this.rotatephotos.bind(this);
   }
   titleClick(){
     location.reload();
   }
   componentDidMount() {
+    const array = [final, archer, vineyards, newBack]
+    let i = 0;
+    // let timerId = setInterval(() => alert('tick'), 2000);
+    setInterval(function() {
+
+      if (i < array.length) {
+        this.setState({
+          background: array[i],
+        })
+          console.log(array[i]);
+      }
+      else return;
+      i++;
+  }.bind(this), 5000);
     window.scrollTo(0, 0);
+    // this.rotatephotos();
+}
+  rotatephotos(){
+    for (let i = 0; i < array.length; i++) {
+      setInterval(() => { console.log(i) }, 5000);
+  }
 }
   render () {
     return (
-      <div className="home-background" style={{position:'relative', top:'00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${newBack})`, backgroundBlendMode: 'color', backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'100vh', width: '100%', marginBottom:'0px'}}>
+      <div className="home-background" style={{position:'relative', top:'00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${this.state.background})`, backgroundBlendMode: 'color', backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'100vh', width: '100%', marginBottom:'0px'}}>
       <LeadingBar/>
       <div className="front-text" style={{top: isMobile ? '20%' : '40%'}}>
       <h1 style={{textShadow: '1px 1px black', fontSize:isMobile ? '32px': '46px'}}>
