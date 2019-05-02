@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+let forceSsl = function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../client/dist'));

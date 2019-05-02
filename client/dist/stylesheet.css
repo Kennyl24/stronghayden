@@ -362,8 +362,8 @@ margin-bottom: 23px;
   background-color: grey;
 }
 .extra-nav:hover {
-  color:green;
-  background-color: white;
+  color:black;
+  background-color: #006f37;
 }
 
 li {
