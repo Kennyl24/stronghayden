@@ -17,9 +17,20 @@ class ServicesPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-}
+  // componentDidMount() {
+  //   window.scrollTo(0, 0);
+    componentDidMount() {
+      window.scrollTo(0, 0);
+      const { isSelected } = this.props;
+      if (isSelected) {
+        this.ref.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'center',
+        });
+      }
+    }
+// }
   render () {
     return (
       <div>

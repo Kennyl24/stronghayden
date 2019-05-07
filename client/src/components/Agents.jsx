@@ -45,16 +45,14 @@ const agents = [
     about: 
     <div>
     <p>
-    Matt Connolly joins Strong & Hayden as a Broker Associate with a focus on Retail, Office, and Industrial leasing, sales, acquisition, and development consulting throughout Napa and Solano Counties. Matt has 28 years in the real estate industry with extensive development and asset management experience working with property owners and developers enhancing value. Matt will be a welcome addition to the services S & H offers its clients.
-    <br/> <br/>
-    Matt recently managed commercial condominium projects and developing a new 290,000 square foot office complex and retail center located in Nevada. Prior to that, Matt served as Development Director for Channel Properties, where he developed mixed-use, multi-family, mini-storage and commercial projects.
-    <br/> <br/>
-    Notable local projects accomplished where the Winship Building acquisition, earthquake retrofit, and leasing; the Alexandria Building acquisition and leasing; the Riverfront project management of design, entitlements, financing, and initial start of construction; and the Solano Storage, Fairfield mixed-use mini-storage and retail project and property management and leasing. In addition, Matt worked with the Chelsea Property Group where he was responsible for their West Coast project acquisitions, entitlements, and construction management, locally managing the development of the Napa and Petaluma Premium Outlets.
-    <br/> <br/>
-    Earlier with Connolly Development, he coordinated the development, leasing, and management of 22 grocery-anchored shopping centers through-out northern California.
-    <br/> <br/>
-    Matt Connolly is a graduate of St. Mary’s College where he earned a BS in Business Administration and is a licensed California real estate broker. Member ICSC.
-      </p>   
+    Strong & Hayden as a Broker Associate with a focus on Retail, Office, and Industrial leasing, sales, acquisition, and development consulting throughout Napa and Solano Counties. With +-40 years in the real estate industry with extensive brokerage, development and asset management experience working with property owners and developers enhancing value. Matt offers many services to his clients.
+    <br/><br/>
+    Matt currently leases many commercial retail and office properties in Napa for owners and tenants; represents owners and buyers in investment property sales, and coordinates tenant improvements for restaurants, retail, and office improvements for his clients.
+    <br/><br/>
+    Prior to Strong & Hayden, Matt managed commercial condominium projects and developed a medical office complex and retail center located in Nevada. Prior to that, Matt served as Development Director for Channel Properties, where he developed mixed-use, multi-family, mini-storage and commercial projects. Notable local projects accomplished where the Winship Building acquisition, earthquake retrofit,  leasing and Tenant improvements (TI’s); the Alexandria Building acquisition, leasing and TI’s; the Riverfront project management of design, entitlements, financing, and initial start of construction; and the Solano Storage, Fairfield mixed-use mini-storage-retail project and property management and leasing. In addition, Matt worked with the Chelsea Property Group where he was responsible for their West Coast project acquisitions, entitlements, construction management and TI’s, locally managing the development of the Napa and Petaluma Premium Outlets. Earlier with Connolly Development, he coordinated the development, leasing, and management of 22 grocery-anchored shopping centers through-out northern California. 
+    <br/><br/>
+    Matt Connolly is a graduate of St. Mary's College where he earned a BS in Business Administration and is a licensed California real estate broker.   </p>   
+    <br/><br/>
           <ul>
           <h4> SPECIALIZATION</h4>
             <li>Commercial and Investment Sales</li>
@@ -65,6 +63,7 @@ const agents = [
             <ul>
             <h4>PROFESSIONAL AFFILIATIONS</h4>
             <li>International Council of Shopping Centers, (ICSC)</li>
+            <li>Napa Chambers of Commerce</li>
           </ul>
           </div>,
   },
@@ -259,11 +258,11 @@ const agents = [
           </div>,
   },
   {
-    name: 'Lauren Dodd',
+    name: 'Lauren Nicholsen',
     title: 'Sales Agent',
-    email: 'bdodd@stronghayden.com',
-    phone: '(707) 363-5000',
-    bre: '02048098',
+    email: 'lnicholsen@stronghayden.com',
+    phone: '(707)-486-8406',
+    bre: '01784261',
     image: 'https://i.ibb.co/g9HTNRG/Van-Dam-Gary-c1-120x150.jpg',
     about: 
     <div>

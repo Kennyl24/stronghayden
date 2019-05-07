@@ -4,19 +4,25 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
 
-
+// let myRef = useRef('hello')
+// const refContainer = useRef(initialValue);
 class Service extends React.Component { 
+
   constructor(props) {
     super(props);
+    // this.ref = React.createRef()
     this.state = {
     }
   }
   componentDidMount(){
-    console.log(this.props.service.index)
+    console.log(this.props.service.ref)
   }
   render () {
     return (
-      <div style={{width:'100%', paddingBottom:'40px', paddingTop:'40px', backgroundColor: this.props.service.key % 2 !== 0 ? '#f5f5f5' : 'white'}}>
+      <div
+      // ref={myRef}
+      // ref={this.props.service.ref}
+      style={{width:'100%', paddingBottom:'40px', paddingTop:'40px', backgroundColor: this.props.service.key % 2 !== 0 ? '#f5f5f5' : 'white'}}>
       <div style={{width: isMobile ? '100%' : '60%', marginLeft: isMobile ? '0%' : '20%', marginRight: isMobile ? '0%' : "20%"}}>
         <h1 style={{color:'black', textAlign:isMobile ? 'center' : null, fontSize:'25px', width:'80%', marginLeft: isMobile ? '10%': null, borderBottom:'2px solid green'}}>
           {this.props.service.title}
