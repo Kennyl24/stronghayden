@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
-app.use(forceSsl);
+// app.use(forceSsl);
 
 const config = '../config.js';
 
