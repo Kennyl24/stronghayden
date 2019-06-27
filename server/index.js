@@ -3,12 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-let forceSsl = function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
-  }
-  return next();
-};
+const forceSsl = require('force-ssl-heroku');
+app.use(forceSsl);
+
 const config = '../config.js';
 
 app.use(cors());
