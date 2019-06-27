@@ -48,7 +48,7 @@ class MapContainer extends React.Component{
        <Map
        style={{
         width: isMobile ? '100%' : '100%',
-        height: '85vh',
+        height: '80vh',
         position: 'absolute'
        }}
           google={this.props.google}
