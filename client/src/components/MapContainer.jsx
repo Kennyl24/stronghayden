@@ -8,7 +8,7 @@ class MapContainer extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      showInfoWindow: false,
+      showInfoWindow: true,
       activeMarker: {},
       lat: null,
       lng: null,
@@ -48,7 +48,7 @@ class MapContainer extends React.Component{
        <Map
        style={{
         width: isMobile ? '100%' : '100%',
-        height: '80vh',
+        height: '85vh',
         position: 'absolute'
        }}
           google={this.props.google}
@@ -67,7 +67,7 @@ class MapContainer extends React.Component{
     position={{lat: 38.28939, lng:-122.27587}} />
     <InfoWindow
     onClick={this.onMarkerClicked}
-    visible={this.state.showInfoWindow}
+    visible={true}
       marker={this.state.activeMarker}>
             <div style={{textAlign:'center'}}>
             <h1 style={{fontSize:'22px', color:'black'}}>
@@ -79,11 +79,11 @@ class MapContainer extends React.Component{
              >Directions</a>
       </Button>
               <br/>
-              433 Soscol Ave a110
+              433 Soscol Ave A110
               <br/>
               Napa, Ca 94559
               <br/>
-              707-224-5898
+              (707) 226-2661
             </div>
     </InfoWindow>
     </Map>

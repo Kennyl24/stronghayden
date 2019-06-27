@@ -12,8 +12,8 @@ class AboutUs extends React.Component {
   }
   render () {
     return (
-      <div>
-      <h1 style={{color:'#006f37', textAlign:'center', marginTop:'20px'}}>Our Broker's Offer</h1>
+      <div style={{marginTop:'30px'}}>
+      {/* <h1 style={{color:'rgb(62, 98, 58)', textAlign:'center', marginTop:'20px'}}>Our Broker's Offer</h1> */}
       <div style={{display:'flex', flexDirection:'row', flexWrap:'wrap', alignItems:'center', marginLeft:'10%', marginRight:'10%'}}>
       <div className="about-square">
       <h1 className="offer-header"> Local Expertiese</h1>
@@ -29,11 +29,7 @@ class AboutUs extends React.Component {
         </div>
         <div className="about-square">
         <h1 className="offer-header"> Results Driven</h1>
-        <ul style={{textAlign:'left'}}>
-          <li>Savings to you in both time and money</li>
-          <li>Increased number of prospective Tenants</li>
-          <li>Maximum exposure of your property</li>
-          </ul>
+        <p>We can offer savings in both time and money. We can provide an increased number of prospective tenants. We can also give you maximum exposure of your property if you list with us. </p>
         </div>
       </div>
       </div>

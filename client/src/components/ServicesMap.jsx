@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
 import Service from './Service.jsx';
-
 const services = [
   {
     title: 'BROKERAGE SERVICES',

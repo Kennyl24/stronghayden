@@ -10,57 +10,57 @@ class Agent extends React.Component {
     super(props);
     this.state = {
       open :false,
+      image: this.props.agent.image
     }
     this.onCloseModal = this.onCloseModal.bind(this);
     this.onOpenModal = this.onOpenModal.bind(this);
+    this.changeImage = this.changeImage.bind(this);
+    this.replaceImage = this.replaceImage.bind(this);
+  }
+  componentDidMount(){
+    console.log(this.props)
   }
   onOpenModal (){
-    this.setState({ open: true });
+    // this.setState({ open: true });
   };
 
   onCloseModal(){
-    this.setState({ open: false });
+    // this.setState({ open: false });
+  };
+  changeImage(){
+    console.log('trying to change')
+    this.props.agent.secondImage ? this.setState({
+      image: this.props.agent.secondImage
+    }): null
+    // this.setState({ open: false });
+  };
+  replaceImage(){
+    console.log('trying to change')
+    this.props.agent.secondImage ? this.setState({
+      image: this.props.agent.image
+    }): null
+    // this.setState({ open: false });
   };
   render () {
     return (
       <div className="agent-card">
-      <img style={{width:'100%', height:'200px'}}src={this.props.agent.image}/>
+      <Link to={{ pathname: `/agents/${this.props.agent.name.split(' ').join('-')}`, state: { key: this.props.index} }}className="read-more">
+      
+      <img style={{width:'100%', height:'300px'}} src={`/${this.state.image}`} alt={this.props.agent.name}/>
       <h1 className='agent-header'>{this.props.agent.name}</h1>
-      <div style={{display:'flex', flexDirection:'column'}}>
-      <h1 className='agent-title'>{this.props.agent.title}</h1>
-      {/* <a href = "mailto:${this.props.agent.email}">
-      {this.props.agent.email}
-      </a> */}
-      {/* <a href = {this.props.agent.phone}>{this.props.agent.phone}</a> */}
-      <Button onClick={this.onOpenModal} style={{borderColor:'#006f37', width:'150px',marginTop:'20px',  marginBottom:'20px'}}variant="outlined">
+      <div style={{display:'flex', flexDirection:'column', minHeight:'200px'}}>
+      <h1 className='agent-title' style={{minHeight: this.props.height ? '60px' : null}}>{this.props.agent.title}</h1>
+      <h1 className='agent-info'>CalBRE# {this.props.agent.bre}</h1>
+      {/* <h1 className='agent-info'>{this.props.agent.email}</h1> */}
+      {/* <h1 className='agent-info'>{this.props.agent.phone}</h1> */}
+        <div style={{alignItems:'center', textAlign:'center'}}>
+        <Button style={{borderColor:'#006f37', width:'150px',marginTop:'20px',  marginBottom:'20px'}}variant="outlined">
         Learn More
         </Button>
-        <div className="example">
-        <Modal
-          open={this.state.open}
-          onClose={this.onCloseModal}
-          center
-          classNames={{
-            transitionEnter: 'transitionEnter',
-            transitionEnterActive: 'transitionEnterActive',
-            transitionExit: 'transitionExitActive',
-            transitionExitActive: 'transitionExitActive',
-          }}
-          animationDuration={1000}
-        >
-        <h4 style={{fontSize:'42px'}}>{this.props.agent.name}</h4>
-        {this.props.agent.about}
-          <p>
-          <h4>DRE: #{this.props.agent.bre}</h4>
-          <h4>Email: {this.props.agent.email}</h4>
-          <h4>Mobile: {this.props.agent.phone}</h4>
-          <h4>Office: (707) 226-2661</h4>
-          
-          <h4>Fax: (707) 226-2339</h4>
-          </p>
-        </Modal>
+        </div>
       </div>
-      </div>
+     
+      </Link>
       </div>
 )
 }

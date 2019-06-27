@@ -48,7 +48,7 @@ class BottomNav extends Component {
         <h1 style={{borderBottom:'2px solid green', fontSize:'24px', textAlign:'left', width:'60%'}}>CONTACT US</h1>
        <div style={{marginBottom:'15px', fontSize:'14px'}} className="bottomnav_links"><a href="tel: (707) 226-2661" style={{color:'white', paddingBottom:'0px'}}>Phone: (707) 226-2661</a> <br/> </div>
         <div style={{marginBottom:'15px', fontSize:'14px'}} className="bottomnav_links"><a style={{color:'white', paddingBottom:'0px'}}> FAX: (707) 226-2339</a> <br/> </div>
-      <div style={{marginBottom:'15px', fontSize:'14px'}}className="bottomnav_links"><a href="mailto:lgrayson@stronghayden.com" style={{color:'white', marginBottom:'0px'}}>Email: lgrayson@stronghayden.com</a> <br/></div>
+      <div style={{marginBottom:'15px', fontSize:'14px'}}className="bottomnav_links"><a href="mailto:admin@stronghayden.com" style={{color:'white', marginBottom:'0px'}}>Email: admin@stronghayden.com</a> <br/></div>
       {/* <div style={{marginBottom:'15px', fontSize:'14px'}}className="bottomnav_links"><a href="https://www.google.com/maps/dir//433+Soscol+Ave+A110,+Napa,+CA+94559/@38.2913408,-122.2796044,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8085060d64b28763:0x86c2a7bfd93882c1!2m2!1d-122.2763325!2d38.2893383" target="_blank" 
              style={{color: 'white', marginBottom:'15px'}}className="bottomnav_links"> 433 Soscol Avenue, Suite A110, Napa, CA 94559 </a> <br/> </div>
       <div style={{marginBottom:'25px', fontSize:'14px'}}className="bottomnav_links">Monday - Friday 8:30AM-5:00PM <br/> </div> */}

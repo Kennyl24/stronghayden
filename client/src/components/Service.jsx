@@ -34,14 +34,26 @@ class Service extends React.Component {
         }}>
           {this.props.service.text}
           </p>
+          {isMobile ?  
+          <div style={{alignItems:'center', width:'100%', textAlign:'center', order:-1}}>
           <img src={this.props.service.image} style={{
             order: isMobile ? -1 : this.props.service.key % 2 !== 0 ? -1 : 1,
             minHeight:'180px',
             minWidth:'250px', 
-            marginLeft: isMobile ? '60px' : null,
+            marginLeft: isMobile ? null : null,
             height:'180px', 
             width:'250px'}}
             />
+            </div>
+          : 
+          <img src={this.props.service.image} style={{
+            order: isMobile ? -1 : this.props.service.key % 2 !== 0 ? -1 : 1,
+            minHeight:'180px',
+            minWidth:'250px', 
+            marginLeft: isMobile ? '40px' : null,
+            height:'180px', 
+            width:'250px'}}
+          /> }
           </div>
       </div>
       </div>

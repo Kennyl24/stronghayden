@@ -18,7 +18,7 @@ const services = [
     ref: 'investment',
   },
   {
-    title: <h3 style={{color:'#7e7575', marginRight:'10px', marginLeft:'10px', fontWeight:'300', }}>CONSTRUCTION <br/> MANAGEMENT & <br/> DEVOLOPMENT</h3>,
+    title: <h3 style={{color:'#7e7575', marginRight:'10px', marginLeft:'10px', fontWeight:'300', }}>CONSTRUCTION <br/> MANAGEMENT & <br/>DEVELOPMENT</h3>,
     image: 'https://i.ibb.co/F4b82Nw/4137181-512.png',
     key: 3,
     ref: 'construction',

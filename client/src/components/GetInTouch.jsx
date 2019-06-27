@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import {isMobile} from 'react-device-detect';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import axios from 'axios';
 
 import Button from '@material-ui/core/Button';
 const styles = theme => ({
@@ -22,7 +23,12 @@ const styles = theme => ({
   cssLabel: {
     color : 'black'
   },
-
+  '& label.Mui-focused': {
+    color: 'green',
+  },
+  cssLabelFocused: {
+    color:'purple'
+  },
   cssOutlinedInput: {
     '&$cssFocused $notchedOutline': {
       borderColor: `green !important`,
@@ -82,11 +88,11 @@ submitIt(){
     const { classes } = this.props;
 
     return (
-      <div style={{width:'50%', minWidth:'380px', maxWidth:'50%', minHeight:'100%', backgroundColor:'#ededed'}}>
+      <div style={{width:'50%', minWidth:'380px', maxWidth:'50%', minHeight:'100%', backgroundColor:'white'}}>
       <h1 style={{color:'black',  textAlign:'center', marginLeft:'20%', marginRight:'20%', fontSize:'25px', borderBottom: '2px solid #006f37'}}>
         Our Home Office 
         </h1>
-        <div style={{textAlign:'center'}}>
+      <div style={{textAlign:'center'}}>
       <a href="https://www.google.com/maps/dir//433+Soscol+Ave+A110,+Napa,+CA+94559/@38.2913408,-122.2796044,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8085060d64b28763:0x86c2a7bfd93882c1!2m2!1d-122.2763325!2d38.2893383" target="_blank" >
       <p>
       433 Soscol Ave Suite A110
@@ -100,9 +106,9 @@ submitIt(){
       Phone: (707) 226-2661
       </p>
       </a>
-      <a href="mailto:lgrayson@stronghayden.com">
+      <a href="mailto:admin@stronghayden.com">
       <p>
-      Email: lgrayson@stronghayden.com
+      Email: admin@stronghayden.com
       </p>
       </a>
       <h1 style={{color:'black', fontSize:'25px', marginLeft:'20%', marginRight:'20%', borderBottom: '2px solid #006f37'}}>
@@ -113,7 +119,8 @@ submitIt(){
             InputLabelProps={{
               classes: {
                 root: classes.cssLabel,
-                focused: classes.cssFocused,
+                
+                focused: {color:'white'}
               },
             }}
             InputProps={{
@@ -123,9 +130,13 @@ submitIt(){
                 notchedOutline: classes.notchedOutline,
               },
               inputMode: "numeric"
-            }}
+          }}
+          
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px', borderColor:'green'}}
           id="outlined-email-input"
+          floatingLabelFocusStyle = {{
+            color: "white"
+          }}
           label="Name"
           type="name"
           name="name"

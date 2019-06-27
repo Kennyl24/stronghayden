@@ -16,13 +16,13 @@ class TeamExperience extends React.Component {
       <div>
       <div style={{display:'flex', flexDirection:'row', flexWrap:'wrap', alignItems:'center', marginLeft:'20%', marginRight:'20%'}}>
         <div className="team-circle">
-        <p style={{marginTop:'40px', fontWeight:'800'}}>Over 250,000 SQ FT. Leased</p>
+        <p style={{marginTop:'40px', fontWeight:'800', color:'inherit'}}>Over 250,000 SQ FT. Leased</p>
           </div>
          <div className="team-circle">
-         <p style={{marginTop:'30px', fontWeight:'800'}}>Over $50,000,000 Sold</p>
+         <p style={{marginTop:'30px', fontWeight:'800', color:'inherit'}}>Over $50,000,000 Sold</p>
           </div>
           <div className="team-circle">
-          <p style={{marginTop:'40px', fontWeight:'800'}}> Over 2,000,000 SQ FT Sold</p>
+          <p style={{marginTop:'40px', fontWeight:'800', color:'inherit'}}> Over 2,000,000 SQ FT Sold</p>
           </div>
       </div>
       <div style={{marginLeft: isMobile ? '20px': '20%', marginRight: isMobile ? '20px': '20%', marginTop:'50px'}}>

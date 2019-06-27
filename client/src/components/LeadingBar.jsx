@@ -33,11 +33,13 @@ class LeadingBar extends React.Component {
     this.state = {
       showSimple: false,
       width: null,
+      opacity: 1.0
     }
+    this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.resize = this.resize.bind(this);
   }
   componentWillMount(){
-    if(window.innerWidth < 975){
+    if(window.innerWidth < 985){
       this.setState({
         width: false,
       });
@@ -47,11 +49,25 @@ class LeadingBar extends React.Component {
       });
     }
   }
+  
   componentDidMount(){
+      window.addEventListener('scroll', this.listenScrollEvent)
     window.addEventListener('resize', this.resize);
   }
   componentWillUnmount(){
     window.removeEventListener('resize', this.resize);
+    window.removeEventListener('scroll', this.listenScrollEvent);
+}
+listenScrollEvent(e){
+  if (window.scrollY > 250) {
+    this.setState({
+      opacity: 1.0
+    })
+  } else {
+    this.setState({
+      opacity: 1.0
+    })  
+  }
 }
 resize(){
   this.forceUpdate();
@@ -69,7 +85,7 @@ resize(){
     return (
       <div>
        { isMobile || !this.state.width ? 
-       <AppBar position="fixed" style={{zIndex:'999',backgroundColor:'white', height:'60px'}}>
+       <AppBar position="fixed" style={{zIndex:'999',backgroundColor:`white`, height:'60px'}}>
        <Toolbar>
        <MenuList style={{display:'flex', margin:'auto', flexDirection:'row'}}>
        <MenuItem className="menu_icon" style={{height:'100%'}} >
@@ -79,25 +95,25 @@ resize(){
          </MenuItem >
          <MenuItem className="menu_icon" style={{height:'100%'}} >
        <ListItemIcon>
-            <DraftsIcon />
+       <a href="mailto:admin@stronghayden.com"><DraftsIcon /></a>
        </ListItemIcon>
          </MenuItem >
          <MenuItem className="menu_icon" style={{height:'100%'}} >
        <ListItemIcon>
-            <PhoneIcon />
+       <a href="tel: (707) 226-2661">  <PhoneIcon /></a>
        </ListItemIcon>
          </MenuItem >
        </MenuList>
      </Toolbar>
        </AppBar>
        : null }
-      <AppBar position= {isMobile || !this.state.width ? "absolute" : 'fixed'} style={{zIndex:'99', backgroundColor:'white', top: isMobile ? '60px' : '0px', alignItems: isMobile ? 'center': null, height:'80px'}}>
+      <AppBar position= {isMobile || !this.state.width ? 'absolute' : 'fixed'} style={{zIndex:'99', backgroundColor: isMobile ? 'white' : `rgba(255,255,255, ${this.state.opacity})`, top: isMobile ? '60px' : '0px', alignItems: isMobile ? 'center': null, height: isMobile? '80px': '80px'}}>
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
       <MenuItem className="menu_icon" style={{height:'100%'}} >
-      <img style={{height: '85px', width: '305px', cursor:'pointer'}}
+      <img style={{height: '80px', width: isMobile ? '280px' : '380px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
-    src="http://stronghayden.com/wp-content/uploads/2014/07/SH-WebLogo-Clear.png"/>
+    src="https://i.ibb.co/w6xBp07/imageedit-12-5093301832.png"/>
         </MenuItem >
       </MenuList>
       {isMobile ? 
@@ -108,16 +124,16 @@ resize(){
       <div>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>
         <span className="menu_b" ><a href="tel:+17072262661">(707) 226-2661</a></span>
-        <span className="menu_b"><a href="mailto:lgrayson@stronghayden.com">lgrayson@stronghayden.com</a></span>
+        <span className="menu_b"><a href="mailto:admin@stronghayden.com">admin@stronghayden.com</a></span>
         </div>
          
-      <div style={{position:'absolute', right:'5%', top: '40px'}}>
+      <div style={{position:'absolute', right:'1%', top: '40px'}}>
         <span className="menu_i" onClick={() => window.location.href = '/'} >Home</span>
         <span className="menu_i" onClick={() => window.location.href = '/about'} >About</span>
         <span className="menu_i" onClick={() => window.location.href = '/team'} >Agents</span>
         <span className="menu_i" onClick={() => window.location.href = '/services'}>Services</span>
         <span className="menu_i"onClick={() => window.location.href = '/listings'}>Listings</span>
-        <span className="menu_i"onClick={() => window.location.href = '/blog'}>Blog</span>
+        <span className="menu_i"onClick={() => window.location.href = '/resources'}>Resources</span>
         <span className="menu_i"onClick={() => window.location.href = '/contact'}>Contact</span>
         </div> </div>}
         </Toolbar>

@@ -55,7 +55,7 @@ class MenuDrawer extends React.Component {
       <div className={classes.fullList}>
         <List>
         
-          {['Home', 'About', 'Team', 'Services', 'Blog', 'Listings', 'Contact'].map((text, index) => (
+          {['Home', 'About', 'Team', 'Services', 'Resources', 'Listings', 'Contact'].map((text, index) => (
             
             <ListItem button key={text} style={{fontFamily: 'Graphik Web,Helvetica,sans-serif!important', textAlign:'center', borderBottom: '1px solid rgba(242, 241, 239, 1)'}}
             onClick={()=> {

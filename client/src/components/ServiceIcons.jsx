@@ -18,6 +18,7 @@ class ServiceIcons extends React.Component {
     this.scrollview = this.scrollview.bind(this);
   }
   componentDidMount() {
+    console.log('hi', this.props.icon.key)
     // scrollToComponent('market', { offset: 0, align: 'middle', duration: 500, ease:'inCirc'});
   }
   scrollview(){
@@ -49,7 +50,8 @@ class ServiceIcons extends React.Component {
   }
   render () {
     return (
-      <div 
+      <div
+      className={this.props.icon.key <= 2 ? "serviceicon-test" : "serviceicon-two"}
       onClick={this.scrollview}
       style={{maxWidth:'300px', margin:'auto'}}>
         <img src={this.props.icon.image} style={{cursor:'pointer', height:'128px', width:'128px'}}/> 

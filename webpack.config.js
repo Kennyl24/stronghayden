@@ -14,7 +14,7 @@ module.exports = {
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,      
+        exclude: [/node_modules/, /config.js/],    
         query: {
           'presets': ['@babel/preset-react'],
           'plugins': [
@@ -36,13 +36,18 @@ module.exports = {
         include: path.resolve(__dirname, '../')
       },
       {
-        test: /\.(png|jpg|gif|pdf)$/,
+        test: /\.(png|jpg|gif|jpeg|pdf)$/,
         use: [
           {
             loader: 'file-loader',
             options: {}  
           }
         ]
+      },
+      {
+        test: /\.(mov|mp4)$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+       
       }
     ]
   }

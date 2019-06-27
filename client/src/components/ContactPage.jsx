@@ -34,7 +34,7 @@ class ContactPage extends React.Component {
     return (
       <div>
       <LeadingBar/>
-      <div style={{paddingTop: isMobile? '150px' : '90px',backgroundColor:'#ededed', paddingBottom:'2%', display:'flex', flexWrap:'wrap', maxWidth:'100%', flexDirection:'row'}}>
+      <div style={{paddingTop: isMobile? '150px' : '80px',backgroundColor:'white', paddingBottom:'2%', display:'flex', flexWrap:'wrap', maxWidth:'100%', flexDirection:'row'}}>
       <GetInTouch/>
       <div style={{width: isMobile? '100%' : '50%', paddingTop: isMobile? '12px': '0px'}}>
       {isMobile ? null : <MapContainer/>}
