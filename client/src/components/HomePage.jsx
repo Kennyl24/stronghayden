@@ -127,7 +127,11 @@ class HomePage extends React.Component {
       {/* <div style={{paddingTop:'300px'}}> */}
       {/* </div> */}
       {this.state.contactPaper ? <ContactPaper/> : null}
-     {isMobile ? null : <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper})} style={{color:"#0c6e39", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
+     {isMobile ? null : this.state.open ?
+      <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:false})} style={{color:"red", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
+      Close
+  </Fab>
+      : <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:true})} style={{color:"#0c6e39", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
         Contact Us
     </Fab>  }
       {/* </div> */}
