@@ -180,6 +180,21 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
           </div>,
   },
   {
+    name: 'Lauren Nicholsen',
+    title: 'Sales Agent',
+    email: 'lnicholsen@stronghayden.com',
+    phone: '(707)-486-8406',
+    bre: '01784261',
+    image: laurenN,
+    about: 
+    <div>
+    <h1 style={{color:'rgb(61, 99, 59)'}}>
+    Coming Soon!  </h1>   
+<img src="https://i.ibb.co/Xyp4Szg/iconfinder-Under-construction-49270.png"/>
+    
+          </div>,
+  },
+  {
     name: 'Kamron Jones',
     title: 'LEASING REPRESENTATIVE',
     email: 'kjones@stronghayden.com',
@@ -245,21 +260,6 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
     <br/>
     Kalah takes a personal approach to each client's needs, getting to know their businesses and properties and making sure she's always on hand to facilitate their next steps. Kalah loves the collaborative, fun and driven environment at Michael Holcomb Commercial Partners.
       </p>   
-          </div>,
-  },
-  {
-    name: 'Lauren Nicholsen',
-    title: 'Sales Agent',
-    email: 'lnicholsen@stronghayden.com',
-    phone: '(707)-486-8406',
-    bre: '01784261',
-    image: laurenN,
-    about: 
-    <div>
-    <h1 style={{color:'rgb(61, 99, 59)'}}>
-    Coming Soon!  </h1>   
-<img src="https://i.ibb.co/Xyp4Szg/iconfinder-Under-construction-49270.png"/>
-    
           </div>,
   },
 ]

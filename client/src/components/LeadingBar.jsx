@@ -33,13 +33,13 @@ class LeadingBar extends React.Component {
     this.state = {
       showSimple: false,
       width: null,
-      opacity: 1.0
+      opacity: 0.9
     }
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
     this.resize = this.resize.bind(this);
   }
   componentWillMount(){
-    if(window.innerWidth < 985){
+    if(window.innerWidth < 1050){
       this.setState({
         width: false,
       });
@@ -65,7 +65,7 @@ listenScrollEvent(e){
     })
   } else {
     this.setState({
-      opacity: 1.0
+      opacity: .9
     })  
   }
 }
@@ -84,7 +84,7 @@ resize(){
   render () {
     return (
       <div>
-       { isMobile || !this.state.width ? 
+       { isMobile ? 
        <AppBar position="fixed" style={{zIndex:'999',backgroundColor:`white`, height:'60px'}}>
        <Toolbar>
        <MenuList style={{display:'flex', margin:'auto', flexDirection:'row'}}>
@@ -111,7 +111,7 @@ resize(){
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
       <MenuItem className="menu_icon" style={{height:'100%'}} >
-      <img style={{height: '80px', width: isMobile ? '280px' : '380px', cursor:'pointer'}}
+      <img style={{height: '80px', width: isMobile ? '280px' : '380px', marginTop:'8px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
     src="https://i.ibb.co/w6xBp07/imageedit-12-5093301832.png"/>
         </MenuItem >
@@ -121,12 +121,16 @@ resize(){
       null
       
       : 
-      <div>
+  <div>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>
         <span className="menu_b" ><a href="tel:+17072262661">(707) 226-2661</a></span>
         <span className="menu_b"><a href="mailto:admin@stronghayden.com">admin@stronghayden.com</a></span>
         </div>
-         
+      {!this.state.width ? 
+      <ListItemIcon>
+      <MenuDrawer/>
+      </ListItemIcon>
+      :    
       <div style={{position:'absolute', right:'1%', top: '40px'}}>
         <span className="menu_i" onClick={() => window.location.href = '/'} >Home</span>
         <span className="menu_i" onClick={() => window.location.href = '/about'} >About</span>
@@ -135,7 +139,10 @@ resize(){
         <span className="menu_i"onClick={() => window.location.href = '/listings'}>Listings</span>
         <span className="menu_i"onClick={() => window.location.href = '/resources'}>Resources</span>
         <span className="menu_i"onClick={() => window.location.href = '/contact'}>Contact</span>
-        </div> </div>}
+      </div> 
+      }
+  </div>
+      }
         </Toolbar>
       </AppBar>
       </div>
