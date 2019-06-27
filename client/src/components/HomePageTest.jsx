@@ -152,7 +152,7 @@ function ButtonBases(props) {
   const { classes } = props;
 
   return (
-    <div style={{marginTop:'20px', marginBottom:'50px', width:'90%', marginLeft:'10%'}}>
+    <div style={{marginTop:'20px', marginBottom:'50px', width:'90%', marginLeft: isMobile ? '5%' : '10%'}}>
     <div className={classes.root}>
       {images.map((image, index) => (
         <ButtonBase

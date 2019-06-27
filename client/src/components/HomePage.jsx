@@ -8,7 +8,7 @@ import newBack from './thisback.jpg';
 import thisone from './967.jpg';
 import burgerfi from './burgerfi.jpg';
 import newscreen from './newscreen.jpeg';
-import homescreen from './homescreen.jpg';
+import homescreen from './aerial.jpg';
 import century from './century.jpg';
 import {isMobile} from 'react-device-detect';
 import SearchBar from './SearchBar.jsx';
