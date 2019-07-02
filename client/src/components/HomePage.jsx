@@ -17,6 +17,8 @@ import NavBar from './NavBar.jsx';
 import Button from '@material-ui/core/Button';
 import LeadingBar from './LeadingBar.jsx';
 import ContactPaper from './ContactPaper.jsx';
+import CheckoutForm from './CheckoutForm.jsx';
+import {Elements, StripeProvider} from 'react-stripe-elements';
 
 import BottomNav from './BottomNav.jsx';
 import {Helmet} from "react-helmet";
@@ -137,6 +139,7 @@ class HomePage extends React.Component {
       {/* </div> */}
       {/* </div> */}
       <SearchBar/>
+      {/* <BottomNav/> */}
       </div>
 )
 }

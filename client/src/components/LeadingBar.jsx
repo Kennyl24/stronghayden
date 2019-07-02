@@ -123,8 +123,8 @@ resize(){
       : 
   <div>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>
-        <span className="menu_b" ><a href="tel:+17072262661">(707) 226-2661</a></span>
-        <span className="menu_b"><a href="mailto:admin@stronghayden.com">admin@stronghayden.com</a></span>
+       {!this.state.width ? null  : <span className="menu_b" ><a href="tel:+17072262661">(707) 226-2661</a></span>}
+       {!this.state.width ? null  :  <span className="menu_b"><a href="mailto:admin@stronghayden.com">admin@stronghayden.com</a></span>}
         </div>
       {!this.state.width ? 
       <ListItemIcon>

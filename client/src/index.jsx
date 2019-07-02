@@ -27,6 +27,10 @@ import LG from './components/LG.jpg';
 import ResourcesPage from './components/ResourcesPage.jsx'
 import Mhteam from './components/Mhteam.jsx'
 import NotFound from './components/NotFound.jsx'
+import CheckoutForm from './components/CheckoutForm.jsx'
+import Payments from './components/Payments.jsx'
+
+import {Elements, StripeProvider} from 'react-stripe-elements';
 
 const agents = [
   {
@@ -265,6 +269,8 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
 ]
 
 ReactDOM.render(
+  // <div>
+  
   <Router>
     <Switch>
       <Route exact path="/" component={HomePage} />
@@ -273,6 +279,8 @@ ReactDOM.render(
       render={(props) => <Agent2 {...props} agents={agents} />}
       />
       <Route exact path="/about" component={AboutPage} />
+      <Route exact path="/payments" component={Payments} />
+
       <Route exact path="/us" component={AboutUsPage} />
       <Route exact path="/team" component={MeetTheTeamPage} />
       {/* <Route exact path="/blog" component={BlogPage} /> */}
@@ -282,9 +290,10 @@ ReactDOM.render(
       <Route exact path="/contact" component={ContactPage} />
       <Route exact path="/mhteam" component={Mhteam} />
       <Route path="/listings/" component={ListingsPage} />
-      <Route path="*" component={NotFound} />
+      {/* <Route path="*" component={NotFound} /> */}
     </Switch>
   </Router>
+  // </div>
   ,
   document.getElementById('app'),
 );

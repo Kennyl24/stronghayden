@@ -25,6 +25,8 @@ app.use('/individualblog', express.static(__dirname + '/../client/dist'));
 app.use('/agents/:name', express.static(__dirname + '/../client/dist'));
 app.use('/resources', express.static(__dirname + '/../client/dist'));
 app.use('/mhteam', express.static(__dirname + '/../client/dist'));
+app.use('/payments', express.static(__dirname + '/../client/dist'));
+
 app.use('/*', express.static(__dirname + '/../client/dist'));
 app.post('/Email', (req, res) => {
   const mailOptions = {
