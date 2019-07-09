@@ -283,10 +283,10 @@ We make things happen!</p>
       {isMobile ? 
       <div style={{width:'100%'}}>
       <Button variant="contained" style={{width:'90%', marginLeft:'5%', marginTop:'25px', backgroundColor:'#006f37'}} >
-      Call {this.state.agent.name.split(' ')[0]}
+     <a href={`tel:${this.state.agent.phone}`}> Call {this.state.agent.name.split(' ')[0]}</a>
     </Button>
       <Button variant="contained" style={{width:'90%', marginLeft:'5%', marginTop:'25px', backgroundColor:'#006f37'}} >
-      Email {this.state.agent.name.split(' ')[0]}
+      <a href={`mailto:${this.state.agent.email}`}> Email {this.state.agent.name.split(' ')[0]}</a>
     </Button>
     <Button onClick={this.showInfo}style={{width:'90%', marginLeft:'5%', marginTop:'25px'}} >
       {this.state.showMore ? 'View Less' :'View More'} <ArrowDownward/>
@@ -358,7 +358,9 @@ We make things happen!</p>
       <p 
       className="contact-info"
       >
+      <a href={`tel:${this.state.agent.phone}`}>
       {this.state.agent.phone}
+      </a>
       </p>
       </div>
       <div style={{display:'flex', flexDirection:'row'}}>
@@ -366,7 +368,7 @@ We make things happen!</p>
       <p 
       className="contact-info"
       >
-     {this.state.agent.name === 'Michael Holcomb' ? '(707) 294-2944' : '(707) 226-2661'}
+     {this.state.agent.name === 'Michael Holcomb' ? <a href="tel:7072942944">(707) 294-2944</a> : <a href="tel:7072262661">(707) 226-2661</a>}
       </p>
       </div>
       <div style={{display:'flex', flexDirection:'row'}}>
@@ -374,7 +376,9 @@ We make things happen!</p>
      <p 
      className="contact-info"
      >
+            <a href={`mailto:${this.state.agent.email}`} >
       {this.state.agent.email}
+      </a>
       </p>
       </div>
       {this.state.agent.name === 'Michael Holcomb' ? 
