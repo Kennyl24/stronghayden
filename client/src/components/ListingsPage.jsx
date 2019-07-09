@@ -54,7 +54,7 @@ class ListingsPage extends React.Component {
       }
   }
 componentDidMount() {
-
+  this.test();
   // window.addEventListener("message", this.handleFrameTasks);
     window.scrollTo(0, 0);
     setTimeout(function(){ 
@@ -65,14 +65,14 @@ componentDidMount() {
     }.bind(this), 8000);
     // const s = document.createElement("script");
     // s.src="//buildout.com/api.js?v8" 
-    // const script = document.createElement("script");
-    // script.src = BuildOut.embed({
-    //   token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-    //   plugin:    "inventory",
-    //   target:    "buildout"
-    // });
-    // script.async = true;
-    // document.querySelector('body').appendChild(script);
+    const script = document.createElement("script");
+    script.src = BuildOut.embed({
+      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+      plugin:    "inventory",
+      target:    "buildout"
+    });
+    script.async = true;
+    document.querySelector('body').appendChild(script);
   //  this.setUserAgent(document.querySelector('buildout').contentWindow, 'MANnDAaR Fake Agent');
 
 }
@@ -96,20 +96,20 @@ test(){
   //   .catch((error)=>{
   //      console.log(error);
   //   });
-  // axios.get('/https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory')
-  // .then((response) => {
-  //   // handle success
-  //   console.log(response);
-  //   this.setState({ response: response})
-  // });
+  axios.get('/https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory')
+  .then((response) => {
+    // handle success
+    console.log(response);
+    this.setState({ response: response})
+  })
     
-  // .catch((error) => {
-  //   // handle error
-  //   console.log(error);
-  // })
-  // .finally(() => {
-  //   // always executed
-  // });
+  .catch((error) => {
+    // handle error
+    console.log(error);
+  })
+  .finally(() => {
+    // always executed
+  });
 
 }
 submitIt(){
@@ -185,15 +185,9 @@ submitIt(){
       
         {/* <div id="buildout"></div> */}
 {/* <script type="text/javascript" src="//buildout.com/api.js?v8"></script> */}
-{/* <script type="text/javascript">
-	{BuildOut.embed({
-		token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-		plugin:    "inventory",
-		target:    "buildout"
-	})};
-</script>  */}
-{/* <div id='buildout' onClick={console.log('hello')}/> */}
-    <iframe 
+
+<div id='buildout' onClick={console.log('hello')}/>
+    {/* <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
     console.log('hello', this.ifr)
@@ -210,12 +204,12 @@ submitIt(){
     src= {this.props.location.customObject !== undefined ? 
       `https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&searchText=${this.props.location.customObject.search}`
     : this.state.feelsgood ? 
-      null
+    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
     :
     
-    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
+    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
      }>
-</iframe>
+</iframe> */}
 {/* </a> */}
    <BottomNav/>
       </div>

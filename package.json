@@ -37,6 +37,7 @@
     "force-ssl-heroku": "^1.0.2",
     "google-maps-react": "^2.0.2",
     "loan-calculator": "^3.0.21",
+    "mortgage-js": "^0.1.2",
     "nodemailer": "^6.2.1",
     "react": "^16.8.6",
     "react-animated-slider": "^1.1.4",

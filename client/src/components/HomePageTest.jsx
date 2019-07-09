@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import {isMobile} from 'react-device-detect';
 import CREDIT from './CREDIT.pdf';
 import Modal from 'react-modal';
+import MortgageCalc from './MortgageCalc.jsx';
 
 const styles = theme => ({
   root: {
@@ -148,12 +149,26 @@ const images = [
   },
 
 ];
+const customStyles = { 
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    height: '400px',
+    transform             : 'translate(-50%, -50%)'
+  }
+}
 class ButtonBases extends React.Component { 
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
     }
+  }
+  componentDidMount(){
+    Modal.setAppElement('body');
   }
   render () {
   const { classes } = this.props;
@@ -164,13 +179,14 @@ class ButtonBases extends React.Component {
     <Modal
     isOpen={true}
     // onAfterOpen={this.afterOpenModal}
-    // onRequestClose={this.closeModal}
-    // style={customStyles}
+    onRequestClose={this.closeModal}
+    style={customStyles}
     contentLabel="Example Modal"
   >
-
-    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-    <button onClick={this.setState({showModal:false})}>close</button>
+  <Button onClick={() => {this.setState({showModal:false})}}>Close</Button>
+  <MortgageCalc/>
+    {/* <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+    <button onClick={() => {this.setState({showModal:false})}}>close</button>
     <div>I am a modal</div>
     <form>
       <input />
@@ -178,7 +194,7 @@ class ButtonBases extends React.Component {
       <button>stays</button>
       <button>inside</button>
       <button>the modal</button>
-    </form>
+    </form> */}
   </Modal> 
     : null}
    

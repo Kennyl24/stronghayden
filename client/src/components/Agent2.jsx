@@ -262,7 +262,7 @@ expectations with each transaction, every time.
 <br/><br/>
 We make things happen!</p>
 <br/><br/>
-<a style={{color: '#bca36e', borderBottom:'1px solid black', fontSize:'19px'}} href="http://www.teammhcp.com" target="_blank">Our Website</a>
+<a style={{color: '#bca36e', borderBottom:'1px solid black', fontSize:'19px'}} href="http://www.teammhcp.com" target="_blank">Team MHCP</a>
 </div>
       </div>
       
@@ -318,7 +318,7 @@ We make things happen!</p>
       <p 
       className="contact-info"
       >
-       (707) 226-2661
+      {this.state.agent.name === 'Michael Holcomb' ? '(707) 294-2944' : '(707) 226-2661'}
       </p>
       </div>
          </div>
@@ -366,7 +366,7 @@ We make things happen!</p>
       <p 
       className="contact-info"
       >
-       (707) 226-2661
+     {this.state.agent.name === 'Michael Holcomb' ? '(707) 294-2944' : '(707) 226-2661'}
       </p>
       </div>
       <div style={{display:'flex', flexDirection:'row'}}>
@@ -377,6 +377,40 @@ We make things happen!</p>
       {this.state.agent.email}
       </p>
       </div>
+      {this.state.agent.name === 'Michael Holcomb' ? 
+      <div>
+      <div style={{display:'flex', flexDirection:'row'}}
+       onClick={() => {
+        window.open(
+          'https://www.facebook.com/pg/teamMHCP/posts/',
+          '_blank' // <- This is what makes it open in a new window.
+        );
+      }}
+      >
+      <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" style={{height:'20px', width:'20px'}}/> 
+      <p 
+      className="contact-info"
+      >
+      Facebook
+      </p>
+      </div>
+      <div style={{display:'flex', flexDirection:'row'}}
+      onClick={() => {
+        window.open(
+          'https://www.linkedin.com/in/michael-holcomb-0552556b/',
+          '_blank' // <- This is what makes it open in a new window.
+        );
+      }}
+      >
+      <img src="https://img.icons8.com/color/48/000000/linkedin.png" style={{height:'20px', width:'20px'}}/> 
+      <p 
+      className="contact-info"
+      >
+      LinkedIn
+      </p>
+      </div>
+      </div>
+      : null }
       </div>
       </div>
       }
