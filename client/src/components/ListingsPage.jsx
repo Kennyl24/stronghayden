@@ -209,7 +209,11 @@ submitIt(){
 
     src= {this.props.location.customObject !== undefined ? 
       `https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&searchText=${this.props.location.customObject.search}`
-    : 'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
+    : this.state.feelsgood ? 
+      null
+    :
+    
+    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
      }>
 </iframe>
 {/* </a> */}
