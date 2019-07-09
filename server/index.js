@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
-// app.use(forceSsl);
+app.use(forceSsl);
 
 const config = '../config.js';
 
@@ -66,10 +66,15 @@ app.post('/Email', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    port: 25,
+    secure: false,
     auth: {
       user: 'stronghaydennotifications@gmail.com',
       pass: config.pass
-    }
+    },
+    tls: {
+      rejectUnauthorized: false
+    },
   });
   transporter.sendMail(mailOptions, (error, info) => {
     console.log('sending mail');
@@ -127,21 +132,26 @@ app.post('/Contact', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    port: 25,
+    secure: false,
     auth: {
       user: 'stronghaydennotifications@gmail.com',
-      pass: config.pass
-    }
+      pass: 'pass5096'
+    },
+    tls: {
+      rejectUnauthorized: false
+    },
   });
   transporter.sendMail(mailOptions, (error, info) => {
-    console.log('sending mail');
+    console.log('sending mail2');
     if (error) {
-      console.log(error);
+      console.log('error', error);
     } else {
       console.log('Email sent: ' + info.response);
     }
   });
   transporter.sendMail(teamOptions, (error, info) => {
-    console.log('sending mail');
+    console.log('sending mail1');
     if (error) {
       console.log(error);
     } else {

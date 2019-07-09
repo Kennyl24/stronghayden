@@ -173,7 +173,7 @@ class SearchBar extends React.Component {
     const { classes } = this.props;
 
     return (
-  <div style={{borderRadius:'8px', textAlign:'center', backgroundColor:'rgba(255, 255, 255, .9)', marginTop: '10px', marginBottom:'10px', border: '1px solid green', width: isMobile ? '90%':'80%', marginLeft:isMobile ? '5%' : '10%', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
+  <div style={{zIndex:'99999999', position:'fixed', bottom:'20px', borderRadius:'8px', textAlign:'center', backgroundColor:'rgba(255, 255, 255, 0.6)', marginTop: '10px', marginBottom:'10px', border: '1px solid green', width: isMobile ? '90%':'80%', marginLeft:isMobile ? '5%' : '10%', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
    <div style={{minWidth:'100%'}}><h1 style={{color:'#3d633b', fontSize:'36px', marginBottom:'0'}}> Strong & Hayden</h1></div>
    <div style={{minWidth:'100%'}}><h2 style={{color:'black', fontSize:'20px', fontWeight:'100'}}>A Leader In All Facets Of Commercial Real Estate</h2></div>
    <div>

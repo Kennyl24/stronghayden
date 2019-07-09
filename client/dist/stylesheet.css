@@ -50,6 +50,14 @@ p{
   padding-bottom: 6px
 
 }
+#background-video{
+  min-height: 100%;
+  min-width: 100%;
+  float: left;
+  top: 0;
+  padding: none;
+  position: fixed; /* optional depending on what you want to do in your app */
+  }
 .menu_a:hover {
   color: black;
   border-bottom: 2px solid white;
@@ -585,7 +593,7 @@ transition: transform ease-out 0.45s;
   max-width:250px;
 }
 .agent-image {
-  width: 220px;
+  width: 200px;
   height: 300px;
   border: 1px solid #bac1ce;
   /* border-radius: 50%; */

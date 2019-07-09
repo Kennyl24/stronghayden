@@ -63,16 +63,16 @@ componentDidMount() {
         open:true
       })
     }.bind(this), 8000);
-    const s = document.createElement("script");
-    s.src="//buildout.com/api.js?v8" 
-    const script = document.createElement("script");
-    script.src = BuildOut.embed({
-      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-      plugin:    "inventory",
-      target:    "buildout"
-    });
-    script.async = true;
-    document.querySelector('body').appendChild(script);
+    // const s = document.createElement("script");
+    // s.src="//buildout.com/api.js?v8" 
+    // const script = document.createElement("script");
+    // script.src = BuildOut.embed({
+    //   token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+    //   plugin:    "inventory",
+    //   target:    "buildout"
+    // });
+    // script.async = true;
+    // document.querySelector('body').appendChild(script);
   //  this.setUserAgent(document.querySelector('buildout').contentWindow, 'MANnDAaR Fake Agent');
 
 }
@@ -192,8 +192,8 @@ submitIt(){
 		target:    "buildout"
 	})};
 </script>  */}
-<div id='buildout'/>
-    {/* <iframe 
+{/* <div id='buildout' onClick={console.log('hello')}/> */}
+    <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
     console.log('hello', this.ifr)
@@ -209,9 +209,9 @@ submitIt(){
 
     src= {this.props.location.customObject !== undefined ? 
       `https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&searchText=${this.props.location.customObject.search}`
-    : 'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
+    : 'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
      }>
-</iframe> */}
+</iframe>
 {/* </a> */}
    <BottomNav/>
       </div>

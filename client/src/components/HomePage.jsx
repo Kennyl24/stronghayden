@@ -19,11 +19,11 @@ import LeadingBar from './LeadingBar.jsx';
 import ContactPaper from './ContactPaper.jsx';
 import CheckoutForm from './CheckoutForm.jsx';
 import {Elements, StripeProvider} from 'react-stripe-elements';
-
+import VideoCover from 'react-video-cover'
 import BottomNav from './BottomNav.jsx';
 import {Helmet} from "react-helmet";
 import {YouTubePlayer} from 'react-video-players';
-
+import video from './video.mp4'
 class HomePage extends React.Component { 
   constructor(props) {
     super(props);
@@ -95,8 +95,20 @@ class HomePage extends React.Component {
   {/* <img className="home-pictures"src={this.state.background} style={{minWidth:'100%', maxWidth:'100%', height:'550px'}}/> */}
        
         {/* </div> */}
-      <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'-00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${this.state.background})`, backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'600px', width: '100%', marginBottom:'0px'}}>
-      
+      <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'-00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important',  backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'600px', width: '100%', marginBottom:'0px'}}>
+      {/* <div style={{
+  width: '300px',
+  height: '300px',
+  overflow: 'hidden',
+}}> */}
+<video id="background-video" loop autoPlay muted>
+    <source src={video} type="video/mp4" />
+    <source src={video} type="video/ogg" />
+    Your browser does not support the video tag.
+    
+</video>
+  {/* <iframe src='https://www.youtube.com/embed/w-LKDZNPst4' /> */}
+{/* </div> */}
       <div className="front-text" style={{top: isMobile ? '20%' : '40%'}}>
       
 

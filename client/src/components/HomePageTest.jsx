@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import {isMobile} from 'react-device-detect';
 import CREDIT from './CREDIT.pdf';
+import Modal from 'react-modal';
 
 const styles = theme => ({
   root: {
@@ -94,7 +95,7 @@ const images = [
     title: 'Letter Of Intent',
     width: '30%',
     descripition:'',
-    href: CREDIT
+    href: CREDIT, 
   },
   {
     url: 'https://i.ibb.co/Hn66jTn/screen-2x.jpg',
@@ -147,22 +148,58 @@ const images = [
   },
 
 ];
-
-function ButtonBases(props) {
-  const { classes } = props;
+class ButtonBases extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    }
+  }
+  render () {
+  const { classes } = this.props;
 
   return (
     <div style={{marginTop:'20px', marginBottom:'50px', width:'90%', marginLeft: isMobile ? '5%' : '10%'}}>
+   {this.state.showModal ? 
+    <Modal
+    isOpen={true}
+    // onAfterOpen={this.afterOpenModal}
+    // onRequestClose={this.closeModal}
+    // style={customStyles}
+    contentLabel="Example Modal"
+  >
+
+    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+    <button onClick={this.setState({showModal:false})}>close</button>
+    <div>I am a modal</div>
+    <form>
+      <input />
+      <button>tab navigation</button>
+      <button>stays</button>
+      <button>inside</button>
+      <button>the modal</button>
+    </form>
+  </Modal> 
+    : null}
+   
     <div className={classes.root}>
       {images.map((image, index) => (
         <ButtonBase
-          onClick={()=> 
-            {
+          onClick={
+            () => {
+            console.log(index)
+            if(index !== 4){
               window.open(
                 image.href,
                 '_blank' // <- This is what makes it open in a new window.
               );
+          } else {
+            this.setState({
+              showModal: true,
+            })
+            console.log('trying')
           }
+        }
         }
           focusRipple
           key={image.title}
@@ -197,7 +234,7 @@ function ButtonBases(props) {
     </div>
   );
 }
-
+}
 ButtonBases.propTypes = {
   classes: PropTypes.object.isRequired,
 };
