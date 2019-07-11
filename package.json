@@ -62,6 +62,7 @@
     "react-stripe-elements": "^3.0.0",
     "react-video-cover": "^1.2.2",
     "react-video-players": "^0.1.11",
+    "sitemap": "^3.2.2",
     "stripe": "^7.4.0",
     "webpack": "^4.30.0",
     "webpack-dev-server": "^3.3.1"

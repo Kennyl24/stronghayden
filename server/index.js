@@ -5,6 +5,36 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
+const sm = require('sitemap');
+const sitemap = sm.createSitemap ({
+  hostname: 'https://stronghayden.com',
+  cacheTime: 600000,        // 600 sec - cache purge period
+  urls: [
+    { url: '/', changefreq: 'daily', priority: 0.3 },
+    { url: '/listings', changefreq: 'daily', priority: 0.7 },
+    { url: '/team'},    // changefreq: 'weekly',  priority: 0.5
+    { url: '/about'}, 
+    { url: '/services'}, 
+    { url: '/resoucres'}, 
+    { url: '/agent/Gary-Van-Dam'}, 
+    { url: '/agents/Matt-Connolly' },
+    { url: '/agents/Michael-Holcomb' },
+    { url: '/agents/Joe-Fischer' },
+    { url: '/agents/Patrick-Gleeson' },
+    { url: '/agents/Lynsey-Grayson' },
+    { url: '/agents/Brian-Dodd' },
+    { url: '/agents/Lauren-Nicholsen' }
+  ]
+});
+app.get('/sitemap.xml', function(req, res) {
+  sitemap.toXML( function (err, xml) {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send( xml );
+  });
+});
 
 const config = '../config.js';
 
