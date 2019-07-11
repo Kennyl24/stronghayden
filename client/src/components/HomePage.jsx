@@ -74,7 +74,7 @@ class HomePage extends React.Component {
       <div>
       <LeadingBar/>
       <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'-00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important',  backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'600px', width: '100%', marginBottom:'0px'}}>
-<video id="background-video" style={{height: isMobile ? '300px' : '100%', minHeight: isMobile ? '300px' : '100%', top: isMobile ? '100px' : '0px'}}defaultMuted playsinline loop autoPlay muted>
+<video id="background-video" style={{height: isMobile ? '300px' : '100%', minHeight: isMobile ? '300px' : '100%', top: isMobile ? '100px' : '0px'}} playsInLine loop autoPlay muted>
     <source src={video} type="video/mp4" />
     <source src={video} type="video/webm"/>
     <source src={video} type="video/ogg" />
