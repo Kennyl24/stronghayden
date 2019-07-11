@@ -47,9 +47,6 @@ class HomePage extends React.Component {
       '1700, 1710 Soscol Avenue & 625 Imperial Way Napa, CA 94559',
       '967 First Street Napa, CA 94559',
       'Gasser South Century Center Napa, CA 94559',  
-      
-
-
   ]
     const repeatedArray2 = addressarray.concat(...Array(10).fill(addressarray));
     let i = 0;
@@ -76,31 +73,8 @@ class HomePage extends React.Component {
     return (
       <div>
       <LeadingBar/>
-      {/* <div style={{paddingTop:'80px'}}>
-      <img className="home-pictures"src={this.state.background} style={{minWidth:'100%', maxWidth:'100%', height:'550px'}}/> */}
-
-      {/* <div>
-        <YouTubePlayer config={{controls:0, autoplay:1, loop:1}} videoId="bAMaZg8bdC4" />
-      </div> */}
-      {/* <video className="background-video" loop autoPlay> */}
-                {/* <source src={this.state.videoURL} type="video/mp4" /> */}
-                {/* <source src={this.state.videoURL} type="video/ogg" /> */}
-                {/* Your browser does not support the video tag. */}
-       {/* </video> */}
-       {/* <video className='background-video' autoPlay loop muted>
-        <source src={this.state.videoUrl} type='video/mp4' />
-      </video> */}
-       {/* <iframe src="https://streamable.com/s/xz5ze/ksfkrl" frameborder="0" width="100%" height="100%" allowfullscreen style={{width:'100%',height:'100%', position:'absolute', left:'0px',top:'0px', overflow:'hidden'}}></iframe> */}
-  {/* <img className="home-pictures"src={this.state.background} style={{minWidth:'100%', maxWidth:'100%', height:'550px'}}/> */}
-       
-        {/* </div> */}
       <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'-00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important',  backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'600px', width: '100%', marginBottom:'0px'}}>
-      {/* <div style={{
-  width: '300px',
-  height: '300px',
-  overflow: 'hidden',
-}}> */}
-<video id="background-video" loop autoPlay muted>
+<video id="background-video" playsinline loop autoPlay muted>
     <source src={video} type="video/mp4" />
     <source src={video} type="video/ogg" />
     Your browser does not support the video tag.

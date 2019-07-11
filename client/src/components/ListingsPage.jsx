@@ -13,7 +13,8 @@ import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import Iframe from 'react-iframe'
 import IframeComm from "react-iframe-comm";
-
+let x;
+let y;
 class ListingsPage extends React.Component { 
   constructor(props) {
     super(props);
@@ -54,6 +55,22 @@ class ListingsPage extends React.Component {
       }
   }
 componentDidMount() {
+  function setUserAgent(element) {
+    chrome.runtime.sendMessage(
+        {action: "GET_USERAGENT"},
+
+        function (customUserAgent) {
+            // console.log('customUserAgent', customUserAgent)
+            if (!customUserAgent)
+                return false;
+            var a = document.createElement("script");
+            a.type = "text/javascript";
+            a.innerText += "Object.defineProperty(window.navigator, 'userAgent', { get: function(){ return '" +
+                customUserAgent + "'; } });";
+            element.documentElement.insertBefore(a, element.documentElement.firstChild)
+        }
+    );
+}
   this.test();
   // window.addEventListener("message", this.handleFrameTasks);
     window.scrollTo(0, 0);
@@ -65,21 +82,32 @@ componentDidMount() {
     }.bind(this), 8000);
     // const s = document.createElement("script");
     // s.src="//buildout.com/api.js?v8" 
-    const script = document.createElement("script");
-    script.src = BuildOut.embed({
-      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-      plugin:    "inventory",
-      target:    "buildout"
-    });
-    script.async = true;
-    document.querySelector('body').appendChild(script);
-  //  this.setUserAgent(document.querySelector('buildout').contentWindow, 'MANnDAaR Fake Agent');
-
+    // const script = document.createElement("script");
+    // script.src = BuildOut.embed({
+    //   token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+    //   plugin:    "inventory",
+    //   target:    "buildout"
+    // });
+    // script.async = true;
+    // document.querySelector('body').appendChild(script);
+    // var y = (x.contentWindow || x.contentDocument);
+    // if (y.document)y = y.document;
+    // y.body.style.backgroundColor = "red";
+    // this.setUserAgent(document.getElemenentById('buildout').contentWindow, 'MANnDAaR Fake Agent');
 }
 onCloseModal(){
   this.setState({
     open: false
   })
+}
+loaded(){
+  console.log('loaded')
+  x = document.getElementById('buildout');
+  console.log(x);
+  // console.log(x.contentWindow)
+  // y = (x.contentWindow || x.contentDocument);
+  // if (y.document)y = y.document;
+  // y.body.style.backgroundColor = "red";
 }
 resizeIframe(obj){
   // function resizeIframe(obj) {
@@ -130,18 +158,11 @@ submitIt(){
   render () {
     return (
       <div>
-        {/* <div ref={el => (this.instance = el)} /> */}
       <LeadingBar/>
-      {/* {this.state.loaded ? this.state.response.data :null} */}
       <Modal
           open={this.state.open}
           onClose={this.onCloseModal}
           center
-          // styles={
-          //   modal={
-          //     maxWidth:'10px',
-          //   }
-          // }
           classNames={{
             modal: isMobile ? 'modal-test' : null,
             transitionEnter: 'transitionEnter',
@@ -186,8 +207,8 @@ submitIt(){
         {/* <div id="buildout"></div> */}
 {/* <script type="text/javascript" src="//buildout.com/api.js?v8"></script> */}
 
-<div id='buildout' onClick={console.log('hello')}/>
-    {/* <iframe 
+{/* <div id='buildout' onClick={console.log('hello')} onLoad={this.loaded()}/> */}
+    <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
     console.log('hello', this.ifr)
@@ -209,7 +230,7 @@ submitIt(){
     
     'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
      }>
-</iframe> */}
+</iframe>
 {/* </a> */}
    <BottomNav/>
       </div>

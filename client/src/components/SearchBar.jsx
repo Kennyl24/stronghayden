@@ -173,7 +173,7 @@ class SearchBar extends React.Component {
     const { classes } = this.props;
 
     return (
-  <div style={{zIndex:'99999999', position:'fixed', bottom:'20px', borderRadius:'8px', textAlign:'center', backgroundColor:'rgba(255, 255, 255, 0.6)', marginTop: '10px', marginBottom:'10px', border: '1px solid green', width: isMobile ? '90%':'80%', marginLeft:isMobile ? '5%' : '10%', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
+  <div style={{zIndex:'999', position:'fixed', bottom:'20px', borderRadius:'8px', textAlign:'center', backgroundColor:'rgba(255, 255, 255, 0.6)', marginTop: '10px', marginBottom:'10px', border: '1px solid green', width: isMobile ? '90%':'80%', marginLeft:isMobile ? '5%' : '10%', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
    <div style={{minWidth:'100%'}}><h1 style={{color:'#3d633b', fontSize:'36px', marginBottom:'0'}}> Strong & Hayden</h1></div>
    <div style={{minWidth:'100%'}}><h2 style={{color:'black', fontSize:'20px', fontWeight:'100'}}>A Leader In All Facets Of Commercial Real Estate</h2></div>
    <div>
@@ -211,50 +211,7 @@ class SearchBar extends React.Component {
           }}
         />
     </div>
-    {/* <div>
-  <h5 style={{margin:0, marginTop:'-5px', position:'absolute'}}> Space Available</h5>
-   <TextField
-          InputProps={{ classes: { input: styles.input1 } }}
-          style={{width: isMobile? '100px': '100px', height: '50px' , marginRight: '15px'}}
-          id="outlined-email-input"
-          placeholder="SQ FT."
-          label="Min"
-          type="search"
-          name="search"
-          // autoComplete="email"
-          margin="normal"
-          // variant="outlined"
-          value={this.state.min}
-          onChange={(event) => {
-            this.setState({
-              min: event.target.value
-            });
-          }}
-        />
-    </div>
-   <p style={{marginRight:'10px', marginTop:'25px'}}> to</p>
-    <div>
-   <TextField
-           InputProps={{ classes: { input: styles.input1 } }}
-          style={{width: isMobile? '100px': '100px', height: '50px' , marginRight: '15px'}}
-          id="outlined-email-input"
-          placeholder="SQ FT."
-          label="Max"
-          type="search"
-          name="search"
-          // autoComplete="email"
-          margin="normal"
-          // variant="outlined"
-          value={this.state.max}
-          onChange={(event) => {
-            this.setState({
-              max: event.target.value
-            });
-          }}
-        />
-    </div> */}
-    {/* <div style={{display:'flex', flexDirection:'row'}}> */}
-    <div style={{margin:'auto'}}>
+    <div style={{margin:'auto', zIndex:'9999999999',}}>
     <FormControl >
         <InputLabel htmlFor="age-helper">Listing Type</InputLabel>
         <Select
@@ -272,7 +229,7 @@ class SearchBar extends React.Component {
       <Menu style={{zIndex:"99999999"}}id="extra-menu" open={this.state.menuOpen} onClose={this.handleClose}>
       </Menu>
     </div>
-    <div style={{margin:'auto'}}>
+    <div style={{margin:'auto', zIndex:'9999999999'}}>
     <FormControl >
         <InputLabel htmlFor="age-helper">Property Type</InputLabel>
         <Select

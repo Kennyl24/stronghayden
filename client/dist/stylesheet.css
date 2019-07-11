@@ -625,7 +625,7 @@ transition: transform ease-out 0.45s;
 }
 
 .background-video{
-
+  z-index: 999;
   height: 100%;
   width: 100%;
   float: left;

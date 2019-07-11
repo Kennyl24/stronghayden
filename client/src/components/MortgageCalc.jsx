@@ -26,7 +26,7 @@ class MortgageCalc extends React.Component {
     super(props);
     this.state = {
       interestRate: '4.5',
-      loanLength: 240,
+      loanLength: 120,
       taxRate: 1.2, 
       insuranceRate: .13, 
       monthlyPayment: null,
