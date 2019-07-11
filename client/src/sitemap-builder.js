@@ -5,6 +5,6 @@ const Sitemap = require('../lib').default;
 
 (
   new Sitemap(router)
-    .build('http://stronghayden.com', { limitCountPaths: 5000 })
+    .build('http://strongandhayden.com', { limitCountPaths: 5000 })
     .save('./sitemap.xml', '/static/')
 );
