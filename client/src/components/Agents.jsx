@@ -16,7 +16,6 @@ import patrick from './patrick.jpg';
 import matt from './Matt.jpg';
 import michael from './michael.jpg';
 import LG from './LG.jpg';
-import matt2 from './matt2.jpg';
 
 const agents = [
   {
@@ -65,7 +64,6 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
     phone: '(707) 477-6189',
     bre: '01164569',
     image: matt,
-    secondImage: matt2,
     about: 
     <div>
     <p>

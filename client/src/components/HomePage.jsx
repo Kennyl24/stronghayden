@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import final from './final.jpg';
 import vineyards from './vineyards.jpg';
-import newBack from './thisback.jpg';
 import thisone from './967.jpg';
 import burgerfi from './burgerfi.jpg';
 import newscreen from './newscreen.jpeg';

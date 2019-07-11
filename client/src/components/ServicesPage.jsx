@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
-import newBack from './newBack.jpg';
 import LeadingBar from './LeadingBar.jsx';
 import ServicesMap from './ServicesMap.jsx';
 import BottomNav from './BottomNav.jsx';
