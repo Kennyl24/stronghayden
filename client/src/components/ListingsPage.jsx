@@ -39,8 +39,6 @@ class ListingsPage extends React.Component {
     this.test();
     }
     handleFrameTasks(e) {
-      console.log(this.ifr)
-    // if(e.data.from.iframe === "load_products");
     }
     setUserAgent(window, userAgent) {
       if (window.navigator.userAgent != userAgent) {
@@ -55,41 +53,45 @@ class ListingsPage extends React.Component {
       }
   }
 componentDidMount() {
-  function setUserAgent(element) {
-    chrome.runtime.sendMessage(
-        {action: "GET_USERAGENT"},
+//   function setUserAgent(element) {
+//     chrome.runtime.sendMessage(
+//         {action: "GET_USERAGENT"},
 
-        function (customUserAgent) {
-            // console.log('customUserAgent', customUserAgent)
-            if (!customUserAgent)
-                return false;
-            var a = document.createElement("script");
-            a.type = "text/javascript";
-            a.innerText += "Object.defineProperty(window.navigator, 'userAgent', { get: function(){ return '" +
-                customUserAgent + "'; } });";
-            element.documentElement.insertBefore(a, element.documentElement.firstChild)
-        }
-    );
-}
-  this.test();
+//         function (customUserAgent) {
+//             // console.log('customUserAgent', customUserAgent)
+//             if (!customUserAgent)
+//                 return false;
+//             var a = document.createElement("script");
+//             a.type = "text/javascript";
+//             a.innerText += "Object.defineProperty(window.navigator, 'userAgent', { get: function(){ return '" +
+//                 customUserAgent + "'; } });";
+//             element.documentElement.insertBefore(a, element.documentElement.firstChild)
+//         }
+//     );
+// }
+  // this.test();
   // window.addEventListener("message", this.handleFrameTasks);
     window.scrollTo(0, 0);
     setTimeout(function(){ 
-      console.log('timeouting')
+      // console.log('timeouting')
       this.setState({
         open:true
       })
     }.bind(this), 8000);
-    // const s = document.createElement("script");
-    // s.src="//buildout.com/api.js?v8" 
-    // const script = document.createElement("script");
-    // script.src = BuildOut.embed({
-    //   token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-    //   plugin:    "inventory",
-    //   target:    "buildout"
-    // });
-    // script.async = true;
-    // document.querySelector('body').appendChild(script);
+    if(this.props.location.customObject !== undefined) {
+      return;
+    } else {
+    const s = document.createElement("script");
+    s.src="//buildout.com/api.js?v8" 
+    const script = document.createElement("script");
+    script.src = BuildOut.embed({
+      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+      plugin:    "inventory",
+      target:    "buildout"
+    });
+    script.async = true;
+    document.querySelector('body').appendChild(script);
+  } 
     // var y = (x.contentWindow || x.contentDocument);
     // if (y.document)y = y.document;
     // y.body.style.backgroundColor = "red";
@@ -101,9 +103,9 @@ onCloseModal(){
   })
 }
 loaded(){
-  console.log('loaded')
+  // console.log('loaded')
   x = document.getElementById('buildout');
-  console.log(x);
+  // console.log(x);
   // console.log(x.contentWindow)
   // y = (x.contentWindow || x.contentDocument);
   // if (y.document)y = y.document;
@@ -116,30 +118,6 @@ resizeIframe(obj){
 // }
 }
 test(){
-  // axios.get('/buildout.com/api.js?v8')
-  //    .then((response) => {
-  //      console.log(response);
-  //     //  const test = response.config.url.substring(1);
-  //      this.setState({loaded: true, response: response})
-  //    })
-  //   .catch((error)=>{
-  //      console.log(error);
-  //   });
-  axios.get('/https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory')
-  .then((response) => {
-    // handle success
-    console.log(response)
-    console.log(response.config.url);
-    this.setState({ response: response})
-  })
-    
-  .catch((error) => {
-    // handle error
-    console.log(error);
-  })
-  .finally(() => {
-    // always executed
-  });
 
 }
 submitIt(){
@@ -202,15 +180,9 @@ submitIt(){
       </Modal>
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
-        {/* <div id="script" /> */}
 
-        {/* <a href="#" onClick={top.window.location.href=''}> */}
-      
-        {/* <div id="buildout"></div> */}
-{/* <script type="text/javascript" src="//buildout.com/api.js?v8"></script> */}
-
-{/* <div id='buildout' onClick={console.log('hello')} onLoad={this.loaded()}/> */}
-    <iframe 
+<div id='buildout' onLoad={this.loaded()}/>
+   {this.props.location.customObject !== undefined ? <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
     // console.log('hello', this.ifr.src)
@@ -232,7 +204,7 @@ submitIt(){
     
     'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
      }>
-</iframe>
+</iframe> : null }
 {/* </a> */}
    <BottomNav/>
       </div>
