@@ -78,20 +78,20 @@ componentDidMount() {
         open:true
       })
     }.bind(this), 8000);
-    if(this.props.location.customObject !== undefined) {
-      return;
-    } else {
-    const s = document.createElement("script");
-    s.src="//buildout.com/api.js?v8" 
-    const script = document.createElement("script");
-    script.src = BuildOut.embed({
-      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-      plugin:    "inventory",
-      target:    "buildout"
-    });
-    script.async = true;
-    document.querySelector('body').appendChild(script);
-  } 
+  //   if(this.props.location.customObject !== undefined) {
+  //     return;
+  //   } else {
+  //   const s = document.createElement("script");
+  //   s.src="//buildout.com/api.js?v8" 
+  //   const script = document.createElement("script");
+  //   script.src = BuildOut.embed({
+  //     token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+  //     plugin:    "inventory",
+  //     target:    "buildout"
+  //   });
+  //   script.async = true;
+  //   document.querySelector('body').appendChild(script);
+  // } 
     // var y = (x.contentWindow || x.contentDocument);
     // if (y.document)y = y.document;
     // y.body.style.backgroundColor = "red";
@@ -182,7 +182,7 @@ submitIt(){
         </div>
 
 <div id='buildout' onLoad={this.loaded()}/>
-   {this.props.location.customObject !== undefined ? <iframe 
+   <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
     // console.log('hello', this.ifr.src)
@@ -198,13 +198,9 @@ submitIt(){
 
     src= {this.props.location.customObject !== undefined ? 
       `https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&searchText=${this.props.location.customObject.search}`
-    : this.state.feelsgood ? 
-    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory/1200Firststreetnapa'
-    :
-    
-    'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
+    :  'https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory'
      }>
-</iframe> : null }
+</iframe> 
 {/* </a> */}
    <BottomNav/>
       </div>
