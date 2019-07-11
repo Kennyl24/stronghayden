@@ -76,6 +76,7 @@ class HomePage extends React.Component {
       <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'-00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important',  backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'600px', width: '100%', marginBottom:'0px'}}>
 <video id="background-video" defaultMuted playsinline loop autoPlay muted>
     <source src={video} type="video/mp4" />
+    <source src={video} type="video/webm"/>
     <source src={video} type="video/ogg" />
     Your browser does not support the video tag.
     

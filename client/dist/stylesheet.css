@@ -631,6 +631,8 @@ transition: transform ease-out 0.45s;
   float: left;
   top: 0;
   padding: none;
+  display: block; 
+
   /* position: fixed; optional depending on what you want to do in your app */
   
   

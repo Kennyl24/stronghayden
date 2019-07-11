@@ -128,7 +128,8 @@ test(){
   axios.get('/https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory')
   .then((response) => {
     // handle success
-    console.log(response);
+    console.log(response)
+    console.log(response.config.url);
     this.setState({ response: response})
   })
     
