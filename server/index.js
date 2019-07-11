@@ -26,15 +26,15 @@ const sitemap = sm.createSitemap ({
     { url: '/agents/Lauren-Nicholsen' }
   ]
 });
-app.get('/sitemap.xml', function(req, res) {
-  sitemap.toXML( function (err, xml) {
-    if (err) {
-      return res.status(500).end();
-    }
-    res.header('Content-Type', 'application/xml');
-    res.send( xml );
-  });
-});
+// app.get('/sitemap.xml', function(req, res) {
+//   sitemap.toXML( function (err, xml) {
+//     if (err) {
+//       return res.status(500).end();
+//     }
+//     res.header('Content-Type', 'application/xml');
+//     res.send( xml );
+//   });
+// });
 
 const config = '../config.js';
 
