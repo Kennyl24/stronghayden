@@ -111,7 +111,8 @@ loaded(){
 }
 resizeIframe(obj){
   // function resizeIframe(obj) {
-    console.log(obj.contentWindow);
+    // obj.contentWindow.document;
+    // y.body.style.backgroundColor = "red";
 // }
 }
 test(){
@@ -211,7 +212,7 @@ submitIt(){
     <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
-    console.log('hello', this.ifr)
+    // console.log('hello', this.ifr.src)
     }} 
     id="inlineFrameExample"
     title="Inline Frame Example"
