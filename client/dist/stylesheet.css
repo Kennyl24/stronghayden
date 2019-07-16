@@ -623,19 +623,20 @@ transition: transform ease-out 0.45s;
 .contact-info:hover {
   color: #006f37;
 }
-
+video {
+  object-fit: fill;
+}
 .background-video{
   z-index: 999;
   height: 100%;
   width: 100%;
+  min-width: 100%;
   float: left;
   top: 0;
   padding: none;
-  display: block; 
-
+  /* display: block;  */
+  object-fit: cover;
   /* position: fixed; optional depending on what you want to do in your app */
-  
-  
   }
 
   .ball {
