@@ -117,9 +117,7 @@ resize(){
         </MenuItem >
       </MenuList>
       {isMobile ? 
-      
-      null
-      
+      null   
       : 
   <div>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>
