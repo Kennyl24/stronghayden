@@ -111,7 +111,7 @@ resize(){
         <Toolbar>
       <MenuList style={{display:'flex', flexDirection:'row'}}>
       <MenuItem className="menu_icon" style={{height:'100%'}} >
-      <img style={{height: isMobile ? '59px' : '80px', width: isMobile ? '280px' : '380px', marginTop:'8px', cursor:'pointer'}}
+      <img style={{width: isMobile ? '280px' : '380px', marginTop:'8px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
     src="https://i.ibb.co/w6xBp07/imageedit-12-5093301832.png"/>
         </MenuItem >
