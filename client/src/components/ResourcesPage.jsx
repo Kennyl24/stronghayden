@@ -80,14 +80,14 @@ class ResourcesPage extends React.Component {
       <div>
       <LeadingBar/>
       <div className="scrim">
-      <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'80px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${resouce})`, backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'45vh', width: '100%', marginBottom:'20px'}}>
+      {/* <div className="home-background" style={{position:'relative', backgroundPosition:'center', top:'80px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${resouce})`, backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'45vh', width: '100%', marginBottom:'20px'}}> */}
       {/* <div style={{height:'400px', textAlign:'center', backgroundColor:'white', paddingTop:"150px"}}> */}
       
       {/* <h1 style={{textAlign:'center', paddingTop:'40px', color:'white'}}>Resources</h1>
       <div style={{textAlign:'center'}}>
       <a href={CREDIT} type="application/pdf" target="_blank" className="menu-item" style={{textAlign:'center', borderBottom: '3px solid', color:'white', borderBottomColor:'rgb(125,121,121)', fontWeight:'600', fontSize:'18px', letterSpacing: '1px', textAlign:'center'}}>Credit Application</a> */}
       {/* </div> */}
-      </div>
+      {/* </div> */}
       </div>
       <div style={{marginTop:'80px', backgroundColor:'white'}}>
       {/* <h1 style={{color:'black', textAlign:'center', color:'#3e623b'}}>Financing</h1>
@@ -126,7 +126,7 @@ class ResourcesPage extends React.Component {
       </div>
       </div> */}
       {/* </div> */}
-      <h1 style={{color:'black', marginTop:'50px', textAlign:'center',  color:'#3e623b'}}> Recommended Resources</h1>
+      {/* <h1 style={{color:'black',  marginTop:isMobile ? '150px' : '50px', textAlign:'center',  color:'#3e623b'}}> Recommended Resources</h1> */}
       {/* <div style={{display:'flex', flexDirection:'row', width:'80%', marginLeft:'10%'}}>
       <div style={{margin:'auto'}}>
       <Button variant="outlined" color="secondary">

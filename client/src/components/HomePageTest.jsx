@@ -19,7 +19,7 @@ const styles = theme => ({
   },
   image: {
     position: 'relative',
-    height: 200,
+    height: 230,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -31,6 +31,7 @@ const styles = theme => ({
       },
       '& $imageMarked': {
         opacity: 0,
+        
       },
       '& $imageTitle': {
         border: '4px solid currentColor',
@@ -72,6 +73,10 @@ const styles = theme => ({
     position: 'relative',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
   },
+  imageTitle2: {
+    position: 'relative',
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
+  },
   imageMarked: {
     height: 3,
     width: 18,
@@ -82,68 +87,192 @@ const styles = theme => ({
     transition: theme.transitions.create('opacity'),
   },
 });
-
 const images = [
   {
-    url: 'https://i.ibb.co/QJJcWzT/helloquence-OQMZw-Nd3-Th-U-unsplash.jpg',
+    url: "https://i.ibb.co/chFWJzv/image-part-001.jpg",
     title: 'Credit Application',
-    width: '30%',
+    width: '33%',
     descripition:'',
     href: CREDIT
   },
   {
-    url: 'https://i.ibb.co/XZ7WPbv/Canva-White-Paper-and-Silver-Fountain-Pen.jpg',
-    title: 'Letter Of Intent',
-    width: '30%',
+    url: 'https://i.ibb.co/LvQhYqC/image-part-003.jpg',
+    title: 'GIS',
+    width: '33%',
+    descripition:'',
+    href: 'http://gis.napa.ca.gov/Html5Viewer/Index.html?viewer=Public_HTML'
+  },
+  {
+    url: 'https://i.ibb.co/9txPkDq/image-part-004.jpg',
+    title: 'US Small Business Administration Loans',
+    width: '32.5%',
+    descripition:'',
+    href:'https://www.sba.gov/funding-programs/loans'
+  },
+  {
+    url: '"https://i.ibb.co/30twXtg/image-part-005.jpg',
+    title: 'Loan Calculator',
+    width: '33%',
+    descripition:'',
+    href:''
+  },
+  {
+    url: "",
+    title: 'RECOMMENDED RESOURCES',
+    width: '33%',
     descripition:'',
     href: CREDIT, 
   },
   {
+    url: 'https://i.ibb.co/HgqXBsk/image-part-006.jpg',
+    title: 'Commercial Loans',
+    width: '32.5%',
+    descripition:'',
+    href: 'https://fitsmallbusiness.com/commercial-real-estate-loans/'
+  },
+  {
+    url: 'https://i.ibb.co/s3DTyD4/image-part-007.jpg',
+    title: 'Planning Projects',
+    width: '33%',
+    descripition:'',
+    href: 'https://www.countyofnapa.org/1709/Planning-Division'
+  },
+  {
+    url: 'https://i.ibb.co/SRZMkzc/image-part-008.jpg',
+    title: 'FEMA Flood Mapping',
+    width: '33%',
+    descripition:'',
+    href: 'https://msc.fema.gov/portal/search'
+  },
+  {
+    url: 'https://i.ibb.co/ft2qf5m/image-part-009.jpg',
+    title: 'Assesors Parcel Data',
+    width: '32.5%',
+    descripition:'',
+    href:'https://www.countyofnapa.org/150/Assessor-Parcel-Data'
+  },
+
+];
+const images2 = [
+  {
+    url: 'https://i.ibb.co/QJJcWzT/helloquence-OQMZw-Nd3-Th-U-unsplash.jpg',
+    title: 'Credit Application',
+    width: '33%',
+    descripition:'',
+    href: CREDIT
+  },
+  {
     url: 'https://i.ibb.co/Hn66jTn/screen-2x.jpg',
     title: 'GIS',
-    width: '30%',
+    width: '33%',
     descripition:'',
     href: 'http://gis.napa.ca.gov/Html5Viewer/Index.html?viewer=Public_HTML'
   },
   {
     url: 'https://i.ibb.co/Yk3mnHZ/download-1.jpg',
     title: 'US Small Business Administration Loans',
-    width: '30%',
+    width: '32.5%',
     descripition:'',
     href:'https://www.sba.gov/funding-programs/loans'
   },
   {
     url: 'https://i.ibb.co/YRbw9rx/Canva-Photo-of-Person-Holding-Pen.jpg',
     title: 'Loan Calculator',
-    width: '30%',
+    width: '33%',
     descripition:'',
-    href:'https://www.bankrate.com/calculators/mortgages/loan-calculator.aspx'
+    href:''
+  },
+  {
+    url: '',
+    title: 'Recommended Resources Page',
+    width: '33%',
+    descripition:'',
+    href: CREDIT, 
   },
   {
     url: 'https://i.ibb.co/MpX1fr4/Canva-null.jpg',
     title: 'Commercial Loans',
-    width: '30%',
+    width: '32.5%',
     descripition:'',
     href: 'https://fitsmallbusiness.com/commercial-real-estate-loans/'
   },
   {
     url: 'https://images.pexels.com/photos/1549000/pexels-photo-1549000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     title: 'Planning Projects',
-    width: '30%',
+    width: '33%',
     descripition:'',
     href: 'https://www.countyofnapa.org/1709/Planning-Division'
   },
   {
     url: 'https://i.ibb.co/Z2BG7T3/Canva-Close-Up-Photo-of-Assorted-Color-of-Push-Pins-on-Map.jpg',
     title: 'FEMA Flood Mapping',
-    width: '30%',
+    width: '33%',
     descripition:'',
     href: 'https://msc.fema.gov/portal/search'
   },
   {
     url: 'https://i.ibb.co/QQtSszp/Canva-Pile-of-Folders.jpg',
     title: 'Assesors Parcel Data',
-    width: '30%',
+    width: '32.5%',
+    descripition:'',
+    href:'https://www.countyofnapa.org/150/Assessor-Parcel-Data'
+  },
+
+];
+const imagesMobile= [
+  {
+    url: 'https://i.ibb.co/QJJcWzT/helloquence-OQMZw-Nd3-Th-U-unsplash.jpg',
+    title: 'Credit Application',
+    width: '33%',
+    descripition:'',
+    href: CREDIT
+  },
+  {
+    url: 'https://i.ibb.co/Hn66jTn/screen-2x.jpg',
+    title: 'GIS',
+    width: '33%',
+    descripition:'',
+    href: 'http://gis.napa.ca.gov/Html5Viewer/Index.html?viewer=Public_HTML'
+  },
+  {
+    url: 'https://i.ibb.co/Yk3mnHZ/download-1.jpg',
+    title: 'US Small Business Administration Loans',
+    width: '32.5%',
+    descripition:'',
+    href:'https://www.sba.gov/funding-programs/loans'
+  },
+  {
+    url: 'https://i.ibb.co/YRbw9rx/Canva-Photo-of-Person-Holding-Pen.jpg',
+    title: 'Loan Calculator',
+    width: '33%',
+    descripition:'',
+    href:''
+  },
+  {
+    url: 'https://i.ibb.co/MpX1fr4/Canva-null.jpg',
+    title: 'Commercial Loans',
+    width: '32.5%',
+    descripition:'',
+    href: 'https://fitsmallbusiness.com/commercial-real-estate-loans/'
+  },
+  {
+    url: 'https://images.pexels.com/photos/1549000/pexels-photo-1549000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    title: 'Planning Projects',
+    width: '33%',
+    descripition:'',
+    href: 'https://www.countyofnapa.org/1709/Planning-Division'
+  },
+  {
+    url: 'https://i.ibb.co/Z2BG7T3/Canva-Close-Up-Photo-of-Assorted-Color-of-Push-Pins-on-Map.jpg',
+    title: 'FEMA Flood Mapping',
+    width: '33%',
+    descripition:'',
+    href: 'https://msc.fema.gov/portal/search'
+  },
+  {
+    url: 'https://i.ibb.co/QQtSszp/Canva-Pile-of-Folders.jpg',
+    title: 'Assesors Parcel Data',
+    width: '32.5%',
     descripition:'',
     href:'https://www.countyofnapa.org/150/Assessor-Parcel-Data'
   },
@@ -174,7 +303,7 @@ class ButtonBases extends React.Component {
   const { classes } = this.props;
 
   return (
-    <div style={{marginTop:'20px', marginBottom:'50px', width:'90%', marginLeft: isMobile ? '5%' : '10%'}}>
+  <div style={{marginTop:'5px', paddingTop: isMobile ? '50px' : '0px',marginBottom:'5px', width:'100%', marginLeft: isMobile ? '0%' : '0%'}}>
    {this.state.showModal ? 
     <Modal
     isOpen={true}
@@ -199,24 +328,23 @@ class ButtonBases extends React.Component {
     : null}
    
     <div className={classes.root}>
-      {images.map((image, index) => (
+    {isMobile ? imagesMobile.map((image, index) => (
         <ButtonBase
           onClick={
             () => {
-            console.log(index)
-            if(index !== 4){
-              window.open(
-                image.href,
-                '_blank' // <- This is what makes it open in a new window.
-              );
-          } else {
-            this.setState({
-              showModal: true,
-            })
-            console.log('trying')
-          }
+            if(index === 3){
+              this.setState({
+                showModal: true,
+              })
+              console.log('trying')
+        }  else {
+            window.open(
+              image.href,
+              '_blank' // <- This is what makes it open in a new window.
+            );
         }
         }
+      }
           focusRipple
           key={image.title}
           className={classes.image}
@@ -238,6 +366,57 @@ class ButtonBases extends React.Component {
               component="span"
               variant="subtitle1"
               color="inherit"
+              className={classes.imageTitle}
+            >
+              {image.title}
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      )) : 
+      images2.map((image, index) => (
+        <ButtonBase
+          onClick={
+            () => {
+            if(index === 3){
+              this.setState({
+                showModal: true,
+              })
+              console.log('trying')
+              
+          }  else if(index === 4){
+            window.alert('At Strong & Hayden, we use different tools daily in order to be the best agents we can be. Here are some of the examples of those tools.')
+            
+        }  else {
+            window.open(
+              image.href,
+              '_blank' // <- This is what makes it open in a new window.
+            );
+        }
+        }
+      }
+          focusRipple
+          key={image.title}
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            margin:'3px',
+            width: image.width, 
+          }}
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              style={{fontSize: index === 4 ? '1.75rem' : '1rem'}}
               className={classes.imageTitle}
             >
               {image.title}

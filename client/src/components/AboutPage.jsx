@@ -28,7 +28,8 @@ class AboutPage extends React.Component {
       <div className="test">
       <LeadingBar/>
       <AboutHeader/>
-      <h1 style={{fontWeight:'800', color:'#3d633b', fontSize:'25px', textAlign:'center'}}>ESTABLISHED LEADER IN ALL FACETS OF COMMERCIAL REAL ESTATE</h1>
+      <h1 style={{fontWeight:'800', color:'#3d633b', fontSize:'40px', textAlign:'center'}}>About Strong & Hayden</h1>
+      <h1 style={{fontWeight:'800', color:'black', fontSize:'25px', textAlign:'center'}}>ESTABLISHED LEADER IN ALL FACETS OF COMMERCIAL REAL ESTATE</h1>
       {/* <TeamExperience/> */}
       <p className= {isMobile ? 'about-us-mobile' :"about-us"}
       
