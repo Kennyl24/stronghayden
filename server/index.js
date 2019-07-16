@@ -8,7 +8,7 @@ app.use(forceSsl);
 
 const config = '../config.js';
 
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../client/dist'));
 app.use('/home', express.static(__dirname + '/../client/dist'));
@@ -18,7 +18,7 @@ app.use('/team', express.static(__dirname + '/../client/dist'));
 app.use('/services', express.static(__dirname + '/../client/dist'));
 app.use('/blog', express.static(__dirname + '/../client/dist'));
 app.use('/listings', express.static(__dirname + '/../client/dist'));
-app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
+// app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
 app.use('/contact', express.static(__dirname + '/../client/dist'));
 // app.use('/agents/*', express.static(__dirname + '/../client/dist'));
 app.use('/individualblog', express.static(__dirname + '/../client/dist'));
@@ -26,7 +26,37 @@ app.use('/agents/:name', express.static(__dirname + '/../client/dist'));
 app.use('/resources', express.static(__dirname + '/../client/dist'));
 app.use('/mhteam', express.static(__dirname + '/../client/dist'));
 app.use('/payments', express.static(__dirname + '/../client/dist'));
+// app.use(function(req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
+// var corsOptions = {
+//   origin: 'https://buildout.com',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
+ 
+// app.get('/listings/:id', cors(corsOptions), function (req, res, next) {
+//   console.log('trying', res);
 
+//   res.json({msg: 'This is CORS-enabled for only example.com.'});
+// });
+
+// let whitelist = ['https://buildout.com'];
+// let corsOptions = {
+//   origin: function (origin, callback, error) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS', error));
+//     }
+//   }
+// };
+ 
+// app.get('/listings/:id', cors(corsOptions), function (req, res, next) {
+//   console.log('trying');
+//   res.json({msg: 'This is CORS-enabled for a whitelisted domain.'});
+// });
 app.use('/*', express.static(__dirname + '/../client/dist'));
 app.post('/Email', (req, res) => {
   const mailOptions = {

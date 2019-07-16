@@ -289,7 +289,7 @@ ReactDOM.render(
       <Route exact path="/services" component={ServicesPage} />
       <Route exact path="/contact" component={ContactPage} />
       <Route exact path="/mhteam" component={Mhteam} />
-      <Route path="/listings" component={ListingsPage} />
+      <Route path="/listings/" component={ListingsPage} />
       {/* <Route path="*" component={NotFound} /> */}
     </Switch>
   </Router>

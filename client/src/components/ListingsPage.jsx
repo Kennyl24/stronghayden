@@ -81,17 +81,20 @@ componentDidMount() {
   //   if(this.props.location.customObject !== undefined) {
   //     return;
   //   } else {
-  //   const s = document.createElement("script");
-  //   s.src="//buildout.com/api.js?v8" 
-  //   const script = document.createElement("script");
-  //   script.src = BuildOut.embed({
-  //     token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-  //     plugin:    "inventory",
-  //     target:    "buildout"
-  //   });
-  //   script.async = true;
-  //   document.querySelector('body').appendChild(script);
-  // } 
+    // const s = document.createElement("script");
+    // s.src="//buildout.com/api.js?v8" 
+    // const script = document.createElement("script");
+    // script.src = BuildOut.embed({
+    //   token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+    //   plugin:    "inventory",
+    //   forceDomain: "https://buildout.com/",
+    //   target:    "buildout",
+    //   standalone:  "true",
+
+    // });
+    // script.async = true;
+    // document.querySelector('body').appendChild(script);
+  
     // var y = (x.contentWindow || x.contentDocument);
     // if (y.document)y = y.document;
     // y.body.style.backgroundColor = "red";
@@ -104,7 +107,8 @@ onCloseModal(){
 }
 loaded(){
   // console.log('loaded')
-  x = document.getElementById('buildout');
+  // console.log('loading')
+  // x = document.getElementById('buildout');
   // console.log(x);
   // console.log(x.contentWindow)
   // y = (x.contentWindow || x.contentDocument);
@@ -181,7 +185,7 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
 
-<div id='buildout' onLoad={this.loaded()}/>
+{/* <div id='buildout' onLoad={this.loaded()}/> */}
    <iframe 
     // sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
