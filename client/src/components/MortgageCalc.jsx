@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import {isMobile} from 'react-device-detect';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+import AmortSchedule from './AmortSchedule.jsx';
 
 // let mortgageCalculator = mortgageJs.createMortgageCalculator();
 // mortgageCalculator.totalPrice = 800000;
@@ -25,12 +26,16 @@ class MortgageCalc extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      price: null,
       interestRate: '4.5',
-      loanLength: 120,
-      taxRate: 1.2, 
-      insuranceRate: .13, 
+      loanLength: 10,
+      taxRate: 1.25, 
+      insuranceRate: .17, 
       monthlyPayment: null,
       numbers: false,
+      mortgageInsuranceRate: 0.0,
+      mortgageInsuranceRateRequired: false,
+      paymentSchedule: [],
       // price: 0,
       // downPayment: '',
     }
@@ -44,11 +49,11 @@ class MortgageCalc extends React.Component {
     mortgageCalculator.totalPrice = this.state.price;
     mortgageCalculator.downPayment = this.state.downPayment;
     mortgageCalculator.interestRate = this.state.interestRate / 100;
-    mortgageCalculator.months = this.state.loanLength;
+    mortgageCalculator.months = this.state.loanLength * 12;
     mortgageCalculator.taxRate = this.state.taxRate / 100;
     mortgageCalculator.insuranceRate = this.state.insuranceRate / 100;
     // mortgageCalculator.mortgageInsuranceRate = 0.010;
-    // mortgageCalculator.mortgageInsuranceEnabled = true;
+    mortgageCalculator.mortgageInsuranceEnabled = false;
     // mortgageCalculator.mortgageInsuranceThreshold = 0.2;
     // mortgageCalculator.additionalPrincipalPayment = 100;
     let payment = mortgageCalculator.calculatePayment();
@@ -56,15 +61,17 @@ class MortgageCalc extends React.Component {
 
     this.setState({
       numbers: true, 
-      payment: payment
+      payment: payment,
+      paymentSchedule: payment.paymentSchedule
+    }, () => {
+      window.scrollTo('500px', '200px')
     })
   }
   render () {
     return (
-      <div>
+      <div style={{marginBottom:'50px', marginLeft: isMobile ? '10px' :'50px'}}>
         <div>
         {/* <Button> Close <Button/> */}
-        <h3 className="homepage-header">Mortgage Calculator</h3>
         <TextField
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
           id="outlined-email-input"
@@ -78,10 +85,7 @@ class MortgageCalc extends React.Component {
           onChange={(event) => {
             this.setState({
               price: event.target.value
-            }, ()=> {
-              console.log(this.state.price)
-            });
-          }}
+            })}}
         />
         <TextField
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
@@ -96,14 +100,13 @@ class MortgageCalc extends React.Component {
           onChange={(event) => {
             this.setState({
               downPayment: event.target.value
-            });
-          }}
+            })}}
         />
         <TextField
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
           id="outlined-email-input"
           label="Interest Rate(%)"
-          type="percentage"
+          type="number"
           name="Interest Rate"
           // autoComplete="name"
           margin="normal"
@@ -118,7 +121,7 @@ class MortgageCalc extends React.Component {
         <TextField
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
           id="outlined-email-input"
-          label="Loan Length (months)"
+          label="Loan Length (years)"
           type="number"
           name="Loan Length"
           // autoComplete="name"
@@ -135,7 +138,7 @@ class MortgageCalc extends React.Component {
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
           id="outlined-email-input"
           label="Tax Rate (%)"
-          type="percentage"
+          type="number"
           name="Tax Rate"
           // autoComplete="name"
           margin="normal"
@@ -151,7 +154,7 @@ class MortgageCalc extends React.Component {
           style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
           id="outlined-email-input"
           label="Insurance Rate(%)"
-          type="percentage"
+          type="number"
           name="Insurance Rate"
           // autoComplete="name"
           margin="normal"
@@ -163,45 +166,60 @@ class MortgageCalc extends React.Component {
             });
           }}
         />
-         {/* <TextField
-          style={{width: isMobile? '300px': '400px', height: '50px', marginRight: '15px'}}
-          id="outlined-email-input"
-          label="Mortgage Insurance Rate "
-          // type="name"
-          name="Mortgage Insurance Rate"
-          // autoComplete="name"
-          margin="normal"
-          variant="outlined"
-          value={this.state.mortgageInsuranceRate}
-          onChange={(event) => {
-            this.setState({
-              mortgageInsuranceRate: event.target.mortgageInsuranceRate
-            });
-          }} */}
-        {/* /> */}
     <Button variant="contained" onClick={this.submitData}>Submit</Button>
     </div>
     {this.state.numbers ? 
-    <h1 style={{color:'black', fontSize:'16px'}}>
-      Total Loan Amount: ${this.state.payment.loanAmount}
+    <div>
+    <h1 style={{color:'black', fontSize:'16px', textAlign:'left', fontWeight:'200'}}>
+      <span style={{paddingBottom:'20px'}}>Total Loan Amount: <span style={{color:'#00367b'}}>${this.state.payment.loanAmount}</span></span>
       <br/>
-      Total Monthly Payment (Estimated): ${this.state.payment.total}
+      Total Monthly Payment (Estimated): <span style={{color:'#00367b'}}> ${this.state.payment.total.toFixed(2)}</span>
       <br/>
-      Interest Payment (Estimated): ${this.state.payment.paymentSchedule[0].interestPayment}
+      Principal & Interest Payment (Estimated): <span style={{color:'#00367b'}}> ${this.state.payment.paymentSchedule[0].interestPayment + this.state.payment.paymentSchedule[0].principalPayment}</span>
       <br/>
-      Principal Payment (Estimated): ${this.state.payment.paymentSchedule[0].principalPayment}
+      {/* Principal Payment (Estimated): ${this.state.payment.paymentSchedule[0].principalPayment}
+      <br/> */}
+      Taxes Monthly (Estimated):  <span style={{color:'#00367b'}}>${this.state.payment.tax.toFixed(2)}</span>
       <br/>
-      Taxes Monthly (Estimated): ${this.state.payment.tax}
+      Insurance Monthly (Estimated): <span style={{color:'#00367b'}}> ${this.state.payment.insurance.toFixed(2)}</span>
       <br/>
-      Insurance Monthly (Estimated): ${this.state.payment.insurance}
-      <br/>
+      </h1>
+      <div style={{width:'100%', color:'black'}}>
+      <h1 style={{fontSize:'20px', color:'black'}}>Amortization Schedule</h1>
+      <div style={{textAlign:'left', display:'flex', flexDirection:'row'}}>
+      <h1 style={{textAlign:'left',color:'black', width:'60px', fontSize:'14px', padding:'10px', minWidth:'60px',marginRight:'10px'}}>Month</h1>
+      <h1 style={{width:'60px',color:'black', fontSize:'14px', padding:'10px',minWidth:'60px',marginRight:'10px'}}>Principal Payment</h1>
+      <h1 style={{width:'60px',color:'black', fontSize:'14px',padding:'10px', minWidth:'60px',marginRight:'10px'}}>Interest Payment</h1>
+      <h1 style={{width:'60px',color:'black', fontSize:'14px',padding:'10px',minWidth:'60px',marginRight:'10px'}}>Balance Remaining</h1>
+        </div>
+      {this.state.payment.paymentSchedule.map((month, index) => {
+        return(
+      // <div style={{width:' 20%', displau:'flex', flexDirection:'row'}}>
+      //   <span style={{padding:'10px'}}>{month.count}.</span>
+      //   <span style={{padding:'10px'}}>${month.interestPayment}</span>
+      //   <span style={{padding:'10px'}}>${month.principalPayment}</span>
+      //   <span style={{padding:'10px'}}>${month.balance}</span>
+      // </div>
+        <AmortSchedule month={month}/>
+      )})}
+      </div>
       {/* Total Monthly Payment(Estimated): ${this.state.payment.total}
       <br/> */}
       {/* Total Monthly Payment(Estimated): ${this.state.monthlyPayment} */}
       {/* Total Monthly Payment(Estimated): ${this.state.monthlyPayment} */}
       {/* Total Monthly Payment(Estimated): ${this.state.monthlyPayment} */}
-       </h1>
+      
+   
+      
+       </div>
       : null}
+      {/* {this.state.PaymentSchedule > 0 ?this.state.payment.paymentSchedule.map((month, index) => 
+      {
+        return 
+        <p>Month#{month.count}</p>
+      }
+        // <AmortSchedule month={month}/>
+       ) : null} */}
       </div>
 )
 }
