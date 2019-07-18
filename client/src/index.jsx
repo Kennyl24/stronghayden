@@ -24,6 +24,8 @@ import patrick from './components/patrick.jpg';
 import matt from './components/Matt.jpg';
 import michael from './components/michael.jpg';
 import LG from './components/LG.jpg';
+import Page404 from './components/Page404.jsx';
+
 import ResourcesPage from './components/ResourcesPage.jsx'
 import Mhteam from './components/Mhteam.jsx'
 import NotFound from './components/NotFound.jsx'
@@ -298,6 +300,8 @@ ReactDOM.render(
 
       <Route path="/listings/" component={ListingsPage} />
       {/* <Route path="*" component={NotFound} /> */}
+      {/* <Route component={Page404} /> */}
+
     </Switch>
   </Router>
   // </div>
