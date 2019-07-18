@@ -7,6 +7,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
+let path = require('path');
 
 const config = '../config.js';
 app.use(cors({credentials: true, origin: true}));
@@ -89,7 +90,7 @@ sitemap({
     },
   },
 }).XMLtoFile();
-app.use('/*', express.static(__dirname + '/../client/dist'));
+// app.use('/*', express.static(__dirname + '/../client/dist'));
 app.post('/Email', (req, res) => {
   const mailOptions = {
     from: 'stronghaydennotifications@gmail.com',
@@ -279,7 +280,8 @@ app.post('/Subscribe', (req, res) => {
   res.sendStatus(200);
 });
 app.get('/sitemap.xml', function(req, res) {
-  res.sendFile(path.join(__dirname, 'path', './sitemap.xml'));
+  console.log('getting');
+  res.sendFile(path.join(__dirname, 'path', '../sitemap.xml'));
 });
 app.listen(process.env.PORT || 3000, function() {
   console.log('listening!');
