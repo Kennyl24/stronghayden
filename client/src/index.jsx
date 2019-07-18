@@ -282,6 +282,9 @@ ReactDOM.render(
       <Route  path="/agents/"
       render={(props) => <Agent2 {...props} agents={agents} />}
       />
+      <Route  path="/agent/"
+      render={(props) => <Agent2 {...props} agents={agents} />}
+      />
       <Route path="/office" component={AboutPage} />
 
       <Route exact path="/about" component={AboutPage} />

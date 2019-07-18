@@ -66,8 +66,9 @@ componentDidMount() {
       token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
       plugin:    "inventory",
       target:    "buildout",
+      // forceDomain: 'localhost'
     });
-    script.async = true;
+    // script.async = true;
     document.querySelector('body').appendChild(script);
   
 }
