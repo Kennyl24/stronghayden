@@ -88,7 +88,7 @@ submitIt(){
     const { classes } = this.props;
 
     return (
-      <div style={{width:'50%', minWidth:'380px', maxWidth:'50%', minHeight:'100%', backgroundColor:'white'}}>
+      <div style={{width:'50%', minWidth:'380px', maxWidth:'50%', height:'650px', minHeight:'100%', backgroundColor:'white'}}>
       <h1 style={{color:'black',  textAlign:'center', marginLeft:'20%', marginRight:'20%', fontSize:'25px', borderBottom: '2px solid #006f37'}}>
         Our Home Office 
         </h1>
