@@ -34,6 +34,12 @@ app.use('/agents/:name', express.static(__dirname + '/../client/dist'));
 app.use('/resources', express.static(__dirname + '/../client/dist'));
 app.use('/mhteam', express.static(__dirname + '/../client/dist'));
 app.use('/payments', express.static(__dirname + '/../client/dist'));
+app.get('/sitemap.xml', function(req, res) {
+  console.log('getting');
+  res.sendFile(path.join(__dirname, 'path', '../sitemap.xml'));
+});
+app.use('/*', express.static(__dirname + '/../client/dist'));
+
 // app.use(function(req, res, next) {
 //   res.header('Access-Control-Allow-Origin', '*');
 //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -278,10 +284,6 @@ app.post('/Subscribe', (req, res) => {
     }
   });
   res.sendStatus(200);
-});
-app.get('/sitemap.xml', function(req, res) {
-  console.log('getting');
-  res.sendFile(path.join(__dirname, 'path', '../sitemap.xml'));
 });
 app.listen(process.env.PORT || 3000, function() {
   console.log('listening!');
