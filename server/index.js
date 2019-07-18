@@ -5,6 +5,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
+const sitemap = require('express-sitemap');
 
 const config = '../config.js';
 app.use(cors({credentials: true, origin: true}));
@@ -56,6 +57,31 @@ app.use('/payments', express.static(__dirname + '/../client/dist'));
 //   console.log('trying');
 //   res.json({msg: 'This is CORS-enabled for a whitelisted domain.'});
 // });
+sitemap({
+  map: {
+    '/': ['get'],
+    '/home': ['get', 'post'],
+    '/about': ['get'],
+    '/contact': [],
+    '/blog': [],
+    '/listings': [],
+    '/team': [],
+    '/resources': [],
+    '/services': [],
+  },
+  route: {
+    '/': {
+      lastmod: '2019-07-07',
+      changefreq: 'always',
+      priority: 1.0,
+    },
+    '/blog': {
+      lastmod: '2019-07-07',
+      changefreq: 'always',
+      priority: 1.0,
+    },
+  },
+}).XMLtoFile();
 app.use('/*', express.static(__dirname + '/../client/dist'));
 app.post('/Email', (req, res) => {
   const mailOptions = {
