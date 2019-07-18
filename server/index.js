@@ -1,3 +1,5 @@
+const sitemap = require('express-sitemap');
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -5,7 +7,6 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
-const sitemap = require('express-sitemap');
 
 const config = '../config.js';
 app.use(cors({credentials: true, origin: true}));
@@ -13,10 +14,16 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../client/dist'));
 app.use('/home', express.static(__dirname + '/../client/dist'));
 app.use('/about', express.static(__dirname + '/../client/dist'));
+app.use('/office', express.static(__dirname + '/../client/dist'));
+
 app.use('/us', express.static(__dirname + '/../client/dist'));
 app.use('/team', express.static(__dirname + '/../client/dist'));
 app.use('/services', express.static(__dirname + '/../client/dist'));
 app.use('/blog', express.static(__dirname + '/../client/dist'));
+app.use('/agents', express.static(__dirname + '/../client/dist'));
+app.use('/current-listings', express.static(__dirname + '/../client/dist'));
+app.use('/for-sale', express.static(__dirname + '/../client/dist'));
+
 app.use('/listings', express.static(__dirname + '/../client/dist'));
 // app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
 app.use('/contact', express.static(__dirname + '/../client/dist'));
@@ -270,6 +277,9 @@ app.post('/Subscribe', (req, res) => {
     }
   });
   res.sendStatus(200);
+});
+app.get('/sitemap.xml', function(req, res) {
+  res.sendFile(path.join(__dirname, 'path', './sitemap.xml'));
 });
 app.listen(process.env.PORT || 3000, function() {
   console.log('listening!');
