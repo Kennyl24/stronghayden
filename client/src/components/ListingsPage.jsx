@@ -102,6 +102,12 @@ submitIt(){
   render () {
     return (
       <div>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Strong & Hayden</title>
+                <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
+                <link rel="canonical" href="https://stronghayden.com/listings" />
+      </Helmet>
       <LeadingBar/>
       <Modal
           open={this.state.open}

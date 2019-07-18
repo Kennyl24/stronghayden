@@ -17,6 +17,7 @@ import Kalah from './Kalah.jpg';
 import mhteam from './mhteam.jpg';
 import Agent from './Agent.jsx';
 import michael from './michael.jpg';
+import {Helmet} from "react-helmet";
 
 const agents = [
   {
@@ -239,6 +240,11 @@ showInfo(){
     }
     return (
       <div>
+<Helmet>
+        <meta charSet="utf-8" />
+        <title>{`${this.state.agent.name} of Strong & Hayden`}</title>
+        {/* <link rel="canonical" href="https://stronghayden.com/agents/" /> */}
+</Helmet>
       <LeadingBar/>
       {this.state.agent.name === 'Michael Holcomb' ?
       <div>

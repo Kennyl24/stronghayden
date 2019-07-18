@@ -10,6 +10,7 @@ import Agents from './Agents.jsx';
 import Mission from './Mission.jsx';
 import AboutUs from './AboutUs.jsx';
 import {isMobile} from 'react-device-detect';
+import {Helmet} from "react-helmet";
 
 import Button from '@material-ui/core/Button';
 
@@ -26,6 +27,12 @@ class AboutPage extends React.Component {
   render () {
     return (
       <div className="test">
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Strong & Hayden</title>
+                <meta name="description" content="Learn about Strong & Hayden. Napa's leading commerical real estate team."/>
+                <link rel="canonical" href="https://stronghayden.com/about" />
+      </Helmet>
       <LeadingBar/>
       <AboutHeader/>
       <h1 style={{fontWeight:'800', color:'#3d633b', fontSize:'40px', textAlign:'center'}}>About Strong & Hayden</h1>

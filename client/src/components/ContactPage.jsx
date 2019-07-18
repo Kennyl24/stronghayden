@@ -13,6 +13,7 @@ import {
   isBrowser,
   isMobile
 } from "react-device-detect";
+import {Helmet} from "react-helmet";
 
 
 class ContactPage extends React.Component { 
@@ -32,6 +33,11 @@ class ContactPage extends React.Component {
   render () {
     return (
       <div>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Contact Strong & Hayden</title>
+                <link rel="canonical" href="https://stronghayden.com/contact" />
+      </Helmet>
       <LeadingBar/>
       <div style={{paddingTop: isMobile? '150px' : '80px',backgroundColor:'white', paddingBottom:'2%', display:'flex', flexWrap:'wrap', maxWidth:'100%', flexDirection:'row'}}>
       <GetInTouch/>
