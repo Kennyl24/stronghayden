@@ -7,7 +7,6 @@ const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
 
 const config = '../config.js';
-
 app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../client/dist'));

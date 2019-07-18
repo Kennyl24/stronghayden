@@ -48,9 +48,11 @@ class MapContainer extends React.Component{
        <Map
        style={{
         width: isMobile ? '100%' : '100%',
-        height: '80vh',
+        height: '85vh',
         position: 'absolute'
        }}
+       options={{
+       mapTypeId:'SATELLITE'}}
           google={this.props.google}
           initialCenter={{
             lat: 38.28939,
