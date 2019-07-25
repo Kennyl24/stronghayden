@@ -87,7 +87,7 @@ class ContactPaper extends React.Component {
           value={this.state.email}
           onChange={(event) => {
             this.setState({
-              email: event.target.value
+              phone: event.target.value
             });
           }}
         />
@@ -104,7 +104,7 @@ class ContactPaper extends React.Component {
           value={this.state.phone}
           onChange={(event) => {
             this.setState({
-              phone: event.target.value
+              email: event.target.value
             });
           }}
         />
