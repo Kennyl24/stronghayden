@@ -25,6 +25,9 @@ import matt from './components/Matt.jpg';
 import michael from './components/michael.jpg';
 import LG from './components/LG.jpg';
 import Page404 from './components/Page404.jsx';
+// import CheckoutForm from './CheckoutForm.jsx';
+// import {Elements, StripeProvider} from 'react-stripe-elements';
+
 
 import ResourcesPage from './components/ResourcesPage.jsx'
 import Mhteam from './components/Mhteam.jsx'
@@ -271,8 +274,8 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
 ]
 
 ReactDOM.render(
-  // <div>
-  
+  <div>
+ 
   <Router>
     <Switch>
       <Route exact path="/" component={HomePage} />
@@ -307,7 +310,7 @@ ReactDOM.render(
 
     </Switch>
   </Router>
-  // </div>
+  </div>
   ,
   document.getElementById('app'),
 );

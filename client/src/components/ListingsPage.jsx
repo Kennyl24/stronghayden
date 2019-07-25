@@ -59,6 +59,9 @@ componentDidMount() {
         open:true
       })
     }.bind(this), 8000);
+    // if(this.props.location.customObject !== undefined){
+    //   return;
+    // } else {
     const s = document.createElement("script");
     s.src="//buildout.com/api.js?v8" 
     const script = document.createElement("script");
@@ -66,11 +69,10 @@ componentDidMount() {
       token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
       plugin:    "inventory",
       target:    "buildout",
-      // forceDomain: 'localhost'
     });
     // script.async = true;
     document.querySelector('body').appendChild(script);
-  
+  // }
 }
 onCloseModal(){
   this.setState({
@@ -104,7 +106,7 @@ submitIt(){
       <div>
         <Helmet>
                 <meta charSet="utf-8" />
-                <title>About Strong & Hayden</title>
+                <title>Strong & Hayden Commercial Listings</title>
                 <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
                 <link rel="canonical" href="https://stronghayden.com/listings" />
       </Helmet>
@@ -151,12 +153,12 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
         <div id='buildout'/>
-
-  {/* {this.props.location.customObject !== undefined ? 
+{/* 
+ {this.props.location.customObject !== undefined ? 
   <iframe 
-    // sandbox='allow-scripts'
+     sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
-    // console.log('hello', this.ifr.src)
+  //  console.log('hello', this.ifr.src)
     }} 
     id="inlineFrameExample"
     title="Inline Frame Example"
@@ -167,7 +169,7 @@ submitIt(){
       // alert(this.contentWindow)
     }
 
-    src={`https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&searchText=${this.props.location.customObject.search}`}
+    src={`https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&initialSearchText=${this.props.location.customObject.search}`}
      >
 </iframe> : 
  <div id='buildout'/>

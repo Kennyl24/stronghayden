@@ -2,6 +2,9 @@ const sitemap = require('express-sitemap');
 
 const express = require('express');
 const app = express();
+const stripe = require('stripe')('sk_test_VvIspUlkw5HBZRM7VHrTFKYC00szsX5PY7');
+
+// app.use(require('body-parser').text());
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
@@ -132,6 +135,22 @@ app.post('/Email', (req, res) => {
   });
   res.sendStatus(200);
 });
+app.post('/charge', (req, res) => {
+  console.log(req.body);
+  try {
+    let {status} = stripe.charges.create({
+      amount: 2000,
+      currency: 'usd',
+      description: 'An example charge',
+      source: req.body
+    });
+
+    res.json({status});
+  } catch (err) {
+    console.log(err);
+    res.status(500).end();
+  }
+});
 
 app.post('/Contact', (req, res) => {
   const mailOptions = {
@@ -227,19 +246,32 @@ app.post('/Subscribe', (req, res) => {
 
     Warmly, 
     `
-  };
+  }; 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    port: 25,
+    secure: false,
     auth: {
       user: 'stronghaydennotifications@gmail.com',
-      pass: config.pass
-    }
+      pass: 'pass5096'
+    },
+    tls: {
+      rejectUnauthorized: false
+    },
   });
+  // const transporter = nodemailer.createTransport({
+  //   service: 'gmail',
+  //   host: 'smtp.gmail.com',
+  //   auth: {
+  //     user: 'stronghaydennotifications@gmail.com',
+  //     pass: config.pass
+  //   }
+  // });
   transporter.sendMail(mailOptions, (error, info) => {
     console.log('sending mail');
     if (error) {
-      console.log(error);
+      console.log('that', error);
     } else {
       console.log('Email sent: ' + info.response);
     }
@@ -247,7 +279,7 @@ app.post('/Subscribe', (req, res) => {
   transporter.sendMail(teamOptions, (error, info) => {
     console.log('sending mail');
     if (error) {
-      console.log(error);
+      console.log('this', error);
     } else {
       console.log('Email sent: ' + info.response);
     }
