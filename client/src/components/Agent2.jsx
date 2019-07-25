@@ -169,7 +169,7 @@ class Agent2 extends React.Component {
         // };
       } else {
       for( let i = 0; i < this.props.agents.length; i++){
-        if(this.state.test === this.props.agents[i].name){
+        if(this.state.test.toLowerCase() === this.props.agents[i].name.toLowerCase()){
           console.log(this.props.agents[i])
           this.setState({
             key: i,
