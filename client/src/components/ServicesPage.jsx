@@ -15,9 +15,6 @@ class ServicesPage extends React.Component {
     this.state = {
     }
   }
-
-  // componentDidMount() {
-  //   window.scrollTo(0, 0);
     componentDidMount() {
       window.scrollTo(0, 0);
       const { isSelected } = this.props;

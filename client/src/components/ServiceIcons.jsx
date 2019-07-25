@@ -18,7 +18,7 @@ class ServiceIcons extends React.Component {
     this.scrollview = this.scrollview.bind(this);
   }
   componentDidMount() {
-    console.log('hi', this.props.icon.key)
+    // console.log('hi', this.props.icon.key)
     // scrollToComponent('market', { offset: 0, align: 'middle', duration: 500, ease:'inCirc'});
   }
   scrollview(){

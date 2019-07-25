@@ -43,7 +43,7 @@ class MenuDrawer extends React.Component {
     });
   };
   showMenu(){
-    console.log('yipee')
+    // console.log('yipee')
     this.setState({
       showMenu: !this.state.showMenu
     })
@@ -91,12 +91,12 @@ class MenuDrawer extends React.Component {
           anchor="top"
           open={this.state.showMenu}
           onClose={this.toggleDrawer}
-          onOpen={this.toggleDrawer}
+          // onOpen={this.toggleDrawer}
           PaperProps={{
-            zIndex:'999999999999'
+            zindex:'999999999999'
           }}
           ModalProps={{
-            zIndex:'999999999999'
+            zindex:'999999999999'
           }}
         >
           <div

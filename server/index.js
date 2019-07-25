@@ -260,14 +260,6 @@ app.post('/Subscribe', (req, res) => {
       rejectUnauthorized: false
     },
   });
-  // const transporter = nodemailer.createTransport({
-  //   service: 'gmail',
-  //   host: 'smtp.gmail.com',
-  //   auth: {
-  //     user: 'stronghaydennotifications@gmail.com',
-  //     pass: config.pass
-  //   }
-  // });
   transporter.sendMail(mailOptions, (error, info) => {
     console.log('sending mail');
     if (error) {

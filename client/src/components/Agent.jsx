@@ -18,7 +18,7 @@ class Agent extends React.Component {
     this.replaceImage = this.replaceImage.bind(this);
   }
   componentDidMount(){
-    console.log(this.props)
+    // console.log(this.props)
   }
   onOpenModal (){
     // this.setState({ open: true });
@@ -28,14 +28,14 @@ class Agent extends React.Component {
     // this.setState({ open: false });
   };
   changeImage(){
-    console.log('trying to change')
+    // console.log('trying to change')
     this.props.agent.secondImage ? this.setState({
       image: this.props.agent.secondImage
     }): null
     // this.setState({ open: false });
   };
   replaceImage(){
-    console.log('trying to change')
+    // console.log('trying to change')
     this.props.agent.secondImage ? this.setState({
       image: this.props.agent.image
     }): null

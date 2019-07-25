@@ -70,12 +70,12 @@ const styles = theme => ({
     borderBottom: '1px solid GREEN !important',
   },
 
-  // notched: {
-  //   borderWidth: '1px',
-  //   borderBottom: '1px solid green !important',
-  //   borderColor: 'grey !important',
-  //   color: 'black'
-  // },
+  notchedOutline: {
+    borderWidth: '1px',
+    borderBottom: '1px solid green !important',
+    borderColor: 'grey !important',
+    color: 'black'
+  },
 
 });
 class SearchBar extends React.Component { 
@@ -88,7 +88,7 @@ class SearchBar extends React.Component {
       max:'',
       newMenu: false,
       listingType: 'All listings', 
-      propertyType: 'Property Type ', 
+      propertyType: 'Property Type', 
       searchSent: true,
     }
     this.handlePropertyChange = this.handlePropertyChange.bind(this);
@@ -99,8 +99,8 @@ class SearchBar extends React.Component {
     this.submit = this.submit.bind(this);
   }
   componentDidMount(){
-    console.log(this.state.propertyType)
-    console.log(this.state.listingType)
+    // console.log(this.state.propertyType)
+    // console.log(this.state.listingType)
   }
   handleClick(){
     console.log('hello')
@@ -122,7 +122,7 @@ class SearchBar extends React.Component {
     })
   }
   handleChange(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     this.setState({
       listingType: event.target.value
     });
@@ -183,14 +183,14 @@ class SearchBar extends React.Component {
             classes: {
               root: classes.cssLabel,
               
-              focused: {color:'white'}
+              // focused: {color:'white'}
             },
           }}
           InputProps={{
             classes: {
               root: classes.cssStandardInput,
               focused: classes.cssFocused,
-              notchedOutline: classes.notchedUnderline,
+              // notchedOutline: classes.notchedUnderline,
             },
             inputMode: "numeric"
         }}
