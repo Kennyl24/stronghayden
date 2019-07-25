@@ -70,12 +70,12 @@ const styles = theme => ({
     borderBottom: '1px solid GREEN !important',
   },
 
-  notched: {
-    borderWidth: '1px',
-    borderBottom: '1px solid green !important',
-    borderColor: 'grey !important',
-    color: 'black'
-  },
+  // notched: {
+  //   borderWidth: '1px',
+  //   borderBottom: '1px solid green !important',
+  //   borderColor: 'grey !important',
+  //   color: 'black'
+  // },
 
 });
 class SearchBar extends React.Component { 

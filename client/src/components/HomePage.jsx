@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
-import final from './final.jpg';
-import vineyards from './vineyards.jpg';
-import thisone from './967.jpg';
-import burgerfi from './burgerfi.jpg';
-import newscreen from './newscreen.jpeg';
-import homescreen from './aerial.jpg';
-import century from './century.jpg';
+// import final from './final.jpg';
+// import vineyards from './vineyards.jpg';
+// import thisone from './967.jpg';
+// import burgerfi from './burgerfi.jpg';
+// import newscreen from './newscreen.jpeg';
+// import homescreen from './aerial.jpg';
+// import century from './century.jpg';
 import {isMobile} from 'react-device-detect';
 import SearchBar from './SearchBar.jsx';
 import Fab from '@material-ui/core/Fab';
@@ -28,47 +28,47 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       phoneNumber:'707254-8891',
-      background: final,
+      // background: final,
       contactPaper: false,
       addres: '967 First Street Napa, CA 94559'
     }
     this.titleClick=this.titleClick.bind(this);
-    this.rotatephotos=this.rotatephotos.bind(this);
+    // this.rotatephotos=this.rotatephotos.bind(this);
   }
   titleClick(){
     location.reload();
   }
-  componentDidMount() {
-    const array = [final, newscreen, homescreen, burgerfi, century]
-    const repeatedArray = array.concat(...Array(10).fill(array));
-    const addressarray = [
-      '1700, 1710 Soscol Avenue & 625 Imperial Way Napa, CA 94559',
-      '1424-1436 Second Street Napa, CA 94559',
-      '1700, 1710 Soscol Avenue & 625 Imperial Way Napa, CA 94559',
-      '967 First Street Napa, CA 94559',
-      'Gasser South Century Center Napa, CA 94559',  
-  ]
-    const repeatedArray2 = addressarray.concat(...Array(10).fill(addressarray));
-    let i = 0;
-    setInterval(function() {
+//   componentDidMount() {
+//     const array = [final, newscreen, homescreen, burgerfi, century]
+//     const repeatedArray = array.concat(...Array(10).fill(array));
+//     const addressarray = [
+//       '1700, 1710 Soscol Avenue & 625 Imperial Way Napa, CA 94559',
+//       '1424-1436 Second Street Napa, CA 94559',
+//       '1700, 1710 Soscol Avenue & 625 Imperial Way Napa, CA 94559',
+//       '967 First Street Napa, CA 94559',
+//       'Gasser South Century Center Napa, CA 94559',  
+//   ]
+//     const repeatedArray2 = addressarray.concat(...Array(10).fill(addressarray));
+//     let i = 0;
+//     setInterval(function() {
 
-      if (i < repeatedArray.length) {
-        this.setState({
-          background: repeatedArray[i],
-          addres: repeatedArray2[i],
-        });
-          console.log(repeatedArray[i]);
-      }
-      else return;
-      i++;
-  }.bind(this), 5000);
-    window.scrollTo(0, 0);
-}
-  rotatephotos(){
-    for (let i = 0; i < array.length; i++) {
-      setInterval(() => { console.log(i) }, 5000);
-  }
-}
+//       if (i < repeatedArray.length) {
+//         this.setState({
+//           background: repeatedArray[i],
+//           addres: repeatedArray2[i],
+//         });
+//           console.log(repeatedArray[i]);
+//       }
+//       else return;
+//       i++;
+//   }.bind(this), 5000);
+//     window.scrollTo(0, 0);
+// }
+//   rotatephotos(){
+//     for (let i = 0; i < array.length; i++) {
+//       setInterval(() => { console.log(i) }, 5000);
+//   }
+// }
   render () {
     return (
       <div>
