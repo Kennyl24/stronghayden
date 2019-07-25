@@ -168,18 +168,18 @@ class Agent2 extends React.Component {
         //   }
         // };
       } else {
-      console.log('trying this one boo');
-      console.log(window.location.href);
       for( let i = 0; i < this.props.agents.length; i++){
         if(this.state.test === this.props.agents[i].name){
           console.log(this.props.agents[i])
           this.setState({
             key: i,
-          }, ()=> this.setState({
+          }, () => {
+            console.log(this.state.key)
+          this.setState({
             agent: this.props.agents[this.state.key],
             image: this.props.agents[this.state.key].image,
             data: true
-          }, ()=> {console.log(this.state.agent.image)}));
+          }, () => {console.log(this.state.agent.image)})});
         }
       };
     }
