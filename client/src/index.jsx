@@ -305,7 +305,7 @@ ReactDOM.render(
       <Route path="/for-sale" component={ListingsPage} />
 
       <Route path="/listings" component={ListingsPage} />
-      <Route path="/listings/:name" component={ListingsPage} />
+      {/* <Route path="/listings/:name" component={ListingsPage} /> */}
 
       {/* <Route path="*" component={NotFound} /> */}
       <Route component={NotFound} />
