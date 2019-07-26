@@ -18,6 +18,9 @@ body {
   padding-bottom: 6px;
   font-weight:500;
 }
+.example {
+  background: #bac1ce
+}
 .menu_i {
   height:10px;
   font-size:14px;

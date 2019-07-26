@@ -3,6 +3,7 @@ const sitemap = require('express-sitemap');
 const express = require('express');
 const app = express();
 const stripe = require('stripe')('sk_test_VvIspUlkw5HBZRM7VHrTFKYC00szsX5PY7');
+const asyncHandler = require('express-async-handler');
 
 // app.use(require('body-parser').text());
 const bodyParser = require('body-parser');
@@ -28,7 +29,7 @@ app.use('/agents', express.static(__dirname + '/../client/dist'));
 app.use('/current-listings', express.static(__dirname + '/../client/dist'));
 app.use('/for-sale', express.static(__dirname + '/../client/dist'));
 
-app.use('/listings', express.static(__dirname + '/../client/dist'));
+app.use('/listings/:id', express.static(__dirname + '/../client/dist'));
 // app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
 app.use('/contact', express.static(__dirname + '/../client/dist'));
 // app.use('/agents/*', express.static(__dirname + '/../client/dist'));
@@ -135,19 +136,17 @@ app.post('/Email', (req, res) => {
   });
   res.sendStatus(200);
 });
-app.post('/charge', (req, res) => {
-  console.log(req.body);
+app.post("/charge", async (req, res) => {
   try {
-    let {status} = stripe.charges.create({
+    let {status} = await stripe.charges.create({
       amount: 2000,
-      currency: 'usd',
-      description: 'An example charge',
+      currency: "usd",
+      description: "An example charge",
       source: req.body
     });
 
     res.json({status});
   } catch (err) {
-    console.log(err);
     res.status(500).end();
   }
 });

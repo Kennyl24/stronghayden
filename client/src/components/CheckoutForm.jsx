@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
 // import React, {Component} from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
@@ -27,24 +28,34 @@ class CheckoutForm extends React.Component {
   //   });
   
   // }
-  submit(event){
-    console.log('submitting)')
-    let token = this.props.stripe.createToken({name: "Name"});
-    console.log(token)
-    axios.post('/charge', {
-      token: token, 
-      amount:'20',
-    })
-    .then( (response) =>  {
-      setTimeout(() => {
-      }, 500);
-    })
-    .catch( (error) => {
-      return ('There seems to have been an error');
+  async submit(ev) {
+    let {token} = await this.props.stripe.createToken({name: "Name"});
+    let response = await axios.post('/charge', {
+      // method: "POST",
+      headers: {"Content-Type": "text/plain"},
+      body: token.id
     });
-    this.setState({
-    });
+  
+    if (response.ok) console.log("Purchase Complete!")
   }
+  // submit(event){
+  //   console.log('submitting)')
+  //   let token = this.props.stripe.createToken({name: "Name"});
+  //   console.log(token);
+  //   axios.post('/charge', {
+  //     token: token, 
+  //     amount:'20',
+  //   })
+  //   .then( (response) =>  {
+  //     setTimeout(() => {
+  //     }, 500);
+  //   })
+  //   .catch( (error) => {
+  //     return ('There seems to have been an error');
+  //   });
+  //   this.setState({
+  //   });
+  // }
   render() {
     return (
       
@@ -64,7 +75,11 @@ class CheckoutForm extends React.Component {
           Total Amount: $XXXXX.XX
           </h1>
         <div>
-
+        <StripeCheckout
+        stripeKey="pk_test_XeY7d5CmID2TcMMFPhKxSbD90028ypuX7W"
+        token={this.onToken}
+        panelLabel="Pay {{amount}}"
+      />
           </div>
           {/* render() { */}
   {this.state.complete ?  <h1>Purchase Complete</h1> :

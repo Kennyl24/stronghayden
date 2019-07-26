@@ -54,11 +54,11 @@ class ListingsPage extends React.Component {
   }
 componentDidMount() {
     window.scrollTo(0, 0);
-    setTimeout(function(){ 
-      this.setState({
-        open:true
-      })
-    }.bind(this), 8000);
+    // setTimeout(function(){ 
+    //   this.setState({
+    //     open:true
+    //   });
+    // }.bind(this), 8000);
     // if(this.props.location.customObject !== undefined){
     //   return;
     // } else {
@@ -70,6 +70,7 @@ componentDidMount() {
       plugin:    "inventory",
       target:    "buildout",
     });
+  
     // script.async = true;
     document.querySelector('body').appendChild(script);
   // }
@@ -153,8 +154,8 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
         <div id='buildout'/>
-{/* 
- {this.props.location.customObject !== undefined ? 
+ 
+ {/* {this.props.location.customObject !== undefined ? 
   <iframe 
      sandbox='allow-scripts'
     ref={(f) => {this.ifr = f
