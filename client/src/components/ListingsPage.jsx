@@ -122,7 +122,7 @@ submitIt(){
                 <meta charSet="utf-8" />
                 <title>Strong & Hayden Commercial Listings</title>
                 <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
-                <link rel="canonical" href="https://stronghayden.com/listings" />
+                {/* <link rel="canonical" href="https://stronghayden.com/listings" /> */}
       </Helmet>
       <LeadingBar/>
       <Modal
