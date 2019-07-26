@@ -52,28 +52,40 @@ class ListingsPage extends React.Component {
           }
       }
   }
-componentDidMount() {
+componentWillMount() {
     window.scrollTo(0, 0);
-    // setTimeout(function(){ 
-    //   this.setState({
-    //     open:true
-    //   });
-    // }.bind(this), 8000);
+  //   if(this.props.location.customObject !== undefined){
+  //     return;
+  //   } else {
+  //   setTimeout(function(){ 
+  //     location.reload();
+  //     this.setState({
+  //       open:true
+  //     });
+  //   }.bind(this), 1000);
+  // }
     // if(this.props.location.customObject !== undefined){
     //   return;
     // } else {
-    const s = document.createElement("script");
-    s.src="//buildout.com/api.js?v8" 
-    const script = document.createElement("script");
-    script.src = BuildOut.embed({
-      token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
-      plugin:    "inventory",
-      target:    "buildout",
-    });
-  
     // script.async = true;
-    document.querySelector('body').appendChild(script);
   // }
+}
+componentDidMount(){
+  const s = document.createElement("script");
+  s.src="//buildout.com/api.js?v8" 
+  const script = document.createElement("script");
+  script.src = BuildOut.embed({
+    token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
+    plugin:    "inventory",
+    target:    "buildout",
+  });
+  document.querySelector('body').appendChild(script);
+  window.onload = function() {
+    if(this.props.location.customObject !== undefined) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
 }
 onCloseModal(){
   this.setState({

@@ -29,7 +29,7 @@ app.use('/agents', express.static(__dirname + '/../client/dist'));
 app.use('/current-listings', express.static(__dirname + '/../client/dist'));
 app.use('/for-sale', express.static(__dirname + '/../client/dist'));
 
-app.use('/listings/:id', express.static(__dirname + '/../client/dist'));
+app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
 // app.use('/listings/:name', express.static(__dirname + '/../client/dist'));
 app.use('/contact', express.static(__dirname + '/../client/dist'));
 // app.use('/agents/*', express.static(__dirname + '/../client/dist'));

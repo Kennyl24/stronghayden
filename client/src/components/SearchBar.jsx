@@ -87,7 +87,7 @@ class SearchBar extends React.Component {
       min:'',
       max:'',
       newMenu: false,
-      listingType: 'All listings', 
+      listingType: 'both', 
       propertyType: 'Property Type', 
       searchSent: true,
     }
@@ -167,7 +167,7 @@ class SearchBar extends React.Component {
     });
   }
   submit() {
-    <Link to={{pathname:"/listings", customObject: null}}></Link>
+    <Link to={{pathname:`/Listings/`, customObject: null}}></Link>
   }
   render () {
     const { classes } = this.props;
@@ -221,7 +221,7 @@ class SearchBar extends React.Component {
           onChange={this.handleChange}
           input={<Input name="age" id="age-helper" />}
         >
-          <MenuItem value={'All Listings'}onClick={this.handleClose}>All Listings</MenuItem>
+          <MenuItem value={'both'}onClick={this.handleClose}>All Listings</MenuItem>
           <MenuItem value={'sale'}onClick={this.handleClose}>Sale</MenuItem>
           <MenuItem value={'lease'}onClick={this.handleClose}>Lease</MenuItem>
         </Select>
@@ -254,7 +254,7 @@ class SearchBar extends React.Component {
     </div>
     {/* </div> */}
     <div style={{margin:'auto', marginTop:"20px"}}>
-    <Link to={{pathname:"/listings", customObject: 
+    <Link to={{pathname:`/listings/?saleOrLease=${this.state.listingType}&propertyType=${this.state.propertyNumber}&initialSearchText=${this.state.search}`, customObject: 
     {
       searchSent: this.state.searchSent, 
       search: this.state.search, 
