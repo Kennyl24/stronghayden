@@ -80,12 +80,13 @@ componentDidMount(){
     target:    "buildout",
   });
   document.querySelector('body').appendChild(script);
-  window.onload = function() {
+  // window.onload = function() {
     if(this.props.location.customObject !== undefined) {
+      console.log('hello')
         window.location = window.location + '#loaded';
         window.location.reload();
     }
-}
+// }
 }
 onCloseModal(){
   this.setState({
