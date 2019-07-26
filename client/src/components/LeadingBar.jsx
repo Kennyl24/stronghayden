@@ -134,7 +134,7 @@ resize(){
         <span className="menu_i" onClick={() => window.location.href = '/about'} >About</span>
         <span className="menu_i" onClick={() => window.location.href = '/team'} >Agents</span>
         <span className="menu_i" onClick={() => window.location.href = '/services'}>Services</span>
-        <span className="menu_i"onClick={() => window.location.href = '/listings'}>Listings</span>
+        <span className="menu_i"onClick={() => window.location.href = '/Listings'}>Listings</span>
         <span className="menu_i"onClick={() => window.location.href = '/resources'}>Resources</span>
         <span className="menu_i"onClick={() => window.location.href = '/contact'}>Contact</span>
       </div> 

@@ -254,7 +254,7 @@ class SearchBar extends React.Component {
     </div>
     {/* </div> */}
     <div style={{margin:'auto', marginTop:"20px"}}>
-    <Link to={{pathname:`/listings/?saleOrLease=${this.state.listingType}&propertyType=${this.state.propertyNumber}&initialSearchText=${this.state.search}`, customObject: 
+    <Link to={{pathname:`/Listings/?saleOrLease=${this.state.listingType}&propertyType=${this.state.propertyNumber}&initialSearchText=${this.state.search}`, customObject: 
     {
       searchSent: this.state.searchSent, 
       search: this.state.search, 
