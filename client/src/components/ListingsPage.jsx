@@ -125,12 +125,12 @@ submitIt(){
                 <meta charSet="utf-8" />
                 <title>Strong & Hayden Commercial Listings</title>
                 <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
-                <head id="mcjs">
+                {/* <head id="mcjs">
                {`!function(c,h,i,m,p)
                 {m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}
                 (document,"script","https://chimpstatic.com/mcjs-connected/js/users/54c003abb1a841f30251d67c6/097f1f2ff61e1de2a89da5a79.js")`};
                 
-                </head>
+                </head> */}
                 {/* <link rel="canonical" href="https://stronghayden.com/listings" /> */}
       </Helmet>
       <LeadingBar/>
