@@ -19,8 +19,8 @@ class Payments extends React.Component {
       <div>
         <LeadingBar/>
         <StripeProvider apiKey="pk_test_XeY7d5CmID2TcMMFPhKxSbD90028ypuX7W">
-        <div className="example">
-          <h1>React Stripe Elements Example</h1>
+        <div className="example" style={{paddingTop:'150px'}}>
+          {/* <h1>React Stripe Elements Example</h1> */}
           <Elements>
             <CheckoutForm />
           </Elements>

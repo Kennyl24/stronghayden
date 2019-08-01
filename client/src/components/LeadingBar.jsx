@@ -59,7 +59,7 @@ class LeadingBar extends React.Component {
     window.removeEventListener('scroll', this.listenScrollEvent);
 }
 listenScrollEvent(e){
-  if (window.scrollY > 250) {
+  if (window.scrollY > 200) {
     this.setState({
       opacity: 1.0
     })

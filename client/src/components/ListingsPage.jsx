@@ -167,27 +167,6 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
         <div id='buildout'/>
- 
- {/* {this.props.location.customObject !== undefined ? 
-  <iframe 
-     sandbox='allow-scripts'
-    ref={(f) => {this.ifr = f
-  //  console.log('hello', this.ifr.src)
-    }} 
-    id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="100%"
-    height="1500px"
-    onLoad={(obj) => 
-      this.resizeIframe(obj)
-      // alert(this.contentWindow)
-    }
-
-    src={`https://buildout.com/plugins/85de2b584effdb53e40923ac5de37c8b85006ba8/inventory?propertyType=${this.props.location.customObject.propertyNumber}&saleOrLease=${this.props.location.customObject.listingType}&initialSearchText=${this.props.location.customObject.search}`}
-     >
-</iframe> : 
- <div id='buildout'/>
- } */}
    <BottomNav/>
       </div>
 )

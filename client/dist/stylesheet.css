@@ -116,6 +116,12 @@ h2 {
   background-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5rem rgba(0, 0, 0.5);
 }
+.scrim2 {
+  background: rgba(26, 88, 28, 0.62);
+  overflow: hidden;
+  height: 100%;
+  z-index: 2;
+}
 .featured-writing{
   color: #fff;
   text-align: center;
@@ -380,7 +386,7 @@ margin-bottom: 23px;
   color:black;
   display: inline-block;
   /* background: #f4f4f4; */
-  border: 1px solid #006f37;
+  /* border: 1px solid #006f37; */
   margin-right: auto;
   margin-left:auto;
   height: 300px;
@@ -391,10 +397,10 @@ margin-bottom: 23px;
   margin-bottom: 15px;
 }
 .about-square:hover{
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+  /* box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2); */
 }
 .offer-header {
-  color:#424243;
+  color:#006f37;
   font-size:26px;
   border-bottom: 1px solid #006f37;
 }
@@ -414,6 +420,23 @@ margin-bottom: 23px;
   margin-left: 5%;
   text-align:center;
 }
+.about-us2 {
+  line-height: 35px;
+  margin-top: 30px;
+  font-size:16px;
+  width:70%;
+  margin-left: 15%;
+  text-align:center;
+  color:whitesmoke;
+}
+.about-us-mobile2  {
+  line-height: 35px;
+  margin-top: 30px;
+  font-size:16px;
+  width:90%;
+  margin-left: 5%;
+  text-align:center;
+}
 .myclassname {
   margin:auto;
 }
@@ -422,11 +445,11 @@ margin-bottom: 23px;
   /* background: -webkit-linear-gradient(left, grey, grey 30%, white 30%, white); */
 }
 .extra-nav {
-  color:white;
+  color:#006f37;
   cursor:pointer;
   height:150px;
   width:100%;
-  background-color: grey;
+  background-color: #eee;
 }
 .extra-nav:hover {
   color:black;
@@ -659,6 +682,8 @@ video {
     /* height: 80px; */
     /* background-color: black; */
     /* border: 2px solid white; */
+    position: absolute;
+    right:33%;
     animation: bounce .75s infinite alternate;
     -webkit-animation: bounce .75s infinite alternate;
   }
