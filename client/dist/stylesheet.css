@@ -391,10 +391,10 @@ margin-bottom: 23px;
   margin-left:auto;
   height: 300px;
   width: 238px;
-  margin-top:10px;
+  /* margin-top:10px; */
   padding: 10px;
   border-radius: 6px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 .about-square:hover{
   /* box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2); */
