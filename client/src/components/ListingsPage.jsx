@@ -124,7 +124,9 @@ loaded(){
 resizeIframe(obj){
 }
 test(){
+  console.log('hello')
   let x  = document.getElementsByClassName("plugin-header-title");
+  console.log(x)
   for (var i = 0; i < x.length; i++) {
     let test = x[i].innerText;
     console.log(test)
