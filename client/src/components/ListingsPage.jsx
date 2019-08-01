@@ -125,9 +125,9 @@ resizeIframe(obj){
 }
 test(){
   console.log('hello')
-  let y = document.getElementsByClassName("col-auto text-muted");
+  let y = document.getElementsByClassName("col-auto text-muted")[0];
   console.log(y);
-  let x  = document.getElementsByClassName("plugin-header-title");
+  let x  = document.getElementsByClassName("plugin-header-title")[0];
   console.log(x)
   for (var i = 0; i < x.length; i++) {
     let test = x[i].innerText;
