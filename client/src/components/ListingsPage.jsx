@@ -13,6 +13,18 @@ import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import Iframe from 'react-iframe'
 import IframeComm from "react-iframe-comm";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  EmailShareButton,
+} from 'react-share';
+import {
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  EmailIcon,
+} from 'react-share';
 let x;
 let y;
 class ListingsPage extends React.Component { 
@@ -23,13 +35,14 @@ class ListingsPage extends React.Component {
       email: '',
       response:null,
       loaded: false,
+      showShare: false,
     }
     this.onCloseModal = this.onCloseModal.bind(this);
     this.submitIt = this.submitIt.bind(this);
     this.resizeIframe = this.resizeIframe.bind(this);
     this.test = this.test.bind(this);
     this.setUserAgent = this.setUserAgent.bind(this);
-
+    this.showShare = this.showShare.bind(this);
     this.handleFrameTasks = this.handleFrameTasks.bind(this);
   }
     componentWillUnmount() {
@@ -37,6 +50,11 @@ class ListingsPage extends React.Component {
     }
     componentWillMount(){
     this.test();
+    }
+    showShare(){
+      this.setState({
+        showShare: !this.state.showShare
+      })
     }
     handleFrameTasks(e) {
     }
@@ -71,6 +89,11 @@ componentWillMount() {
   // }
 }
 componentDidMount(){
+  let x  = document.getElementsByClassName("plugin-header-title");
+  for (var i = 0; i < x.length; i++) {
+    let test = x[i].innerText;
+    console.log(test)
+  }
   // const scripting = document.createElement("script");
   // s.src =             
 
@@ -176,6 +199,40 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
         <div id='buildout'/>
+        <div style={{position:'fixed', borderRadius:'25px', backgroundColor:'white', bottom: '10%', right:'2%'}}> 
+    <h1 style={{fontSize:'18px', textAlign:'center', color:'black'}}>Share This Page:</h1>
+    {/* <Button style={{width:'200px', backgroundColor:'white', borderRadius:'20px', color:'black'}} onMouseOver={this.showShare} variant="contained">Share</Button> */}
+{/*  {this.state.showShare ?  */}
+  <div style={{display:'flex', flexDirection:'row'}}>
+  {/* <span style={{cursor:'pointer'}}> */}
+  <div>
+  <FacebookShareButton children="Listing" url={window.location.href} hashtag="#StrongandHayden">
+  <FacebookIcon size={40} round={true} />
+  </FacebookShareButton>
+  </div>
+  <div>
+
+  <LinkedinShareButton children="Listing" url={window.location.href}>
+  <LinkedinIcon size={40} round={true} />
+  </LinkedinShareButton>
+  </div>
+
+  <div>
+
+  <TwitterShareButton children="Listing" url={window.location.href}  via={'StrongHayden'} hashtags={["StrongandHayden"]}>
+  <TwitterIcon size={40} round={true} />
+  </TwitterShareButton>
+  </div>
+  <div>
+
+  <EmailShareButton children="Listing" url={window.location.href}>
+  <EmailIcon size={40} round={true} />
+  </EmailShareButton>
+  </div>
+  {/* </span> */}
+
+  </div> 
+    </div>
    <BottomNav/>
    
       </div>
