@@ -49,7 +49,7 @@ class ListingsPage extends React.Component {
     window.removeEventListener("message", this.handleFrameTasks);
     }
     componentWillMount(){
-    this.test();
+    // this.test();
     }
     showShare(){
       this.setState({
@@ -124,7 +124,11 @@ loaded(){
 resizeIframe(obj){
 }
 test(){
-
+  let x  = document.getElementsByClassName("plugin-header-title");
+  for (var i = 0; i < x.length; i++) {
+    let test = x[i].innerText;
+    console.log(test)
+  }
 }
 submitIt(){
   axios.post('/Subscribe', {
@@ -199,7 +203,7 @@ submitIt(){
       <div style={{height:isMobile ? '150px' : '82px'}}>
         </div>
         <div id='buildout'/>
-        <div style={{position:'fixed', borderRadius:'25px', backgroundColor:'white', bottom: '10%', right:'2%'}}> 
+        <div onClick={this.test}style={{position:'fixed', borderRadius:'25px', backgroundColor:'white', bottom: '10%', right:'2%'}}> 
     <h1 style={{fontSize:'18px', textAlign:'center', color:'black'}}>Share This Page:</h1>
     {/* <Button style={{width:'200px', backgroundColor:'white', borderRadius:'20px', color:'black'}} onMouseOver={this.showShare} variant="contained">Share</Button> */}
 {/*  {this.state.showShare ?  */}
