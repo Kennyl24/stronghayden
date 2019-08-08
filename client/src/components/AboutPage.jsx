@@ -58,7 +58,7 @@ class AboutPage extends React.Component {
       {/* <TeamExperience/> */}
       <AboutUs/>
       <div style={{height: isMobile ? '450px': '300px', backgroundColor:'#eee', color:'black'}}> 
-      <h1 style={{textAlign:'center', margin:0, lineHeight:'40px', color:'green'}}> 
+      <h1 style={{textAlign:'center', margin:0, paddingTop:'20px', lineHeight:'40px', color:'green'}}> 
       Reviews
       </h1>
       {this.state.odd ? 

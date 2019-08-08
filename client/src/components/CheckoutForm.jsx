@@ -118,13 +118,14 @@ class CheckoutForm extends React.Component {
 
     return (
       <div style={{textAlign:'center'}}>
-          <h1 style={{color:'black', marginTop:"20px", fontSize:'24px'}}> 
+          <h1 style={{color:'black', marginTop:'10px', fontSize:'24px'}}> 
           Charge Details:</h1>
           <br/>
           <br/>
 
-          <h1 style={{color:'black', fontSize:'18px'}}> 
+          <h1 style={{color:'black', fontSize:'18px', paddingTop:'0px'}}> 
           Commision Amount: 
+          </h1>
           <TextField
               InputLabelProps={{
                 classes: {
@@ -155,19 +156,25 @@ class CheckoutForm extends React.Component {
             });
           }}
         />
-        <Button onClick={this.calculate}>Submit</Button>
+        <br/>
+          <br/>
+        <Button variant="outlined" style={{backgroundColor:'white'}}onClick={this.calculate}>Calculate</Button>
           <br/>
           <br/>
           Credit Card Charge(2.25%): {this.state.charge}
           <br/>
           <br/>
           Total Amount:  {this.state.total}
-          </h1>
         <div>
         <StripeCheckout
         stripeKey="pk_test_XeY7d5CmID2TcMMFPhKxSbD90028ypuX7W"
         token={this.onToken}
         panelLabel="Pay {{amount}}"
+        amount={1000000}
+        image="https://i.ibb.co/w6xBp07/imageedit-12-5093301832.png" // the pop-in header image (default none)
+
+        email = {'kenny.laprelle@gmail.com'}
+        currency="USD"
       />
           </div>
           {/* render() { */}

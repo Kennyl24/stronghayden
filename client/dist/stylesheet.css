@@ -114,7 +114,7 @@ h2 {
 .scrim {
   border-radius: 0%;
   background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 5rem rgba(0, 0, 0.5);
+  box-shadow: 0 0 1rem rgba(0, 0, 0.5);
 }
 .scrim2 {
   background: rgba(26, 88, 28, 0.62);
