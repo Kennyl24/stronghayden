@@ -114,14 +114,14 @@ class HomePage extends React.Component {
       </div> */}
       {/* <div style={{paddingTop:'300px'}}> */}
       {/* </div> */}
-      {this.state.contactPaper ? <ContactPaper/> : null}
+      {/* {this.state.contactPaper ? <ContactPaper/> : null}
      {isMobile ? null : this.state.open ?
       <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:false})} style={{color:"red", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
       Close
   </Fab>
       : <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:true})} style={{color:"#0c6e39", position:'absolute', bottom:'30%', borderRadius:'4px', height:'auto', right:'0px', borderColor:'#0c6e39'}}>
         C<br/>o<br/>n<br/>t<br/>a<br/>c<br/>t<br/> <br/>U<br/>s
-    </Fab>  }
+    </Fab>  } */}
       {/* </div> */}
       {/* </div> */}
       <SearchBar/>
