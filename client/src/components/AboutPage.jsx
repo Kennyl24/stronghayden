@@ -57,7 +57,7 @@ class AboutPage extends React.Component {
       {/* <h1 style={{fontWeight:'800', color:'#3d633b', fontSize:'40px', textAlign:'center'}}>About Strong & Hayden</h1> */}
       {/* <TeamExperience/> */}
       <AboutUs/>
-      <div style={{height: isMobile ? '450px': '300px', backgroundColor:'#eee', color:'black'}}> 
+      <div style={{height: isMobile ? '450px': '350px', backgroundColor:'#eee', color:'black'}}> 
       <h1 style={{textAlign:'center', margin:0, paddingTop:'20px', lineHeight:'40px', color:'green'}}> 
       Reviews
       </h1>
