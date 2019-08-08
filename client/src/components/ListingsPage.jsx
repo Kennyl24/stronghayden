@@ -220,20 +220,20 @@ submitIt(){
   </div>
   <div>
 
-  <LinkedinShareButton children="Listing" url={window.location.href}>
+  <LinkedinShareButton style={{cursor:'pointer'}} children="Listing" url={window.location.href}>
   <LinkedinIcon size={40} round={false} />
   </LinkedinShareButton>
   </div>
 
   <div>
 
-  <TwitterShareButton children="Listing" url={window.location.href}  via={'StrongHayden'} hashtags={["StrongandHayden"]}>
+  <TwitterShareButton style={{cursor:'pointer'}} children="Listing" url={window.location.href}  via={'StrongHayden'} hashtags={["StrongandHayden"]}>
   <TwitterIcon size={40} round={false} />
   </TwitterShareButton>
   </div>
   <div>
 
-  <EmailShareButton children="Listing" url={window.location.href}>
+  <EmailShareButton style={{cursor:'pointer'}} children="Listing" url={window.location.href}>
   <EmailIcon size={40} round={false} />
   </EmailShareButton>
   </div>

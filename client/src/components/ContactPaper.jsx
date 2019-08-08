@@ -51,10 +51,10 @@ class ContactPaper extends React.Component {
         {/* <div style={{height:'40px', backgroundColor:'rgb(12, 110, 57)'}}>
           <h1 style={{textAlign:'center', lineHeight:'30px', fontSize:'20px'}}>Strong & Hayden Team</h1>
           </div> */}
-        <Typography style={{textAlign:'center'}}variant="h5" component="h3">
-          Contact us Today. 
+        <Typography style={{textAlign:'left'}}variant="h5" component="h3">
+          Contact us Today
         </Typography>
-        <Typography style={{textAlign:'center'}} component="p">
+        <Typography style={{textAlign:'left'}} component="p">
         Our team will get back to you as soon as possible.
         </Typography>
         <TextField

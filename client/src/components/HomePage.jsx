@@ -119,8 +119,8 @@ class HomePage extends React.Component {
       <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:false})} style={{color:"red", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
       Close
   </Fab>
-      : <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:true})} style={{color:"#0c6e39", position:'absolute', bottom:'10px', right:'10px', borderColor:'#0c6e39'}}>
-        Contact Us
+      : <Fab variant="extended"  onClick={() => this.setState({contactPaper: !this.state.contactPaper, open:true})} style={{color:"#0c6e39", position:'absolute', bottom:'30%', borderRadius:'4px', height:'auto', right:'0px', borderColor:'#0c6e39'}}>
+        C<br/>o<br/>n<br/>t<br/>a<br/>c<br/>t<br/> <br/>U<br/>s
     </Fab>  }
       {/* </div> */}
       {/* </div> */}
