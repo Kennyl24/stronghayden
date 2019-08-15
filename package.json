@@ -63,6 +63,7 @@
     "react-scroll-to-component": "^1.0.2",
     "react-share": "^2.4.0",
     "react-social-icons": "^4.1.0",
+    "react-social-share-buttons": "^1.0.2",
     "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^3.0.0",
     "react-video-cover": "^1.2.2",

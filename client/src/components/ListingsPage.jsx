@@ -13,6 +13,8 @@ import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import Iframe from 'react-iframe'
 import IframeComm from "react-iframe-comm";
+import ShareButton from 'react-social-share-buttons'
+
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -208,17 +210,27 @@ submitIt(){
         </div>
         <div id='buildout'/>
         <div onClick={this.test}style={{position:'fixed', borderRadius:'0px', bottom: '40%', left:'0%'}}> 
-    <h1 style={{fontSize:'16px', textAlign:'center', color:'black', backgroundColor:'white', margin: 0}}>Share</h1>
+    {/* <h1 style={{fontSize:'16px', textAlign:'center', color:'black', backgroundColor:'white', margin: 0}}>Share</h1> */}
     {/* <Button style={{width:'200px', backgroundColor:'white', borderRadius:'20px', color:'black'}} onMouseOver={this.showShare} variant="contained">Share</Button> */}
 {/*  {this.state.showShare ?  */}
   <div style={{display:'flex', flexDirection:'column'}}>
+  {/* <div>
+            Hey, share me!
+            <ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={window.location.href}
+                media={"https://imgs.xkcd.com/comics/error_code.png"}
+                text="Sit by a lake"
+            />
+        </div> */}
   {/* <span style={{cursor:'pointer'}}> */}
-  <div>
+  {/* <div>
   <FacebookShareButton style={{cursor:'pointer'}}children="Listing" url={window.location.href} hashtag="#StrongandHayden">
   <FacebookIcon size={40} round={false} />
   </FacebookShareButton>
-  </div>
-  <div>
+  </div> */}
+  {/* <div>
 
   <LinkedinShareButton style={{cursor:'pointer'}} children="Listing" url={window.location.href}>
   <LinkedinIcon size={40} round={false} />
@@ -236,7 +248,7 @@ submitIt(){
   <EmailShareButton style={{cursor:'pointer'}} children="Listing" url={window.location.href}>
   <EmailIcon size={40} round={false} />
   </EmailShareButton>
-  </div>
+  </div> */}
   {/* </span> */}
 
   </div> 
