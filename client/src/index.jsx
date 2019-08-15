@@ -171,23 +171,23 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
      
           </div>,
   },
-  {
-    name: 'Brian Dodd',
-    title: 'Sales Agent',
-    email: 'bdodd@stronghayden.com',
-    phone: '(707) 363-5000',
-    bre: '02048098',
-    image: Brian,
-    about: 
-    <div>
-    <p>
-    A third generation local from Napa, California, Brian Dodd is a real estate agent at Strong & Hayden. As such, he has a unique perspective on the community, a strong network and knows what works in the area. Brian adds value to every transaction that he’s involved in.
-    <br/> <br/>
-    Brian graduated from California State University, Chico with a BS in business administration with a marketing focus. He is currently on the Board of Directors for Rotary Club of Napa Sunrise and Leadership Napa Valley, and volunteers for Collabria Care Hospice.
+  // {
+  //   name: 'Brian Dodd',
+  //   title: 'Sales Agent',
+  //   email: 'bdodd@stronghayden.com',
+  //   phone: '(707) 363-5000',
+  //   bre: '02048098',
+  //   image: Brian,
+  //   about: 
+  //   <div>
+  //   <p>
+  //   A third generation local from Napa, California, Brian Dodd is a real estate agent at Strong & Hayden. As such, he has a unique perspective on the community, a strong network and knows what works in the area. Brian adds value to every transaction that he’s involved in.
+  //   <br/> <br/>
+  //   Brian graduated from California State University, Chico with a BS in business administration with a marketing focus. He is currently on the Board of Directors for Rotary Club of Napa Sunrise and Leadership Napa Valley, and volunteers for Collabria Care Hospice.
     
-      </p>   
-          </div>,
-  },
+  //     </p>   
+  //         </div>,
+  // },
   {
     name: 'Lauren Nicholsen',
     title: 'Sales Agent',
