@@ -158,6 +158,17 @@ submitIt(){
                 <meta charSet="utf-8" />
                 <title>Strong & Hayden Commercial Listings</title>
                 <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
+            
+            
+            {/* <title>{this.state.blog.blogTitle}</title>
+            <meta name="keywords" content={this.state.blog.blogTitle} />
+            <meta name="description" content={this.state.blog.blogSnippet} />
+            <meta name="og:description" content={this.state.blog.blogSnippet} />
+            <meta property="og:title" content={this.state.blog.blogTitle} />
+            <meta property="og:image" content={this.state.blog.blogImage} />
+            <meta property="og:url" content={window.location.href}/> */}
+               
+               
                 {/* <head id="mcjs">
                {`!function(c,h,i,m,p)
                 {m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}

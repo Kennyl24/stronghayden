@@ -6,6 +6,19 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {isMobile} from 'react-device-detect';
 import { SocialIcon } from 'react-social-icons';
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  EmailShareButton,
+} from 'react-share';
+import {
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  EmailIcon,
+} from 'react-share';
+import ShareButton from 'react-social-share-buttons'
 
 class BottomNav extends Component {
   constructor(props) {
@@ -42,6 +55,15 @@ class BottomNav extends Component {
         <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}}url="https://twitter.com/stronghayden" />
         <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}} url="https://www.facebook.com/StrongHayden/" />
         <SocialIcon style={{marginBottom:'15px'}} url="https://www.youtube.com/channel/UCYEoUjdS2NWUJHchJWvvTlw" />
+        </div>
+        <div>
+          <ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={window.location.href}
+                media={"https://imgs.xkcd.com/comics/error_code.png"}
+                text="Sit by a lake"
+            />
         </div>
           </div>
           <div className="grid-item" style={{order:0}}>
