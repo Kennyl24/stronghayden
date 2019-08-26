@@ -160,13 +160,13 @@ submitIt(){
                 <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
             
             
-            {/* <title>{this.state.blog.blogTitle}</title>
-            <meta name="keywords" content={this.state.blog.blogTitle} />
-            <meta name="description" content={this.state.blog.blogSnippet} />
-            <meta name="og:description" content={this.state.blog.blogSnippet} />
-            <meta property="og:title" content={this.state.blog.blogTitle} />
-            <meta property="og:image" content={this.state.blog.blogImage} />
-            <meta property="og:url" content={window.location.href}/> */}
+            <title>Strong & Hayden Commercial Listings</title>
+            <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
+            <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta property="og:title" content="Strong & Hayden Commercial Listings" />
+            <meta property="og:image" content="https://imgs.xkcd.com/comics/error_code.png" />
+            <meta property="og:url" content={window.location.href}/>
                
                
                 {/* <head id="mcjs">
