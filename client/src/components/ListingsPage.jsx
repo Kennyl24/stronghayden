@@ -83,6 +83,15 @@ this.setState({
 }, ()=> {
   console.log(this.state.innerText)
 });
+let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
+style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
+bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+console.log(bi);
+this.setState({
+  innerHTML: text.innerHTML()
+}, ()=> {
+  console.log(this.state.innerText)
+});
 // style = img.currentStyle || window.getComputedStyle(img, false),
 // bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 
