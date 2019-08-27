@@ -36,6 +36,14 @@ class ContactPage extends React.Component {
         <Helmet>
                 <meta charSet="utf-8" />
                 <title>Contact Strong & Hayden</title>
+        <meta name="description" content="The Strong & Hayden Team's Agents"/>
+        <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
+            <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta property="og:title" content="Contact Strong & Hayden" />
+            {/* <meta property="og:image" content={this.state.agent.image} /> */}
+            <meta property="og:url" content={window.location.href}/>
+        {/* <link rel="canonical" href="https://stronghayden.com/agents/" /> */}
                 <link rel="canonical" href="https://stronghayden.com/contact" />
       </Helmet>
       <LeadingBar/>

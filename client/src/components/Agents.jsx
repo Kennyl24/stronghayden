@@ -16,6 +16,7 @@ import patrick from './patrick.jpg';
 import matt from './Matt.jpg';
 import michael from './michael.jpg';
 import LG from './LG.jpg';
+import {Helmet} from "react-helmet";
 
 const agents = [
   {
@@ -236,6 +237,17 @@ class Agents extends React.Component {
   render () {
     return (
     <div style={{paddingTop: isMobile ? '0px' : '0px'}}>
+    <Helmet>
+                <meta charSet="utf-8" />
+                <title>Strong & Hayden Agents</title>
+                <meta name="description" content="The Strong & Hayden Team's Agents"/>
+            <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
+            <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
+            <meta property="og:title" content={this.state.innerHTML ? this.state.innerHTML : 'Strong & Hayden Agents'} />
+            <meta property="og:image" content={gary} />
+            <meta property="og:url" content={window.location.href}/>
+      </Helmet>
     <div className="home-background" style={{position:'relative', top: isMobile ? '120px':'00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${team})`, backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:isMobile ? 'contain':'cover', height: isMobile ? '400px' : '90vh', width: '100%', marginBottom:'0px'}}>
     {/* <h1 style={{color:'white',  fontWeight:'800',paddingTop:'150px', textAlign:'center'}}> STRONG & HAYDEN TEAM </h1> */}
     </div>
