@@ -27,7 +27,7 @@ import {
   LinkedinIcon,
   EmailIcon,
 } from 'react-share';
-let x;
+let text;
 let y;
 class ListingsPage extends React.Component { 
   constructor(props) {
@@ -77,21 +77,25 @@ componentWillMount() {
 }
 componentDidMount(){
   // Get the image id, style and the url from it
-// let text = document.getElementsByClassName('plugin-header-address')[0];
-// this.setState({
-//   innerHTML: text.innerHTML()
-// }, ()=> {
-//   console.log(this.state.innerText)
-// });
-// let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
-// style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
-// bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-// console.log(bi);
-// this.setState({
-//   innerHTML: text.innerHTML()
-// }, ()=> {
-//   console.log(this.state.innerText)
-// });
+text = document.getElementsByClassName('plugin-header-address')[0];
+if(text){
+this.setState({
+  innerHTML: text.innerText()
+}, ()=> {
+  console.log(this.state.innerHTML)
+});
+let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
+style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
+bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+console.log(bi);
+this.setState({
+  innerHTML: text.innerHTML()
+}, ()=> {
+  console.log(this.state.innerText)
+});
+} else {
+  null
+}
 // style = img.currentStyle || window.getComputedStyle(img, false),
 // bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 
@@ -160,7 +164,7 @@ submitIt(){
             <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
             <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
             <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
-            <meta property="og:title" content={this.state.innerHTML} />
+            <meta property="og:title" content={this.state.innerHTML ? this.state.innerHTML : 'Commercial Listings'} />
             <meta property="og:image" content="https://imgs.xkcd.com/comics/error_code.png" />
             <meta property="og:url" content={window.location.href}/>
       </Helmet>
