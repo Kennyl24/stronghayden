@@ -76,17 +76,17 @@ class ListingsPage extends React.Component {
 componentWillMount() {
     window.scrollTo(0, 0);
 }
-async componentDidMount(){
+componentDidMount(){
   // Get the image id, style and the url from it
 // style = img.currentStyle || window.getComputedStyle(img, false),
 // bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 
 // Display the url to the user   
 
-  const s = document.createElement("script");
-  s.src="//buildout.com/api.js?v8" 
+  // const s = document.createElement("script");
+  // s.src="//buildout.com/api.js?v8" 
   const script = document.createElement("script");
-  script.src =  await BuildOut.embed({
+  script.src =  BuildOut.embed({
     token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
     plugin:    "inventory",
     target:    "buildout",
