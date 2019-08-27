@@ -38,6 +38,7 @@ class ListingsPage extends React.Component {
       response:null,
       loaded: false,
       showShare: false,
+      buildOutLoaded: false
     }
     this.onCloseModal = this.onCloseModal.bind(this);
     this.submitIt = this.submitIt.bind(this);
@@ -77,25 +78,6 @@ componentWillMount() {
 }
 componentDidMount(){
   // Get the image id, style and the url from it
-text = document.getElementsByClassName('plugin-header-address')[0];
-if(text){
-this.setState({
-  innerHTML: text.innerText()
-}, ()=> {
-  console.log(this.state.innerHTML)
-});
-let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
-style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
-bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-console.log(bi);
-this.setState({
-  innerHTML: text.innerHTML()
-}, ()=> {
-  console.log(this.state.innerText)
-});
-} else {
-  null
-}
 // style = img.currentStyle || window.getComputedStyle(img, false),
 // bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 
@@ -109,12 +91,34 @@ this.setState({
     plugin:    "inventory",
     target:    "buildout",
   });
+   
   document.querySelector('body').appendChild(script);
     if(this.props.location.customObject !== undefined) {
       console.log('hello')
         window.location = window.location + '#loaded';
         window.location.reload();
-    }
+  }
+}
+componentDidUpdate(){
+  text = document.getElementsByClassName('plugin-header-address')[0];
+  if(text){
+  this.setState({
+    innerHTML: text.innerText()
+  }, ()=> {
+    console.log(this.state.innerHTML)
+  });
+  let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
+  style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
+  bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+  console.log(bi);
+  this.setState({
+    innerHTML: text.innerHTML()
+  }, ()=> {
+    console.log(this.state.innerText)
+  });
+} else {
+  return;
+}
 }
 onCloseModal(){
   this.setState({
