@@ -6,8 +6,6 @@
   "scripts": {
     "test": "npm test",
     "react-dev": "webpack -d --watch",
-    "dev": "node server/index.js",
-    "build": "next build",
     "start": "node server/index.js"
   },
   "repository": {
