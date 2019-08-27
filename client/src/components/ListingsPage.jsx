@@ -103,11 +103,13 @@ componentDidUpdate(){
   text = document.getElementsByClassName('plugin-header-address');
   if(text){
   this.setState({
-    innerHTML: text.innerText()
+    innerHTML: text[0].innerText()
   }, ()=> {
     console.log(this.state.innerHTML)
   });
+}
   let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
+  if(shareImage){
   style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
   console.log(bi);
