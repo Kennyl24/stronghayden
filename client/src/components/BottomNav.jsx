@@ -57,11 +57,11 @@ class BottomNav extends Component {
         <SocialIcon style={{marginBottom:'15px'}} url="https://www.youtube.com/channel/UCYEoUjdS2NWUJHchJWvvTlw" />
         </div>
         <h1 style={{borderBottom:'2px solid green', fontSize:'24px', textAlign:'left', width:'60%'}}>SHARE THIS PAGE </h1>
-        <div style={{textAlign:'left'}}>
+        {/* <div style={{textAlign:'left'}}>
         <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}}url="https://twitter.com/stronghayden" />
         <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}} url="https://www.facebook.com/StrongHayden/" />
         <SocialIcon style={{marginBottom:'15px'}} url="https://www.youtube.com/channel/UCYEoUjdS2NWUJHchJWvvTlw" />
-        </div>
+        </div> */}
           </div>
           <div className="grid-item" style={{order:0}}>
         <h1 style={{borderBottom:'2px solid green', fontSize:'24px', textAlign:'left', width:'60%'}}>CONTACT US</h1>
