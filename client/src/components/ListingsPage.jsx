@@ -74,30 +74,19 @@ class ListingsPage extends React.Component {
   }
 componentWillMount() {
     window.scrollTo(0, 0);
-  //   if(this.props.location.customObject !== undefined){
-  //     return;
-  //   } else {
-  //   setTimeout(function(){ 
-  //     location.reload();
-  //     this.setState({
-  //       open:true
-  //     });
-  //   }.bind(this), 1000);
-  // }
-    // if(this.props.location.customObject !== undefined){
-    //   return;
-    // } else {
-    // script.async = true;
-  // }
 }
 componentDidMount(){
-  let x  = document.getElementsByClassName("plugin-header-title");
-  for (var i = 0; i < x.length; i++) {
-    let test = x[i].innerText;
-    console.log(test)
-  }
-  // const scripting = document.createElement("script");
-  // s.src =             
+  // Get the image id, style and the url from it
+let text = document.getElementsByClassName('plugin-header-address')[0];
+this.setState({
+  innerHTML: text.innerHTML()
+}, ()=> {
+  console.log(this.state.innerText)
+});
+// style = img.currentStyle || window.getComputedStyle(img, false),
+// bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+// Display the url to the user   
 
   const s = document.createElement("script");
   s.src="//buildout.com/api.js?v8" 
@@ -108,13 +97,11 @@ componentDidMount(){
     target:    "buildout",
   });
   document.querySelector('body').appendChild(script);
-  // window.onload = function() {
     if(this.props.location.customObject !== undefined) {
       console.log('hello')
         window.location = window.location + '#loaded';
         window.location.reload();
     }
-// }
 }
 onCloseModal(){
   this.setState({
@@ -164,18 +151,9 @@ submitIt(){
             <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
             <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
             <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
-            <meta property="og:title" content="Strong & Hayden Commercial Listings" />
+            <meta property="og:title" content={this.state.innerHTML} />
             <meta property="og:image" content="https://imgs.xkcd.com/comics/error_code.png" />
             <meta property="og:url" content={window.location.href}/>
-               
-               
-                {/* <head id="mcjs">
-               {`!function(c,h,i,m,p)
-                {m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}
-                (document,"script","https://chimpstatic.com/mcjs-connected/js/users/54c003abb1a841f30251d67c6/097f1f2ff61e1de2a89da5a79.js")`};
-                
-                </head> */}
-                {/* <link rel="canonical" href="https://stronghayden.com/listings" /> */}
       </Helmet>
       <LeadingBar/>
       <Modal
