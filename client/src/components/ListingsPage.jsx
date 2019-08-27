@@ -168,16 +168,11 @@ submitIt(){
       <div>
         <Helmet>
                 <meta charSet="utf-8" />
-                <title>Strong & Hayden Commercial Listings</title>
-                <meta name="description" content="The latest Strong & Hayden commercial real estate listings."/>
-            
-            
             <title>Strong & Hayden Commercial Listings</title>
             <meta name="keywords" content="Napa, Vallejo, Commerical Real Estate, Latest lisitings, hotels, property, vineyards" />
             <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
             <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
-            <meta property="og:title" content={this.state.innerHTML ? this.state.innerHTML : 'Commercial Listings'} />
-            <meta property="og:image" content="https://imgs.xkcd.com/comics/error_code.png" />
+            <meta property="og:image" content="https://i.ibb.co/WKV1SKJ/Team-copy.jpg" />
             <meta property="og:url" content={window.location.href}/>
       </Helmet>
       <LeadingBar/>
