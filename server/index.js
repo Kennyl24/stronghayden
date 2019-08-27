@@ -12,7 +12,7 @@ const nodemailer = require('nodemailer');
 const forceSsl = require('force-ssl-heroku');
 app.use(forceSsl);
 let path = require('path');
-
+app.use(require('prerender-node'));
 const config = '../config.js';
 app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());

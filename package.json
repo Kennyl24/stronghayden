@@ -6,6 +6,8 @@
   "scripts": {
     "test": "npm test",
     "react-dev": "webpack -d --watch",
+    "dev": "node server/index.js",
+    "build": "next build",
     "start": "node server/index.js"
   },
   "repository": {
@@ -41,12 +43,14 @@
     "http-proxy-middleware": "^0.19.1",
     "loan-calculator": "^3.0.21",
     "mortgage-js": "^0.1.2",
+    "next": "^9.0.5",
     "nodemailer": "^6.2.1",
     "path": "^0.12.7",
-    "react": "^16.8.6",
+    "prerender-node": "^3.2.5",
+    "react": "^16.9.0",
     "react-animated-slider": "^1.1.4",
     "react-device-detect": "^1.6.2",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.9.0",
     "react-dropdown": "^1.6.4",
     "react-helmet": "^5.2.0",
     "react-iframe": "^1.8.0",
