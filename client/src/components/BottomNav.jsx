@@ -57,11 +57,31 @@ class BottomNav extends Component {
         <SocialIcon style={{marginBottom:'15px'}} url="https://www.youtube.com/channel/UCYEoUjdS2NWUJHchJWvvTlw" />
         </div>
         <h1 style={{borderBottom:'2px solid green', fontSize:'24px', textAlign:'left', width:'60%'}}>SHARE THIS PAGE </h1>
-        {/* <div style={{textAlign:'left'}}>
-        <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}}url="https://twitter.com/stronghayden" />
-        <SocialIcon style={{marginRight:'10px', marginBottom:'15px'}} url="https://www.facebook.com/StrongHayden/" />
-        <SocialIcon style={{marginBottom:'15px'}} url="https://www.youtube.com/channel/UCYEoUjdS2NWUJHchJWvvTlw" />
-        </div> */}
+        <div style={{textAlign:'left'}}>
+        <div style={{display:'flex', flexDirection:'row', flexWrap:'noWrap'}}>
+  {/* <span style={{cursor:'pointer'}}> */}
+  <div>
+  <FacebookShareButton children="IndividualBlog" url={window.location.href} >
+  <FacebookIcon size={40} round={true} />
+  </FacebookShareButton>
+  </div>
+  <div>
+  <LinkedinShareButton children="IndividualBlog" url={window.location.href}>
+  <LinkedinIcon size={40} round={true} />
+  </LinkedinShareButton>
+  </div>
+  <div>
+  <TwitterShareButton children="IndividualBlog" url={window.location.href}>
+  <TwitterIcon size={40} round={true} />
+  </TwitterShareButton>
+  </div>
+  <div>
+  <EmailShareButton children="IndividualBlog" url={window.location.href}>
+  <EmailIcon size={40} round={true} />
+  </EmailShareButton>
+  </div>
+  </div>
+          </div>
           </div>
           <div className="grid-item" style={{order:0}}>
         <h1 style={{borderBottom:'2px solid green', fontSize:'24px', textAlign:'left', width:'60%'}}>CONTACT US</h1>
