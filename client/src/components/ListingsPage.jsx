@@ -76,7 +76,7 @@ class ListingsPage extends React.Component {
 componentWillMount() {
     window.scrollTo(0, 0);
 }
-componentDidMount(){
+async componentDidMount(){
   // Get the image id, style and the url from it
 // style = img.currentStyle || window.getComputedStyle(img, false),
 // bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
@@ -86,7 +86,7 @@ componentDidMount(){
   const s = document.createElement("script");
   s.src="//buildout.com/api.js?v8" 
   const script = document.createElement("script");
-  script.src = BuildOut.embed({
+  script.src =  await BuildOut.embed({
     token:     "85de2b584effdb53e40923ac5de37c8b85006ba8",
     plugin:    "inventory",
     target:    "buildout",
@@ -98,17 +98,23 @@ componentDidMount(){
         window.location = window.location + '#loaded';
         window.location.reload();
   }
+  this.setState({
+    updated: true
+  })
 }
 componentDidUpdate(){
+  console.log('hello1', this.state.updated);
   text = document.getElementsByClassName('plugin-header-address');
-  if(text){
+  if(text > 0 ) {
   this.setState({
     innerHTML: text[0].innerText()
   }, ()=> {
     console.log(this.state.innerHTML)
   });
 }
+console.log('hello2');
   let shareImage = document.getElementsByClassName('carousel-image carousel-image-bg')[0];
+  console.log('hello1', shareImage);
   if(shareImage){
   style = shareImage.currentStyle || window.getComputedStyle(shareImage, false);
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
