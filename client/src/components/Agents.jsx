@@ -245,7 +245,7 @@ class Agents extends React.Component {
             <meta name="description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
             <meta name="og:description" content="The Latest Commercial Real Estate Listings in Napa and it's surronding areas" />
             <meta property="og:title" content={this.state.innerHTML ? this.state.innerHTML : 'Strong & Hayden Agents'} />
-            <meta property="og:image" content={gary} />
+            {/* <meta property="og:image" content={gary} /> */}
             <meta property="og:url" content={window.location.href}/>
       </Helmet>
     <div className="home-background" style={{position:'relative', top: isMobile ? '120px':'00px',backgroundColor: 'rgba(238, 238, 238, 0.41) !important', backgroundImage: `url(${team})`, backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:isMobile ? 'contain':'cover', height: isMobile ? '400px' : '90vh', width: '100%', marginBottom:'0px'}}>

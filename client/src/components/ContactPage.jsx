@@ -44,7 +44,7 @@ class ContactPage extends React.Component {
             {/* <meta property="og:image" content={this.state.agent.image} /> */}
             <meta property="og:url" content={window.location.href}/>
         {/* <link rel="canonical" href="https://stronghayden.com/agents/" /> */}
-                <link rel="canonical" href="https://stronghayden.com/contact" />
+            <link rel="canonical" href="https://stronghayden.com/contact" />
       </Helmet>
       <LeadingBar/>
       <div style={{paddingTop: isMobile? '150px' : '80px',backgroundColor:'white', paddingBottom:'2%', display:'flex', flexWrap:'wrap', maxWidth:'100%', flexDirection:'row'}}>
