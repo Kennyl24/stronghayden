@@ -100,7 +100,7 @@ componentDidMount(){
   }
 }
 componentDidUpdate(){
-  text = document.getElementsByClassName('plugin-header-address')[0];
+  text = document.getElementsByClassName('plugin-header-address');
   if(text){
   this.setState({
     innerHTML: text.innerText()
