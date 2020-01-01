@@ -39,7 +39,7 @@ class LeadingBar extends React.Component {
     this.resize = this.resize.bind(this);
   }
   componentWillMount(){
-    if(window.innerWidth < 1050){
+    if(window.innerWidth < 1250){
       this.setState({
         width: false,
       });
@@ -71,7 +71,7 @@ listenScrollEvent(e){
 }
 resize(){
   this.forceUpdate();
-  if(window.innerWidth < 970){
+  if(window.innerWidth < 1200){
     this.setState({
       width: false,
     });
@@ -114,10 +114,14 @@ resize(){
       <img style={{width: isMobile ? '280px' : '320px', marginTop:'8px', cursor:'pointer'}}
     onClick={() => window.location.href = '/'}
     src="https://i.ibb.co/w6xBp07/imageedit-12-5093301832.png"/>
+    <img style={{width: isMobile ? '0px' : '240px', marginLeft: '25px', marginTop:'8px', cursor:'pointer'}}
+    onClick={() => window.location.href = '/'}
+    src="https://i.ibb.co/h7RnkSN/S-HFull-Logo-1.png"/>
         </MenuItem >
       </MenuList>
       {isMobile ? 
       null   
+      
       : 
   <div>
       <div style={{position:'absolute', right:'5%', top: '5px'}}>

@@ -13,6 +13,8 @@ import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import axios from 'axios';
 import cameron from './cameron.jpg';
 import diana from './diana.jpg';
+import kelly from './Kellys.jpg';
+
 import Kalah from './Kalah.jpg';
 import mhteam from './mhteam.jpg';
 import Agent from './Agent.jsx';
@@ -86,6 +88,21 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
   Diana is a long-term Napa native and lives here in Napa with her husband Michael who owns a Napa-based Vineyard management company and winery alongside their two grown children.
   </p>
         </div>,
+  },
+  {
+    name: 'Kim Streblow',
+    title: 'Luxury Residential and Vineyard Specialist',
+    email: 'kstreblow@stronghayden.com',
+    phone: '(707) 799-1780',
+    bre: '02041819',
+    image: kelly,
+    about: 
+    <div>
+    <p>
+    Bio Coming Soon! 
+
+      </p>   
+          </div>,
   },
   {
   name: 'Kalah Rowland',

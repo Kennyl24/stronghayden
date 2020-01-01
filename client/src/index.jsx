@@ -24,6 +24,8 @@ import patrick from './components/patrick.jpg';
 import matt from './components/Matt.jpg';
 import michael from './components/michael.jpg';
 import LG from './components/LG.jpg';
+import kelly from './components/Kellys.jpg';
+
 import Page404 from './components/Page404.jsx';
 // import CheckoutForm from './CheckoutForm.jsx';
 // import {Elements, StripeProvider} from 'react-stripe-elements';
@@ -188,6 +190,21 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
   //     </p>   
   //         </div>,
   // },
+  {
+    name: 'Kim Streblow',
+    title: 'Luxury Residential and Vineyard Specialist',
+    email: 'kstreblow@stronghayden.com',
+    phone: '(707) 799-1780',
+    bre: '02041819',
+    image: kelly,
+    about: 
+    <div>
+    <p>
+    Bio Coming Soon! 
+
+      </p>   
+          </div>,
+  },
   {
     name: 'Lauren Nicholsen',
     title: 'Sales Agent',

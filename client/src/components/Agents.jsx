@@ -17,6 +17,7 @@ import matt from './Matt.jpg';
 import michael from './michael.jpg';
 import LG from './LG.jpg';
 import {Helmet} from "react-helmet";
+import kelly from './Kellys.jpg';
 
 const agents = [
   {
@@ -120,6 +121,21 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
     phone: '(707) 815-1434',
     bre: '02041819',
     image: LG,
+    about: 
+    <div>
+    <p>
+    Bio Coming Soon! 
+
+      </p>   
+          </div>,
+  },
+  {
+    name: 'Kim Streblow',
+    title: 'Luxury Residential and Vineyard Specialist',
+    email: 'kstreblow@stronghayden.com',
+    phone: '(707) 799-1780',
+    bre: '02041819',
+    image: kelly,
     about: 
     <div>
     <p>
