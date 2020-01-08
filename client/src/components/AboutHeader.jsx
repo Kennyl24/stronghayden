@@ -20,10 +20,10 @@ class AboutHeader extends React.Component {
        {/* <div style={{backgroundImage: `url(${adobe})`, backgroundBlendMode: 'color', backgroundRepeat: 'no-repeat', imageRendering: '-webkit-optimize-contrast', backgroundSize:'cover', height:'60vh', width: '100%',}}> */}
      
       {/* <h1 style={{color:isMobile ? '#3c633a' :'white', fontWeight:'800', textAlign:'center', paddingTop:isMobile ? '50px': '200px'}}> ABOUT US</h1> */}
-      <h1 style={{fontWeight:'800', color: isMobile ? 'white' : 'black', fontSize:'25px', paddingTop:isMobile ? '50px': '200px', textAlign:'center'}}>
-      Napa Valley's leader in all facets of commercial real estate.
+      {/* <h1 style={{fontWeight:'800', color: isMobile ? 'white' : 'black', fontSize:'25px', paddingTop:isMobile ? '50px': '200px', textAlign:'center'}}>
+      Napa Valley's leader in all facets of commercial real estate. */}
        {/* LEADER IN ALL FACETS OF COMMERCIAL REAL ESTATE */}
-       </h1>
+       {/* </h1> */}
 
        {/* {isMobile ? null : <h1 style={{fontWeight:'800', color:'white', fontSize:'20px', textAlign:'center'}}>ESTABLISHED LEADER IN ALL FACETS OF COMMERCIAL REAL ESTATE</h1> } */}
        </div>
