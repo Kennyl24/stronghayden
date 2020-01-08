@@ -46,7 +46,7 @@ class Agent extends React.Component {
       <div className="agent-card">
       <Link to={{ pathname: `/agents/${this.props.agent.name.split(' ').join('-')}`, state: { key: this.props.index} }}className="read-more">
       
-      <img style={{width:'200px', minWidth:'200px', maxWidth:'200px', height:'300px'}} src={`/${this.state.image}`} alt={this.props.agent.name}/>
+      <img style={{width:'200px', minWidth:'200px', maxWidth:'200px', paddingBottom:  this.props.agent.name === 'Kim Streblow' ? '25px' :'0px' , height: this.props.agent.name === 'Kim Streblow' ? '250px' :'300px'}} src={`/${this.state.image}`} alt={this.props.agent.name}/>
       <h1 className='agent-header'>{this.props.agent.name}</h1>
       <div style={{display:'flex', flexDirection:'column', minHeight:'200px'}}>
       <h1 className='agent-title' style={{minHeight: this.props.height ? '60px' : null}}>{this.props.agent.title}</h1>
