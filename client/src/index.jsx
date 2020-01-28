@@ -113,10 +113,10 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
   },
   {
     name: 'Joe Fischer',
-    title: 'Sales Agent',
+    title: 'Assistant',
     email: 'jfischer@stronghayden.com',
     phone: '(707) 738-5853',
-    bre: '01458995',
+    bre: '01982853',
     image: joe,
     about: 
     <div>
@@ -195,7 +195,7 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
     title: 'Luxury Residential and Vineyard Specialist',
     email: 'kstreblow@stronghayden.com',
     phone: '(707) 799-1780',
-    bre: '02041819',
+    bre: '01966115',
     image: kelly,
     about: 
     <div>

@@ -94,7 +94,7 @@ Michael is a Napa native who lives here in the Valley with his wife Claire and f
     title: 'Luxury Residential and Vineyard Specialist',
     email: 'kstreblow@stronghayden.com',
     phone: '(707) 799-1780',
-    bre: '02041819',
+    bre: '01966115',
     image: kelly,
     about: 
     <div>
